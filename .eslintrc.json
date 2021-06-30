@@ -3,7 +3,9 @@
     "airbnb",
     "prettier",
     "prettier/react",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
   ],
   "parser": "babel-eslint",
   "parserOptions": {
@@ -44,7 +46,7 @@
         "props": false
       }
     ],
-    "no-console": 0,
+    "no-console": "error",
     "import/prefer-default-export": 1,
     "import": 0,
     "func-names": 0,
@@ -82,10 +84,10 @@
     "prettier/prettier": [
       "error",
       {
-        "trailingComma": "esnext",
+        "trailingComma": "all",
         "singleQuote": false,
         "printWidth": 100,
-        "endOfLine":"auto"
+        "endOfLine": "auto"
       }
     ],
     "jsx-a11y/href-no-hash": "off",
