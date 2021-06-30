@@ -5,7 +5,7 @@ export const Navbar = () => {
   return (
     <div>
       <p>This is an example of a component</p>
-      <Button type="primary">Example of Antd buttons</Button>
+      <Button type="primary">Example of Antd button</Button>
     </div>
   )
 }
