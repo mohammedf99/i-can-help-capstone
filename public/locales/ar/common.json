@@ -1,5 +1,7 @@
 {
-  "word_key": "الكلمة",
+  "title": "استطيع المساعدة",
+  "place": "places",
+  "word_key":"word",
   "complex": {
     "page1": {
       "title": "العنوان"

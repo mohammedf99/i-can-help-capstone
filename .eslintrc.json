@@ -73,7 +73,7 @@
     "no-shadow": "off",
     "quotes": [
       2,
-      "single",
+      "double",
       {
         "avoidEscape": true,
         "allowTemplateLiterals": true
@@ -82,8 +82,8 @@
     "prettier/prettier": [
       "error",
       {
-        "trailingComma": "es5",
-        "singleQuote": true,
+        "trailingComma": "esnext",
+        "singleQuote": false,
         "printWidth": 100,
         "endOfLine":"auto"
       }
