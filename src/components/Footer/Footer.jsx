@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col } from "antd";
-import { FooterSty, LogoSty, FooterParaSty, SMWrapperSty, SMIconSty } from "./Footer.styled";
+import { FooterSty, LogoSty, FooterParaSty, SMWrapperSty, SMIconSty, FooterH2Sty } from "./Footer.styled";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Footer = () => (
   <FooterSty>
@@ -16,7 +17,7 @@ const Footer = () => (
           </Col>
           <Col span={24}>
             <SMWrapperSty>
-              <SMIconSty />
+              <SMIconSty><FontAwesomeIcon icon="facebook" /></SMIconSty>
               <SMIconSty />
               <SMIconSty />
             </SMWrapperSty>
@@ -24,7 +25,17 @@ const Footer = () => (
         </Row>
       </Col>
       <Col span={12}>
-        <h1>right side</h1>
+        <Row>
+            <Col span={7}>
+                <FooterH2Sty>Company</FooterH2Sty>
+            </Col>
+            <Col span={7}>
+                <FooterH2Sty>Support</FooterH2Sty>
+            </Col>
+            <Col span={10}>
+                <FooterH2Sty>Contact Us</FooterH2Sty>
+            </Col>
+        </Row>
       </Col>
     </Row>
   </FooterSty>
