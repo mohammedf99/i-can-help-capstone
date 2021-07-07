@@ -35,6 +35,7 @@ export const SMIconSty = styled.div`
   background-color: rgba(250, 250, 255, 0.1);
   border-radius: 50%;
   margin-right: 0.75rem;
+  font-size: 20px;
 `;
 
 export const FooterH2Sty = styled.h2`
