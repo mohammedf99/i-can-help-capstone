@@ -79,6 +79,7 @@ export const InputIconSty = styled.button`
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   border: 0;
+  font-size: 20px;
 `;
 
 export const Column = styled(Col)`
