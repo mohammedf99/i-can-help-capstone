@@ -1,19 +1,11 @@
 import styled from "styled-components";
+import { Col } from "antd";
 
 export const FooterSty = styled.footer`
-  background-color: #1c1256;
-  color: #fafaff;
   width: 100%;
-  height: 360px;
-  padding: 64px 128px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`;
-
-export const LeftSideSty = styled.div`
-  display: flex;
-  flex-direction: column;
+  color: #fafaff;
+  background-color: #1c1256;
+  padding: 65px 165px;
 `;
 
 export const LogoSty = styled.h1`
@@ -45,18 +37,6 @@ export const SMIconSty = styled.div`
   margin-right: 0.75rem;
 `;
 
-export const RightSideSty = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 635px;
-`;
-
-export const RightSectSty = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 165px;
-`;
-
 export const FooterH2Sty = styled.h2`
   font-size: 24px;
   color: #fafaff;
@@ -71,10 +51,6 @@ export const Ul = styled.ul`
 
 export const Li = styled.li`
   margin-bottom: 0.75rem;
-`;
-
-export const ContactDivSty = styled.div`
-  width: 255px;
 `;
 
 export const InputDivSty = styled.div`
@@ -102,4 +78,8 @@ export const InputIconSty = styled.button`
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   border: 0;
+`;
+
+export const Column = styled(Col)`
+  padding: 10rem;
 `;
