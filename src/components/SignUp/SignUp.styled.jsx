@@ -33,6 +33,13 @@ export const InputStyled = styled(Input)`
   width: 100%;
   padding: 12px;
 `;
+export const InputPasswordStyled = styled(Input.Password)`
+  border: 1px solid #eaeaea;
+  border-radius: 3px;
+  height: 20%;
+  width: 100%;
+  padding: 12px;
+`;
 
 export const ButtonStyled = styled(Button)`
   background-color: #1c1259;

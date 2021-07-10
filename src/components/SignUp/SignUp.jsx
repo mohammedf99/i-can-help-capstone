@@ -2,6 +2,7 @@ import React from "react";
 import { Form, Button } from "antd";
 import {
   InputStyled,
+  InputPasswordStyled,
   HeaderStyled,
   ButtonStyled,
   CardStyled,
@@ -41,7 +42,7 @@ function SignUpForm() {
         </Form.Item>
 
         <Form.Item>
-          <InputStyled placeholder="Password" />
+          <InputPasswordStyled placeholder="Password" />
         </Form.Item>
 
         <Form.Item>
