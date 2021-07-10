@@ -3,6 +3,7 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
+import UpperSection from "../components/Profile/UpperSection/UpperSection";
 // import { Navbar } from "@components/Navbar/Navbar";
 
 function Homepage() {
@@ -13,6 +14,7 @@ function Homepage() {
     <div>
       {t("title")}
       <Navbar />
+      <UpperSection />
       <Footer />
     </div>
   );
