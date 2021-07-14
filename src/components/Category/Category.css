@@ -73,9 +73,9 @@ body {
     top: 2232px;
     background-color: #ffffff;
     border: none;
-    flex: none;
+    /* flex: none; */
     order: 3;
-    flex-grow: 0;
+    /* flex-grow: 0; */
     margin: 80px 0px;
   }
   .icon {
