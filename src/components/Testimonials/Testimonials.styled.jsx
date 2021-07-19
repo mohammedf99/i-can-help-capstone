@@ -78,15 +78,18 @@ export const TestimonialsSection = styled.div`
     }
     .slick-dots li.slick-active button{
         background-color:#2EC5CE;
+        
     }
     h2{
-        color: #1C1259
+        color: #1C1259;
+        text-align: center;
     }
     p{
-        color: #1C1259
+        color: #1C1259;
+        text-align: center;
     }
     span{
-       color: #474A57
+       color: #474A57;
     }
 
     @media screen and (max-width: 1024px) {
