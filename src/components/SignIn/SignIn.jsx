@@ -8,6 +8,7 @@ import {
   ButtonStyled,
   CardStyled,
   TitleStyled,
+  Backdrop,
 } from "../SignUp/SignUp.styled";
 
 const EmailIconSVG = () => (
@@ -27,52 +28,57 @@ const EmailIconSVG = () => (
   </svg>
 );
 
-function SignInForm() {
-  return (
-    <CardStyled>
-      <Form>
-        <HeaderStyled>Sign In</HeaderStyled>
-        <TitleStyled>Sign in now to start helping!</TitleStyled>
+function SignInForm({ isVisible, backgroundClick }) {
+  return isVisible ? (
+    <div>
+      <Backdrop onClick={backgroundClick} />
+      <CardStyled>
+        <Form>
+          <HeaderStyled>Sign In</HeaderStyled>
+          <TitleStyled>Sign in now to start helping!</TitleStyled>
 
-        <Form.Item>
-          <InputStyled placeholder="  Email" prefix={<EmailIconSVG />} />
-        </Form.Item>
+          <Form.Item>
+            <InputStyled placeholder="  Email" prefix={<EmailIconSVG />} />
+          </Form.Item>
 
-        <Form.Item>
-          <InputPasswordStyled placeholder="Password" />
-        </Form.Item>
+          <Form.Item>
+            <InputPasswordStyled placeholder="Password" />
+          </Form.Item>
 
-        <Form.Item style={{ textAlign: "left" }}>
-          <Checkbox label="Remember me" />
-        </Form.Item>
+          <Form.Item style={{ textAlign: "left" }}>
+            <Checkbox label="Remember me" />
+          </Form.Item>
 
-        <Form.Item>
-          <ButtonStyled type="primary" htmlType="submit">
-            Sign in
-          </ButtonStyled>
-        </Form.Item>
+          <Form.Item>
+            <ButtonStyled type="primary" htmlType="submit">
+              Sign in
+            </ButtonStyled>
+          </Form.Item>
 
-        <Form.Item />
+          <Form.Item />
 
-        <Form.Item>
-          <Button
-            type="text"
-            style={{ color: "#1c1259", fontFamily: "Roboto" }}
-          >
-            Forgot password?
-          </Button>
-        </Form.Item>
+          <Form.Item>
+            <Button
+              type="text"
+              style={{ color: "#1c1259", fontFamily: "Roboto" }}
+            >
+              Forgot password?
+            </Button>
+          </Form.Item>
 
-        <Form.Item>
-          <Button
-            type="text"
-            style={{ color: "#1c1259", fontFamily: "Roboto" }}
-          >
-            Don't have account yet?
-          </Button>
-        </Form.Item>
-      </Form>
-    </CardStyled>
+          <Form.Item>
+            <Button
+              type="text"
+              style={{ color: "#1c1259", fontFamily: "Roboto" }}
+            >
+              Don't have account yet?
+            </Button>
+          </Form.Item>
+        </Form>
+      </CardStyled>
+    </div>
+  ) : (
+    <></>
   );
 }
 
