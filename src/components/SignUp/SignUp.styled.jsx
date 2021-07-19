@@ -1,6 +1,13 @@
 import { Button, Input, Card } from "antd";
 import styled from "styled-components";
 
+export const BackDrop = styled.div`
+  position: "absolute",
+  top: 0,
+  width: "100%",
+  height: "100%",
+`;
+
 export const CardStyled = styled(Card)`
   width: 50%;
   left: 25%;
