@@ -2,7 +2,6 @@ import React from "react";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Navbar from "../components/Navbar/Navbar";
-import JobPostingForm from "../components/JobPostingForm/JobPostingForm";
 // import { Navbar } from "@components/Navbar/Navbar";
 
 function Homepage() {
@@ -13,7 +12,6 @@ function Homepage() {
     <div>
       {t("title")}
       <Navbar />
-      <JobPostingForm />
     </div>
   );
 }
