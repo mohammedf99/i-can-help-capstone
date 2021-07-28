@@ -30,6 +30,7 @@ const PostFiltering = () => (
             <option selected disabled>
               Employment type
             </option>
+            <option value="full-time">Contract</option>
             <option value="full-time">Full-time</option>
             <option value="part-time">Part-time</option>
           </select>
@@ -37,10 +38,13 @@ const PostFiltering = () => (
         <Col span={24}>
           <select className="filter-select">
             <option selected disabled>
-              Gender
+              Location
             </option>
-            <option value="female">Female</option>
-            <option value="male">Male</option>
+            <option value="Erbil">Erbil</option>
+            <option value="Duhok">Duhok</option>
+            <option value="Halabja">Halabja</option>
+            <option value="Kerkuk">Kerkuk</option>
+            <option value="Sulaymaniyah">Sulaymaniyah</option>
           </select>
         </Col>
         <Col span={24}>
