@@ -85,8 +85,7 @@ export const LocationTag = styled.div`
   border-radius: 25px;
   font-size: 1rem;
 
-
-  p{
+  p {
     margin: 0;
     padding: 0;
   }
