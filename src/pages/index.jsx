@@ -2,6 +2,7 @@ import React from "react";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Navbar from "../components/Navbar/Navbar";
+import PostFiltering from "../components/PostFiltering/PostFiltering";
 // import { Navbar } from "@components/Navbar/Navbar";
 
 function Homepage() {
@@ -12,6 +13,7 @@ function Homepage() {
     <div>
       {t("title")}
       <Navbar />
+      <PostFiltering />
     </div>
   );
 }
