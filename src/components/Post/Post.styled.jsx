@@ -83,9 +83,16 @@ export const LocationTag = styled.div`
   height: 40px;
   padding: 0.5rem 1rem;
   border-radius: 25px;
+  font-size: 1rem;
+
+
+  p{
+    margin: 0;
+    padding: 0;
+  }
 
   .address {
-    padding-left: 80px;
+    padding-left: 100px;
   }
 `;
 
