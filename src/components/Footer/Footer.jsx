@@ -33,13 +33,19 @@ const Footer = () => (
           <Col span={24}>
             <SMWrapperSty>
               <SMIconSty>
-                <FontAwesomeIcon icon={faFacebook} />
+                <a href="#" className="a-no-style">
+                  <FontAwesomeIcon icon={faFacebook} />
+                </a>
               </SMIconSty>
               <SMIconSty>
-                <FontAwesomeIcon icon={faGithub} />
+                <a href="#" className="a-no-style">
+                  <FontAwesomeIcon icon={faGithub} />
+                </a>
               </SMIconSty>
               <SMIconSty>
-                <FontAwesomeIcon icon={faYoutube} />
+                <a href="#" className="a-no-style">
+                  <FontAwesomeIcon icon={faYoutube} />
+                </a>
               </SMIconSty>
             </SMWrapperSty>
           </Col>
@@ -50,19 +56,51 @@ const Footer = () => (
           <Col span={7}>
             <FooterH2Sty>Company</FooterH2Sty>
             <Ul>
-              <Li>About us</Li>
-              <Li>Blog</Li>
-              <Li>Contact us</Li>
-              <Li>Testimonials</Li>
+              <Li>
+                <a href="#" className="a-no-style">
+                  About us
+                </a>
+              </Li>
+              <Li>
+                <a href="#" className="a-no-style">
+                  Blog
+                </a>
+              </Li>
+              <Li>
+                <a href="#" className="a-no-style">
+                  Contact us
+                </a>
+              </Li>
+              <Li>
+                <a href="#" className="a-no-style">
+                  Testimonials
+                </a>
+              </Li>
             </Ul>
           </Col>
           <Col span={7}>
             <FooterH2Sty>Support</FooterH2Sty>
             <Ul>
-              <Li>Help center</Li>
-              <Li>Terms of service</Li>
-              <Li>Legal</Li>
-              <Li>Privacy prolicy</Li>
+              <Li>
+                <a href="#" className="a-no-style">
+                  Help center
+                </a>
+              </Li>
+              <Li>
+                <a href="#" className="a-no-style">
+                  Terms of service
+                </a>
+              </Li>
+              <Li>
+                <a href="#" className="a-no-style">
+                  Legal
+                </a>
+              </Li>
+              <Li>
+                <a href="#" className="a-no-style">
+                  Privacy prolicy
+                </a>
+              </Li>
             </Ul>
           </Col>
           <Col span={10}>
