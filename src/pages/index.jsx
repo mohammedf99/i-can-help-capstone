@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Navbar from "../components/Navbar/Navbar";
+import NavbarSection from "../components/Navbar/NavbarSection";
 // import { Navbar } from "@components/Navbar/Navbar";
 
 function Homepage() {
@@ -10,8 +10,8 @@ function Homepage() {
 
   return (
     <div>
-      {t("title")}
-      <Navbar />
+      {/* {t("title")} */}
+      <NavbarSection />
     </div>
   );
 }
