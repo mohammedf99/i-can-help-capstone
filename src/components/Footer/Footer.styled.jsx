@@ -6,6 +6,15 @@ export const FooterSty = styled.footer`
   color: #fafaff;
   background-color: #1c1256;
   padding: 65px 165px;
+
+  .a-no-style{
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .a-no-style:hover{
+    opacity: 0.8;
+  }
 `;
 
 export const LogoSty = styled.h1`
