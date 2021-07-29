@@ -3,7 +3,7 @@ import { Tag } from "antd";
 
 export const PostDiv = styled.div`
   box-sizing: border-box;
-  width: 75%;
+  width: 100%;
   height: auto;
   padding: 2rem 3rem;
   display: flex;
@@ -12,6 +12,7 @@ export const PostDiv = styled.div`
   border: 1.5px solid #4e4e9f;
   border-radius: 5px;
   background-color: #fafaff;
+  margin-bottom: 1rem;
 
   &:hover {
     border: 0;
@@ -79,7 +80,7 @@ export const LocationTag = styled.div`
   align-items: center;
   border: 1px solid #ee4266;
   color: #ee4266;
-  width: 90%;
+  width: 95%;
   height: 40px;
   padding: 0.5rem 1rem;
   border-radius: 25px;
