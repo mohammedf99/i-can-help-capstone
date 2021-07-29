@@ -26,6 +26,7 @@ const NavbarSection = () => (
         <div style={{ display: "flex", flexDirection: "column" }}>
           <Button
             className="Searchbtn"
+            type="input"
             icon={<SearchOutlined />}
             style={{
               display: "flex",
