@@ -7,12 +7,12 @@ export const FooterSty = styled.footer`
   background-color: #1c1256;
   padding: 65px 165px;
 
-  .a-no-style{
+  .a-no-style {
     text-decoration: none;
     color: inherit;
   }
 
-  .a-no-style:hover{
+  .a-no-style:hover {
     opacity: 0.8;
   }
 `;
