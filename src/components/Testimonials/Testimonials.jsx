@@ -43,10 +43,10 @@ const Testimonials = () => {
           <TestimonialsList testimonialsData={testimonialsData} />
         </div>
         <div>
-          <h3></h3>
+          <TestimonialsList testimonialsData={testimonialsData} />
         </div>
         <div>
-          <h3></h3>
+          <TestimonialsList testimonialsData={testimonialsData} />
         </div>
       </Carousel>
     </TestimonialsSection>
