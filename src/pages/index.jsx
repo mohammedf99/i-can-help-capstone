@@ -3,6 +3,7 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
+
 // import { Navbar } from "@components/Navbar/Navbar";
 
 function Homepage() {
