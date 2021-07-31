@@ -3,6 +3,8 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Navbar from "../components/Navbar/Navbar";
 import ProfilePost from "../components/ProfilePost/ProfilePost";
+import Category from '../components/Category/Category';
+
 // import { Navbar } from "@components/Navbar/Navbar";
 
 function Homepage() {
@@ -11,9 +13,10 @@ function Homepage() {
 
   return (
     <div>
-      {t("title")}
+      {/* {t("title")} */}
       <Navbar />
-      <ProfilePost />
+      {/* <ProfilePost /> */}
+      <Category />
     </div>
   );
 }
