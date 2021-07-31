@@ -35,17 +35,17 @@ const categoryData = [
   },
 ];
 
+
+
 const Category = () => {
   return (
     <CategoryStyle>
-   
-        
-     
       <div className="container">
-      <h1>Categories</h1>
+        <h1>Categories</h1>
         <div className="col">
           <CategoryList categoryData={categoryData} />
         </div>
+       
       </div>
       <button className="btn">
         View all
