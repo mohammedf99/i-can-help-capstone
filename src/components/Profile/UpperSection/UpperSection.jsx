@@ -8,8 +8,7 @@ import {
   WorkTitle,
   LocationText,
   MyPostsDiv,
-  MyPinsDiv,
-  numOfPosts,
+  PinnedPostsDiv,
 } from "./UpperSection.styled";
 
 const UpperSection = () => (
@@ -19,7 +18,10 @@ const UpperSection = () => (
         <Row>
           <Col span={8}>
             <ProImgDiv>
-              <img src="#" alt="profile" />
+              <img
+                src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                alt="profile"
+              />
             </ProImgDiv>
           </Col>
           <Col span={16}>
@@ -31,7 +33,7 @@ const UpperSection = () => (
                 <WorkTitle>Gardner</WorkTitle>
               </Col>
               <Col span={24}>
-                <FontAwesomeIcon icon={faMapMarkerAlt} className="pink-icon" />
+                <FontAwesomeIcon icon={faMapMarkerAlt} style={{ color: "#EE4266" }} />
                 <LocationText>Erbil, IQ</LocationText>
               </Col>
             </Row>
@@ -41,17 +43,28 @@ const UpperSection = () => (
       <Col span={16}>
         <Row>
           <Col span={8}>
-            <MyPostsDiv>
-              <div className="postTitle">
-                <h3>My posts</h3>
+            <MyPostsDiv className="post-card">
+              <div className="card-upper">
+                <h2>5</h2>
               </div>
-              <span className="numOfPosts">20</span>
+              <div className="card-lowe">
+                <h3>
+                  <a href="#">My posts</a>
+                </h3>
+              </div>
             </MyPostsDiv>
           </Col>
           <Col span={8}>
-            <MyPinsDiv>
-              <h1>Pinned posts</h1>
-            </MyPinsDiv>
+            <PinnedPostsDiv className="card">
+              <div className="card-upper">
+                <h2>5</h2>
+              </div>
+              <div className="card-lower">
+                <h3>
+                  <a href="#">Pinned posts</a>
+                </h3>
+              </div>
+            </PinnedPostsDiv>
           </Col>
         </Row>
       </Col>

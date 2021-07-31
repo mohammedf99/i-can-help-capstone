@@ -4,7 +4,13 @@ export const ProImgDiv = styled.div`
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background-color: red;
+
+  img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
 `;
 
 export const ProUserName = styled.h2`
@@ -31,25 +37,99 @@ export const LocationText = styled.h4`
 `;
 
 export const MyPostsDiv = styled.div`
+  box-sizing: border-box;
+  width: 90%;
+  height: 140px;
   background-color: #1c1259;
-  color: #fafaff;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90%;
   border-radius: 5px;
+
+  .card-upper {
+    height: 60%;
+  }
+
+  h2 {
+    font-size: 4rem;
+    color: #fafaff;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+  }
+
+  .card-lower {
+    height: 40%;
+  }
+
+  h3 {
+    font-size: 2rem;
+    color: #fafaff;
+    font-weight: 700;
+  }
+
+  .card-upper,
+  .card-lower {
+    display: flex;
+    align-items: center;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  a:hover {
+    opacity: 0.8;
+  }
 `;
 
-export const MyPinsDiv = styled.div`
-  background-color: #ff9b00;
-  color: #fafaff;
+export const PinnedPostsDiv = styled.div`
+  box-sizing: border-box;
+  width: 90%;
+  height: 140px;
+  background-color: #FF9B00;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 90%;
   border-radius: 5px;
-`;
 
-export const numOfPosts = styled("numOfPosts")`
-  color: #red;
+  .card-upper {
+    height: 60%;
+  }
+
+  h2 {
+    font-size: 4rem;
+    color: #fafaff;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+  }
+
+  .card-lower {
+    height: 40%;
+  }
+
+  h3 {
+    font-size: 2rem;
+    color: #fafaff;
+    font-weight: 700;
+  }
+
+  .card-upper,
+  .card-lower {
+    display: flex;
+    align-items: center;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  a:hover {
+    opacity: 0.8;
+  }
 `;
