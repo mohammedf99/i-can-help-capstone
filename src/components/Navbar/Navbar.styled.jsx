@@ -24,12 +24,16 @@ export const Navbar = styled.div`
     font-size: 36px;
     line-height: 20px;
   }
+
   .Searchbtn {
     border: 1px solid #1c1259;
     box-sizing: border-box;
     border-radius: 40px;
-    color: #1c1259;
+
     width: 263px;
+  }
+  .ant-input-lg {
+    color: #1c1259;
   }
   .nav {
     display: flex;
@@ -50,6 +54,22 @@ export const Navbar = styled.div`
     margin-right: 5px;
     background: #ffffff;
     border: 1px solid #1c1259;
+    transition: all 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+  }
+  .btn1:hover {
+    background: #1c1259;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 40px;
+    width: 30%;
+  }
+  .btn1:hover::after {
+    content: "Login";
+    color: white;
+    border: 1px solid black;
   }
   .btn2 {
     margin-right: 5px;
@@ -112,5 +132,8 @@ export const Navbar = styled.div`
   }
   .anticon-search {
     margin-top: 5px;
+  }
+  .avatar:hover {
+    cursor: pointer;
   }
 `;

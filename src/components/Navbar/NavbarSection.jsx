@@ -2,8 +2,14 @@ import React from "react";
 // import { Button } from "antd";
 import { Navbar } from "./Navbar.styled";
 import { Button, Tooltip } from "antd";
+import { Input, Space } from "antd";
 import { SearchOutlined, DownOutlined, UserOutlined } from "@ant-design/icons";
+import SignedinNavbar from "./SignedinNavbar";
+import SignedoutNavbar from "./SignedoutNavbar";
 
+const { Search } = Input;
+const onSearch = (value) => console.log(value);
+const user=true
 const NavbarSection = () => (
   <Navbar>
     <div className="Navbar">
@@ -24,7 +30,7 @@ const NavbarSection = () => (
           <a href="#">Find Talent</a>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <Button
+          {/* <Button
             className="Searchbtn"
             type="input"
             icon={<SearchOutlined />}
@@ -35,28 +41,17 @@ const NavbarSection = () => (
             }}
           >
             Search here
-          </Button>
+          </Button> */}
+
+          <Input
+            className="Searchbtn"
+            size="large"
+            placeholder="Search here"
+            suffix={<SearchOutlined />}
+          />
         </div>
       </div>
-
-      <div className="btn">
-        <Tooltip title="search">
-          <Button
-            className="btn1"
-            type="button"
-            shape="circle"
-            icon={<UserOutlined />}
-          />
-        </Tooltip>
-        <Tooltip title="search">
-          <Button
-            className="btn2"
-            type="button"
-            shape="circle"
-            icon={<DownOutlined className="arrow" />}
-          />
-        </Tooltip>
-      </div>
+      {!user?<SignedoutNavbar/>:<SignedinNavbar />}
     </div>
   </Navbar>
 );
