@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Testimonials from "../components/Testimonials/Testimonials";
 import Footer from "../components/Footer/Footer";
 import NavbarSection from "../components/Navbar/NavbarSection";
 import ProfilePost from "../components/ProfilePost/ProfilePost";
@@ -13,8 +14,9 @@ function Homepage() {
   return (
     <div>
       <NavbarSection />
+      <Testimonials />
       <UpperSection />
-          <Footer />
+      <Footer />
     </div>
   );
 }
