@@ -1,9 +1,11 @@
 import React from "react";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Navbar from "../components/Navbar/Navbar";
-import Testimonials from "../components/Testimonials/Testimonials"
-// import { Navbar } from "@components/Navbar/Navbar";
+import Testimonials from "../components/Testimonials/Testimonials";
+import Footer from "../components/Footer/Footer";
+import NavbarSection from "../components/Navbar/NavbarSection";
+import ProfilePost from "../components/ProfilePost/ProfilePost";
+import UpperSection from "../components/Profile/UpperSection/UpperSection";
 
 function Homepage() {
   // This controls the direction of the page for RTL languages
@@ -11,7 +13,10 @@ function Homepage() {
 
   return (
     <div>
-     <Testimonials />
+      <NavbarSection />
+      <Testimonials />
+      <UpperSection />
+      <Footer />
     </div>
   );
 }
