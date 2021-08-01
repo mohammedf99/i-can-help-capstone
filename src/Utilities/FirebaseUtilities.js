@@ -24,7 +24,7 @@ export const setUser = ({ email, name }, id) =>
       posts: [],
       pinnedPosts: [],
     })
-    .catch((e) => console.log(e));
+    .catch((e) => alert(e));
 
 export const updateUser = (values, id) => {
   try {
@@ -62,16 +62,29 @@ export const signUp = ({ email, password, name }, callback) => {
   }
 };
 
-export const signIn = ({ email, password }, callback) => {
+export const signIn = ({ email, password, remember }, callback) => {
+  const { LOCAL, SESSION } = Firebase.auth.Auth.Persistence;
+
   try {
+    // check remember state
+
     Firebase.auth()
-      .signInWithEmailAndPassword(email, password)
-      .then((r) => {
-        if (!r.user.emailVerified) return alert("please verify to log in");
-        alert("signin success");
-        if (callback) callback();
-      })
-      .catch((e) => alert(e.message));
+      .setPersistence(remember ? LOCAL : SESSION)
+      .then(() =>
+        // sign in with credentials
+
+        Firebase.auth()
+          .signInWithEmailAndPassword(email, password)
+          .then((r) => {
+            // check verification
+
+            if (!r.user.emailVerified) return alert("please verify to log in");
+            alert("signin success");
+            if (callback) callback();
+          })
+          .catch((e) => alert(e.message))
+      )
+      .catch((e) => alert(e));
   } catch (error) {
     alert(error.message);
   }
