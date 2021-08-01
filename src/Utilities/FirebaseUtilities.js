@@ -43,7 +43,6 @@ export const signUp = ({ email, password, name }, callback) => {
   try {
     Firebase.auth()
       .createUserWithEmailAndPassword(email, password)
-
       .then(({ user }) => {
         user.sendEmailVerification({
           url: "https://i-can-help-20773.web.app",
@@ -53,7 +52,6 @@ export const signUp = ({ email, password, name }, callback) => {
           Firebase.auth().signOut()
         );
       })
-
       .then(() => {
         alert("signup success");
         if (callback) callback();
