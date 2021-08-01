@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, Button } from "antd";
+import { useRouter } from "next/router";
+import { signUp } from "../../Utilities/FirebaseUtilities";
 import {
   InputStyled,
   InputPasswordStyled,
@@ -28,6 +30,15 @@ const EmailIconSVG = () => (
 );
 
 function SignUpForm({ isVisible, backgroundClick }) {
+  const [data, setData] = useState({
+    name: null,
+    email: null,
+    password: null,
+    confirmPass: null,
+  });
+
+  const route = useRouter();
+
   return isVisible ? (
     <div>
       <BackDrop onClick={backgroundClick} />
@@ -38,25 +49,44 @@ function SignUpForm({ isVisible, backgroundClick }) {
           <TitleStyled>Sign up now to start helping!</TitleStyled>
 
           <Form.Item>
-            <InputStyled placeholder="Name" />
+            <InputStyled
+              placeholder="Name"
+              onChange={(e) => setData({ ...data, name: e.target.value })}
+            />
           </Form.Item>
 
           <Form.Item>
-            <InputStyled placeholder="  Email" prefix={<EmailIconSVG />} />
+            <InputStyled
+              placeholder="  Email"
+              prefix={<EmailIconSVG />}
+              onChange={(e) => setData({ ...data, email: e.target.value })}
+            />
           </Form.Item>
 
           <Form.Item>
-            <InputPasswordStyled placeholder="Password" />
+            <InputPasswordStyled
+              placeholder="Password"
+              onChange={(e) => setData({ ...data, password: e.target.value })}
+            />
           </Form.Item>
 
           <Form.Item>
-            <InputStyled placeholder="Repeat Password" />
+            <InputPasswordStyled
+              placeholder="Repeat Password"
+              onChange={(e) =>
+                setData({ ...data, confirmPass: e.target.value })
+              }
+            />
           </Form.Item>
 
           <Form.Item />
 
           <Form.Item>
-            <ButtonStyled type="primary" htmlType="submit">
+            <ButtonStyled
+              type="primary"
+              htmlType="submit"
+              onClick={() => signUp(data)}
+            >
               Sign up
             </ButtonStyled>
           </Form.Item>
