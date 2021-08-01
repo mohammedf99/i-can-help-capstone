@@ -1,3 +1,4 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import LoggedIn from "../../Utilities/auth/Auth";
 import ProfilePage from "./profilePage";
 
@@ -8,3 +9,9 @@ export default function Profile() {
     </LoggedIn>
   );
 }
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common"])),
+  },
+});
