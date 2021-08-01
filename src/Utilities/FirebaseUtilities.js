@@ -33,7 +33,7 @@ export const updateUser = (values, id) => {
   }
 };
 
-export const signUp = ({ email, password, name }) => {
+export const signUp = ({ email, password, name }, callback) => {
   try {
     Firebase.auth()
       .createUserWithEmailAndPassword(email, password)
@@ -42,7 +42,26 @@ export const signUp = ({ email, password, name }) => {
           url: "https://i-can-help-20773.web.app",
         })
       )
-      .then(() => setUser({ email, name }, Firebase.auth().currentUser.uid));
+      .then(() => {
+        alert("signup success");
+        setUser({ email, name }, Firebase.auth().currentUser.uid);
+        callback();
+      });
+  } catch (error) {
+    alert(error);
+  }
+};
+
+export const signIn = ({ email, password }, callback) => {
+  try {
+    Firebase.auth()
+      .signInWithEmailAndPassword(email, password)
+      .then((r) => {
+        if (!r.user.emailVerified) return alert("please verify to log in");
+        alert("signin success");
+        callback();
+      })
+      .catch((e) => alert(e.message));
   } catch (error) {
     alert(error.message);
   }
@@ -66,5 +85,16 @@ export const post = (values, user) => {
     });
   } catch (error) {
     alert(error);
+  }
+};
+
+export const signout = (callback) => {
+  try {
+    Firebase.auth()
+      .signOut()
+      .then(callback)
+      .catch((e) => alert(e.message));
+  } catch (e) {
+    alert(e.message);
   }
 };
