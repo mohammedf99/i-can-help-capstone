@@ -1,0 +1,253 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Post filtering correctly 1`] = `
+<div
+  className="PostFilteringstyled__FilterContainer-sc-1kfb96c-0 ilPYwp"
+>
+  <form
+    action=""
+  >
+    <div
+      className="ant-row"
+      style={
+        Object {
+          "marginBottom": -4,
+          "marginLeft": -4,
+          "marginRight": -4,
+          "marginTop": -4,
+        }
+      }
+    >
+      <div
+        className="ant-col ant-col-24"
+        style={
+          Object {
+            "paddingBottom": 4,
+            "paddingLeft": 4,
+            "paddingRight": 4,
+            "paddingTop": 4,
+          }
+        }
+      >
+        <h3
+          className="salary-title"
+        >
+          Salary
+        </h3>
+      </div>
+    </div>
+    <div
+      className="ant-row salary-row"
+      style={
+        Object {
+          "marginBottom": -4,
+          "marginLeft": -4,
+          "marginRight": -4,
+          "marginTop": -4,
+        }
+      }
+    >
+      <div
+        className="ant-col ant-col-4 from-to-title"
+        style={
+          Object {
+            "paddingBottom": 4,
+            "paddingLeft": 4,
+            "paddingRight": 4,
+            "paddingTop": 4,
+          }
+        }
+      >
+        <label
+          htmlFor="from"
+        >
+          From
+        </label>
+      </div>
+      <div
+        className="ant-col ant-col-8"
+        style={
+          Object {
+            "paddingBottom": 4,
+            "paddingLeft": 4,
+            "paddingRight": 4,
+            "paddingTop": 4,
+          }
+        }
+      >
+        <input
+          className="salary-input"
+          id="from"
+          name="from"
+          placeholder="$"
+          type="number"
+        />
+      </div>
+      <div
+        className="ant-col ant-col-4 from-to-title"
+        style={
+          Object {
+            "paddingBottom": 4,
+            "paddingLeft": 4,
+            "paddingRight": 4,
+            "paddingTop": 4,
+          }
+        }
+      >
+        <label
+          htmlFor="to"
+        >
+          To
+        </label>
+      </div>
+      <div
+        className="ant-col ant-col-8"
+        style={
+          Object {
+            "paddingBottom": 4,
+            "paddingLeft": 4,
+            "paddingRight": 4,
+            "paddingTop": 4,
+          }
+        }
+      >
+        <input
+          className="salary-input"
+          id="to"
+          name="to"
+          placeholder="$"
+          type="number"
+        />
+      </div>
+    </div>
+    <div
+      className="ant-row select-row"
+      style={
+        Object {
+          "marginBottom": -4,
+          "marginLeft": -4,
+          "marginRight": -4,
+          "marginTop": -4,
+        }
+      }
+    >
+      <div
+        className="ant-col ant-col-24"
+        style={
+          Object {
+            "paddingBottom": 4,
+            "paddingLeft": 4,
+            "paddingRight": 4,
+            "paddingTop": 4,
+          }
+        }
+      >
+        <select
+          className="filter-select"
+        >
+          <option
+            disabled={true}
+            selected={true}
+          >
+            Employment type
+          </option>
+          <option
+            value="full-time"
+          >
+            Contract
+          </option>
+          <option
+            value="full-time"
+          >
+            Full-time
+          </option>
+          <option
+            value="part-time"
+          >
+            Part-time
+          </option>
+        </select>
+      </div>
+      <div
+        className="ant-col ant-col-24"
+        style={
+          Object {
+            "paddingBottom": 4,
+            "paddingLeft": 4,
+            "paddingRight": 4,
+            "paddingTop": 4,
+          }
+        }
+      >
+        <select
+          className="filter-select"
+        >
+          <option
+            disabled={true}
+            selected={true}
+          >
+            Location
+          </option>
+          <option
+            value="Erbil"
+          >
+            Erbil
+          </option>
+          <option
+            value="Duhok"
+          >
+            Duhok
+          </option>
+          <option
+            value="Halabja"
+          >
+            Halabja
+          </option>
+          <option
+            value="Kerkuk"
+          >
+            Kerkuk
+          </option>
+          <option
+            value="Sulaymaniyah"
+          >
+            Sulaymaniyah
+          </option>
+        </select>
+      </div>
+      <div
+        className="ant-col ant-col-24"
+        style={
+          Object {
+            "paddingBottom": 4,
+            "paddingLeft": 4,
+            "paddingRight": 4,
+            "paddingTop": 4,
+          }
+        }
+      >
+        <select
+          className="filter-select"
+        >
+          <option
+            disabled={true}
+            selected={true}
+          >
+            Show only
+          </option>
+          <option
+            value="full-time"
+          >
+            Employeer
+          </option>
+          <option
+            value="part-time"
+          >
+            Jobseeker
+          </option>
+        </select>
+      </div>
+    </div>
+  </form>
+</div>
+`;

@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Post component correctly 1`] = `
+<div
+  className="Poststyled__PostDiv-sc-r6hdig-0 koDFtN"
+>
+  <div
+    className="post-upper-section"
+  >
+    <div
+      className="upper-left"
+    >
+      <span
+        className="user-type"
+      >
+        Jobseeker
+      </span>
+      <span
+        className="user-full-name"
+      >
+        Mohammmed Hamid Mahmood
+      </span>
+      <p
+        className="post-desc"
+      >
+        I am a gardner looking for a part-time job.
+      </p>
+    </div>
+    <div
+      className="upper-right"
+    >
+      <div
+        className="Poststyled__LocationTag-sc-r6hdig-1 jOzPSy post-location-tag"
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-map-marker-alt fa-w-12 pink-icon-color"
+          data-icon="map-marker-alt"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 384 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+        <p
+          className="address"
+        >
+          Sulaymaniyah, Iraq
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    className="post-lower-section"
+  >
+    <div
+      className="lower-left"
+    >
+      <span
+        className="ant-tag Poststyled__Tags-sc-r6hdig-2 kcIoRp"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      >
+        Part-time
+      </span>
+      <span
+        className="ant-tag Poststyled__Tags-sc-r6hdig-2 kcIoRp"
+        style={
+          Object {
+            "backgroundColor": undefined,
+          }
+        }
+      >
+        Gardner
+      </span>
+    </div>
+    <div
+      className="lower-right"
+    >
+      <button
+        className="Poststyled__PinButton-sc-r6hdig-3 jreKdE"
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-check fa-w-16 pin-icon"
+          data-icon="check"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 512 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+        Pin
+      </button>
+      <button
+        className="Poststyled__PinButton-sc-r6hdig-3 jreKdE"
+      >
+        <svg
+          aria-hidden="true"
+          className="svg-inline--fa fa-comments fa-w-18 msg-icon"
+          data-icon="comments"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          style={Object {}}
+          viewBox="0 0 576 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M416 192c0-88.4-93.1-160-208-160S0 103.6 0 192c0 34.3 14.1 65.9 38 92-13.4 30.2-35.5 54.2-35.8 54.5-2.2 2.3-2.8 5.7-1.5 8.7S4.8 352 8 352c36.6 0 66.9-12.3 88.7-25 32.2 15.7 70.3 25 111.3 25 114.9 0 208-71.6 208-160zm122 220c23.9-26 38-57.7 38-92 0-66.9-53.5-124.2-129.3-148.1.9 6.6 1.3 13.3 1.3 20.1 0 105.9-107.7 192-240 192-10.8 0-21.3-.8-31.7-1.9C207.8 439.6 281.8 480 368 480c41 0 79.1-9.2 111.3-25 21.8 12.7 52.1 25 88.7 25 3.2 0 6.1-1.9 7.3-4.8 1.3-2.9.7-6.3-1.5-8.7-.3-.3-22.4-24.2-35.8-54.5z"
+            fill="currentColor"
+            style={Object {}}
+          />
+        </svg>
+        Message
+      </button>
+    </div>
+  </div>
+</div>
+`;

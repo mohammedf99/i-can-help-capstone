@@ -1,0 +1,215 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Navbar correctly 1`] = `
+<div
+  className="JobPostingFormstyled__JobPostingContainer-sc-1bu3b4i-0 dDncMP"
+>
+  <form
+    action=""
+  >
+    <div
+      className="ant-row"
+      style={Object {}}
+    >
+      <div
+        className="ant-col"
+        style={Object {}}
+      >
+        <textarea
+          cols="140"
+          id="post"
+          name="post"
+          placeholder="Job description..."
+          rows="3"
+        />
+      </div>
+    </div>
+    <div
+      className="ant-row"
+      style={Object {}}
+    >
+      <div
+        className="ant-col ant-col-5"
+        style={Object {}}
+      >
+        <input
+          id="salary"
+          name="salary"
+          placeholder="Salary in USD"
+          type="number"
+        />
+      </div>
+      <div
+        className="ant-col ant-col-4"
+        style={Object {}}
+      >
+        <select
+          className="post-select"
+        >
+          <option
+            disabled={true}
+            selected={true}
+          >
+            You are a(n)
+          </option>
+          <option
+            value=""
+          >
+            Employer
+          </option>
+          <option
+            value=""
+          >
+            Jobseeker
+          </option>
+        </select>
+      </div>
+      <div
+        className="ant-col ant-col-5"
+        style={Object {}}
+      >
+        <select
+          className="post-select"
+        >
+          <option
+            disabled={true}
+            selected={true}
+          >
+            Job type
+          </option>
+          <option
+            value=""
+          >
+            Babysitter
+          </option>
+          <option
+            value=""
+          >
+            Cleaner
+          </option>
+          <option
+            value=""
+          >
+            Design
+          </option>
+          <option
+            value=""
+          >
+            Gardner
+          </option>
+          <option
+            value=""
+          >
+            Marketing
+          </option>
+          <option
+            value=""
+          >
+            Production
+          </option>
+          <option
+            value=""
+          >
+            Translator
+          </option>
+          <option
+            value=""
+          >
+            Worker
+          </option>
+          <option
+            value=""
+          >
+            open
+          </option>
+          <option
+            value=""
+          >
+            Others
+          </option>
+        </select>
+      </div>
+      <div
+        className="ant-col ant-col-4"
+        style={Object {}}
+      >
+        <select
+          className="post-select"
+        >
+          <option
+            disabled={true}
+            selected={true}
+          >
+            Time
+          </option>
+          <option
+            value=""
+          >
+            Contract
+          </option>
+          <option
+            value=""
+          >
+            Full-time
+          </option>
+          <option
+            value=""
+          >
+            Part-time
+          </option>
+        </select>
+      </div>
+      <div
+        className="ant-col ant-col-6"
+        style={Object {}}
+      >
+        <select
+          className="post-select"
+        >
+          <option
+            disabled={true}
+            selected={true}
+          >
+            Location
+          </option>
+          <option
+            value=""
+          >
+            Erbil
+          </option>
+          <option
+            value=""
+          >
+            Duhok
+          </option>
+          <option
+            value=""
+          >
+            Halabja
+          </option>
+          <option
+            value=""
+          >
+            Kerkuk
+          </option>
+          <option
+            value=""
+          >
+            Sulaymaniyah
+          </option>
+        </select>
+      </div>
+    </div>
+    <div
+      className="ant-row ant-row-end"
+      style={Object {}}
+    >
+      <button
+        type="submit"
+      >
+        Post
+      </button>
+    </div>
+  </form>
+</div>
+`;
