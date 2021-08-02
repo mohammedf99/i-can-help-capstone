@@ -6,6 +6,7 @@ import Footer from "../components/Footer/Footer";
 import NavbarSection from "../components/Navbar/NavbarSection";
 import ProfilePost from "../components/ProfilePost/ProfilePost";
 import UpperSection from "../components/Profile/UpperSection/UpperSection";
+import Category from '../components/Category/Category';
 
 function Homepage() {
   // This controls the direction of the page for RTL languages
@@ -17,6 +18,7 @@ function Homepage() {
       <Testimonials />
       <UpperSection />
       <Footer />
+      <Category />
     </div>
   );
 }
