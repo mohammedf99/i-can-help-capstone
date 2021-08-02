@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders profile's upper section correctly 1`] = `
+<section>
+  <div
+    className="ant-row"
+    style={Object {}}
+  >
+    <div
+      className="ant-col ant-col-8"
+      style={Object {}}
+    >
+      <div
+        className="ant-row"
+        style={Object {}}
+      >
+        <div
+          className="ant-col ant-col-8"
+          style={Object {}}
+        >
+          <div
+            className="UpperSectionstyled__ProImgDiv-sc-1uo74lt-0 eAzPa-d"
+          >
+            <img
+              alt="profile"
+              src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+            />
+          </div>
+        </div>
+        <div
+          className="ant-col ant-col-16"
+          style={Object {}}
+        >
+          <div
+            className="ant-row"
+            style={Object {}}
+          >
+            <div
+              className="ant-col ant-col-24"
+              style={Object {}}
+            >
+              <h2
+                className="UpperSectionstyled__ProUserName-sc-1uo74lt-1 diuZhs"
+              >
+                John Doe
+              </h2>
+            </div>
+            <div
+              className="ant-col ant-col-24"
+              style={Object {}}
+            >
+              <h3
+                className="UpperSectionstyled__WorkTitle-sc-1uo74lt-2 hcJcZz"
+              >
+                Gardner
+              </h3>
+            </div>
+            <div
+              className="ant-col ant-col-24"
+              style={Object {}}
+            >
+              <svg
+                aria-hidden="true"
+                className="svg-inline--fa fa-map-marker-alt fa-w-12 "
+                data-icon="map-marker-alt"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                style={
+                  Object {
+                    "color": "#EE4266",
+                  }
+                }
+                viewBox="0 0 384 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+                  fill="currentColor"
+                  style={Object {}}
+                />
+              </svg>
+              <h4
+                className="UpperSectionstyled__LocationText-sc-1uo74lt-3 fcwTUB"
+              >
+                Erbil, IQ
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="ant-col ant-col-16"
+      style={Object {}}
+    >
+      <div
+        className="ant-row"
+        style={Object {}}
+      >
+        <div
+          className="ant-col ant-col-8"
+          style={Object {}}
+        >
+          <div
+            className="UpperSectionstyled__MyPostsDiv-sc-1uo74lt-4 cNOGuD post-card"
+          >
+            <div
+              className="card-upper"
+            >
+              <h2>
+                5
+              </h2>
+            </div>
+            <div
+              className="card-lowe"
+            >
+              <h3>
+                <a
+                  href="#"
+                >
+                  My posts
+                </a>
+              </h3>
+            </div>
+          </div>
+        </div>
+        <div
+          className="ant-col ant-col-8"
+          style={Object {}}
+        >
+          <div
+            className="UpperSectionstyled__PinnedPostsDiv-sc-1uo74lt-5 gCVRbc card"
+          >
+            <div
+              className="card-upper"
+            >
+              <h2>
+                5
+              </h2>
+            </div>
+            <div
+              className="card-lower"
+            >
+              <h3>
+                <a
+                  href="#"
+                >
+                  Pinned posts
+                </a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

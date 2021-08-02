@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt, faCheck, faComments } from "@fortawesome/free-solid-svg-icons";
 import { PostDiv, LocationTag, Tags, PinButton } from "./Post.styled";
+import ContactModal from "./ContactModal";
 
 const Post = () => (
   <PostDiv>
@@ -28,10 +29,7 @@ const Post = () => (
           <FontAwesomeIcon icon={faCheck} className="pin-icon" />
           Pin
         </PinButton>
-        <PinButton>
-          <FontAwesomeIcon icon={faComments} className="msg-icon" />
-          Message
-        </PinButton>
+        <ContactModal />
       </div>
     </div>
   </PostDiv>
