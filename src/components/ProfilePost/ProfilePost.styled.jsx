@@ -20,6 +20,7 @@ export const PostCardCont = styled(Card)`
   p {
     margin-top: 0.75rem;
   }
+
   margin-bottom: 1rem;
 `;
 

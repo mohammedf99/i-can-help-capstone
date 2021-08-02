@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { PostCardCont, PostCardBody } from "./ProfilePost.styled";
 
+
 const ProfilePost = () => {
   const { Meta } = PostCardCont;
 
