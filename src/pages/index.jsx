@@ -4,9 +4,11 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import WelcomePage from "./welcome";
 
+
 function Homepage() {
   // This controls the direction of the page for RTL languages
   const { t } = useTranslation("common");
+
 
   return <WelcomePage />;
 
