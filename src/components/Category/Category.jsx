@@ -41,7 +41,7 @@ const Category = () => {
       <div className="container">
         <div className="col">
           <h1>Categories</h1>
-          
+
           <CategoryList categoryData={categoryData} />
         </div>
       </div>

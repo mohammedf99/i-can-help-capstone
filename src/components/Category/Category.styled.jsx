@@ -61,7 +61,6 @@ export const CategoryListStyle = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   height: 2200px;
-  
 `;
 
 export const CustomCategoryStyle = styled.div`
