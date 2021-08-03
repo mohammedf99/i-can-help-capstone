@@ -23,8 +23,8 @@ export const PostsContainer = styled.div`
   .posts {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: start;
     flex-wrap: wrap;
-    order: 4;
+    flex: 1 1 auto;
   }
 `;
