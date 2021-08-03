@@ -2,17 +2,18 @@ import { Button, Input, Card } from "antd";
 import styled from "styled-components";
 
 export const BackDrop = styled.div`
-  position: "absolute",
-  top: 0,
-  width: "100%",
-  height: "100%",
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: transparent;
 `;
 
 export const CardStyled = styled(Card)`
   width: 50%;
-  left: 25%;
   top: 11%;
-  position: fixed;
+  left: 25%;
   text-align: center;
   border-radius: 40px;
   padding-inline: 10%;
