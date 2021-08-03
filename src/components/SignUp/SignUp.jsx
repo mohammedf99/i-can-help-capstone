@@ -41,12 +41,15 @@ function SignUpForm({ isVisible, backgroundClick }) {
 
   return isVisible ? (
     <div>
-      <BackDrop onClick={backgroundClick} />
+      <BackDrop onClick={backgroundClick}>
+        <CardStyled onClick={(e) => e.stopPropagation()}>
+          <Form>
+            <HeaderStyled>Sign up</HeaderStyled>
+            <TitleStyled>Sign up now to start helping!</TitleStyled>
 
-      <CardStyled>
-        <Form>
-          <HeaderStyled>Sign up</HeaderStyled>
-          <TitleStyled>Sign up now to start helping!</TitleStyled>
+            <Form.Item>
+              <InputStyled placeholder="Name" />
+            </Form.Item>
 
           <Form.Item>
             <InputStyled
@@ -79,7 +82,12 @@ function SignUpForm({ isVisible, backgroundClick }) {
             />
           </Form.Item>
 
-          <Form.Item />
+
+            <Form.Item>
+              <ButtonStyled type="primary" htmlType="submit">
+                Sign up
+              </ButtonStyled>
+            </Form.Item>
 
           <Form.Item>
             <ButtonStyled
@@ -91,18 +99,17 @@ function SignUpForm({ isVisible, backgroundClick }) {
             </ButtonStyled>
           </Form.Item>
 
-          <Form.Item />
-
-          <Form.Item>
-            <Button
-              type="text"
-              style={{ color: "#1c1259", fontFamily: "Roboto" }}
-            >
-              Have account?
-            </Button>
-          </Form.Item>
-        </Form>
-      </CardStyled>
+            <Form.Item>
+              <Button
+                type="text"
+                style={{ color: "#1c1259", fontFamily: "Roboto" }}
+              >
+                Have account?
+              </Button>
+            </Form.Item>
+          </Form>
+        </CardStyled>
+      </BackDrop>
     </div>
   ) : (
     <></>
