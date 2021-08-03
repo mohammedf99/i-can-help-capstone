@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../components/Navbar/NavbarSection";
 import ProfilePost from "../components/ProfilePost/ProfilePost";
 import MyPostsPage from "./myPosts/myPostsPage";
 // import { Navbar } from "@components/Navbar/Navbar";
