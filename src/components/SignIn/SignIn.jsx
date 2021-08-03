@@ -41,44 +41,43 @@ function SignInForm({ isVisible, backgroundClick }) {
 
   return isVisible ? (
     <div>
-      <BackDrop onClick={backgroundClick} />
+      <BackDrop onClick={backgroundClick}>
+        <CardStyled>
+          <Form>
+            <HeaderStyled>Sign In</HeaderStyled>
+            <TitleStyled>Sign in now to start helping!</TitleStyled>
 
-      <CardStyled>
-        <Form>
-          <HeaderStyled>Sign In</HeaderStyled>
-          <TitleStyled>Sign in now to start helping!</TitleStyled>
+            <Form.Item>
+              <InputStyled
+                placeholder="  Email"
+                prefix={<EmailIconSVG />}
+                onChange={(e) => setData({ ...data, email: e.target.value })}
+              />
+            </Form.Item>
 
-          <Form.Item>
-            <InputStyled
-              placeholder="  Email"
-              prefix={<EmailIconSVG />}
-              onChange={(e) => setData({ ...data, email: e.target.value })}
-            />
-          </Form.Item>
+            <Form.Item>
+              <InputPasswordStyled
+                placeholder="Password"
+                onChange={(e) => setData({ ...data, password: e.target.value })}
+              />
+            </Form.Item>
 
-          <Form.Item>
-            <InputPasswordStyled
-              placeholder="Password"
-              onChange={(e) => setData({ ...data, password: e.target.value })}
-            />
-          </Form.Item>
+            <Form.Item style={{ textAlign: "left" }}>
+              <Checkbox
+                label="Remember me"
+                change={(value) => setData({ ...data, remember: value })}
+              />
+            </Form.Item>
 
-          <Form.Item style={{ textAlign: "left" }}>
-            <Checkbox
-              label="Remember me"
-              change={(value) => setData({ ...data, remember: value })}
-            />
-          </Form.Item>
-
-          <Form.Item>
-            <ButtonStyled
-              type="primary"
-              htmlType="submit"
-              onClick={() => signIn(data, () => route.push("home"))}
-            >
-              Sign in
-            </ButtonStyled>
-          </Form.Item>
+            <Form.Item>
+              <ButtonStyled
+                type="primary"
+                htmlType="submit"
+                onClick={() => signIn(data, () => route.push("home"))}
+              >
+                Sign in
+              </ButtonStyled>
+            </Form.Item>
 
             <Form.Item>
               <ButtonStyled type="primary" htmlType="submit">
@@ -107,7 +106,7 @@ function SignInForm({ isVisible, backgroundClick }) {
             </Form.Item>
           </Form>
         </CardStyled>
-      </Backdrop>
+      </BackDrop>
     </div>
   ) : (
     <></>
