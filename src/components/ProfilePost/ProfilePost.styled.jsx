@@ -3,37 +3,35 @@ import { Card } from "antd";
 
 export const PostCardCont = styled(Card)`
   border-radius: 10px;
-
   .ant-card-body {
     padding: 14px 16px;
   }
-
   a {
     color: #1c1259;
   }
-
   img {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
-
   p {
     margin-top: 0.75rem;
   }
-
+  margin-right: 0.5rem;
   margin-bottom: 1rem;
+
+  &:hover {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
 `;
 
 export const PostCardBody = styled.div`
   display: flex;
   flex-direction: column;
   color: #1c1259;
-
   .upper-body {
     display: flex;
     justify-content: space-between;
   }
-
   .name,
   .salary {
     color: #1c1259;
@@ -42,19 +40,16 @@ export const PostCardBody = styled.div`
   }
 
   .middle-body {
-    height: 75px;
+    height: 70px;
     overflow: hidden;
     margin-bottom: 1rem;
   }
-
   a {
     text-decoration: none;
   }
-
   a:hover {
     color: #4e4e9f;
   }
-
   .lower-body {
     display: flex;
     justify-content: flex-end;
