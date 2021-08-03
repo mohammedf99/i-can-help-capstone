@@ -1,6 +1,5 @@
 import React from "react";
 import { Form, Button } from "antd";
-import Checkbox from "../Checkbox/Checkbox";
 import {
   InputStyled,
   InputPasswordStyled,
@@ -8,8 +7,8 @@ import {
   ButtonStyled,
   CardStyled,
   TitleStyled,
-  Backdrop,
-} from "../SignUp/SignUp.styled";
+  BackDrop,
+} from "./SignUp.styled";
 
 const EmailIconSVG = () => (
   <svg
@@ -28,60 +27,56 @@ const EmailIconSVG = () => (
   </svg>
 );
 
-function SignInForm({ isVisible, backgroundClick }) {
+function SignUpForm({ isVisible, backgroundClick }) {
   return isVisible ? (
     <div>
+      <BackDrop onClick={backgroundClick} />
 
-      <Backdrop onClick={backgroundClick}>
-        <CardStyled>
-          <Form>
-            <HeaderStyled>Sign In</HeaderStyled>
-            <TitleStyled>Sign in now to start helping!</TitleStyled>
+      <CardStyled>
+        <Form>
+          <HeaderStyled>Sign up</HeaderStyled>
+          <TitleStyled>Sign up now to start helping!</TitleStyled>
 
-            <Form.Item>
-              <InputStyled placeholder="  Email" prefix={<EmailIconSVG />} />
-            </Form.Item>
+          <Form.Item>
+            <InputStyled placeholder="Name" />
+          </Form.Item>
 
-            <Form.Item>
-              <InputPasswordStyled placeholder="Password" />
-            </Form.Item>
+          <Form.Item>
+            <InputStyled placeholder="  Email" prefix={<EmailIconSVG />} />
+          </Form.Item>
 
-            <Form.Item style={{ textAlign: "left" }}>
-              <Checkbox label="Remember me" />
-            </Form.Item>
+          <Form.Item>
+            <InputPasswordStyled placeholder="Password" />
+          </Form.Item>
 
-            <Form.Item>
-              <ButtonStyled type="primary" htmlType="submit">
-                Sign in
-              </ButtonStyled>
-            </Form.Item>
+          <Form.Item>
+            <InputStyled placeholder="Repeat Password" />
+          </Form.Item>
 
-            <Form.Item />
+          <Form.Item />
 
-            <Form.Item>
-              <Button
-                type="text"
-                style={{ color: "#1c1259", fontFamily: "Roboto" }}
-              >
-                Forgot password?
-              </Button>
-            </Form.Item>
+          <Form.Item>
+            <ButtonStyled type="primary" htmlType="submit">
+              Sign up
+            </ButtonStyled>
+          </Form.Item>
 
-            <Form.Item>
-              <Button
-                type="text"
-                style={{ color: "#1c1259", fontFamily: "Roboto" }}
-              >
-                Don't have account yet?
-              </Button>
-            </Form.Item>
-          </Form>
-        </CardStyled>
-      </Backdrop>
+          <Form.Item />
+
+          <Form.Item>
+            <Button
+              type="text"
+              style={{ color: "#1c1259", fontFamily: "Roboto" }}
+            >
+              Have account?
+            </Button>
+          </Form.Item>
+        </Form>
+      </CardStyled>
     </div>
   ) : (
     <></>
   );
 }
 
-export default SignInForm;
+export default SignUpForm;
