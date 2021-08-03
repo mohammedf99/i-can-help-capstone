@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { PostCardCont, PostCardBody } from "./ProfilePost.styled";
 
-
 const ProfilePost = () => {
   const { Meta } = PostCardCont;
 
@@ -11,7 +10,7 @@ const ProfilePost = () => {
     <PostCardCont
       hoverable
       style={{ width: 240 }}
-      cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" />}
+      cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" width="240" />}
     >
       <PostCardBody>
         <div className="upper-body">

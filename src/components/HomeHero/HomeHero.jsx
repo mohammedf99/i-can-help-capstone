@@ -9,7 +9,7 @@ import {
 } from "./HomeHero.styled";
 
 const HomeHero = () => (
-  <Row style={{ margin: "40px" }}>
+  <Row style={{ height: "81vh", margin: "40px", marginTop: "70px" }}>
     <Col span={10}>
       <TitleStyled>Hire the best workers in Kurdistan </TitleStyled>
 
