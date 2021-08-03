@@ -80,27 +80,34 @@ function SignInForm({ isVisible, backgroundClick }) {
             </ButtonStyled>
           </Form.Item>
 
-          <Form.Item />
+            <Form.Item>
+              <ButtonStyled type="primary" htmlType="submit">
+                Sign in
+              </ButtonStyled>
+            </Form.Item>
 
-          <Form.Item>
-            <Button
-              type="text"
-              style={{ color: "#1c1259", fontFamily: "Roboto" }}
-            >
-              Forgot password?
-            </Button>
-          </Form.Item>
+            <Form.Item />
 
-          <Form.Item>
-            <Button
-              type="text"
-              style={{ color: "#1c1259", fontFamily: "Roboto" }}
-            >
-              Don't have account yet?
-            </Button>
-          </Form.Item>
-        </Form>
-      </CardStyled>
+            <Form.Item>
+              <Button
+                type="text"
+                style={{ color: "#1c1259", fontFamily: "Roboto" }}
+              >
+                Forgot password?
+              </Button>
+            </Form.Item>
+
+            <Form.Item>
+              <Button
+                type="text"
+                style={{ color: "#1c1259", fontFamily: "Roboto" }}
+              >
+                Don't have account yet?
+              </Button>
+            </Form.Item>
+          </Form>
+        </CardStyled>
+      </Backdrop>
     </div>
   ) : (
     <></>
