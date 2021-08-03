@@ -15,13 +15,6 @@ function MyPostsPage() {
         <div className="posts">
           <ProfilePost />
           <ProfilePost />
-          <ProfilePost />
-          <ProfilePost />
-          <ProfilePost />
-          <ProfilePost />
-          <ProfilePost />
-          <ProfilePost />
-          <ProfilePost />
         </div>
       </PostsContainer>
     </>
