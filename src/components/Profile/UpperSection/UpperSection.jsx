@@ -2,6 +2,7 @@ import React from "react";
 import { Row, Col } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt, faUser } from "@fortawesome/free-solid-svg-icons";
+
 import { UpperSectionCont, MyPostsCard, PinnedPostCard } from "./UpperSection.styled";
 
 const UpperSection = () => (
