@@ -6,6 +6,7 @@ import { createFromIconfontCN } from "@ant-design/icons";
 import { signout } from "../../Utilities/FirebaseUtilities";
 import { AuthContext } from "../../Utilities/auth/Auth";
 
+
 const IconFont = createFromIconfontCN({
   scriptUrl: "//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js",
 });
@@ -26,5 +27,6 @@ const SignedinNavbar = () => {
     </div>
   );
 };
+
 
 export default SignedinNavbar;
