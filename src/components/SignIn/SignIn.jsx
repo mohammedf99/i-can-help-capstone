@@ -42,7 +42,7 @@ function SignInForm({ isVisible, backgroundClick }) {
   return isVisible ? (
     <div>
       <BackDrop onClick={backgroundClick}>
-        <CardStyled>
+        <CardStyled onClick={(e) => e.stopPropagation()}>
           <Form>
             <HeaderStyled>Sign In</HeaderStyled>
             <TitleStyled>Sign in now to start helping!</TitleStyled>
@@ -75,12 +75,6 @@ function SignInForm({ isVisible, backgroundClick }) {
                 htmlType="submit"
                 onClick={() => signIn(data, () => route.push("home"))}
               >
-                Sign in
-              </ButtonStyled>
-            </Form.Item>
-
-            <Form.Item>
-              <ButtonStyled type="primary" htmlType="submit">
                 Sign in
               </ButtonStyled>
             </Form.Item>

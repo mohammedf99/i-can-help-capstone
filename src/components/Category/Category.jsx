@@ -1,5 +1,5 @@
 import React from "react";
-import { CategoryStyle } from "../Category/Category.styled";
+import { CategoryStyle } from "./Category.styled";
 import CategoryList from "./CategoryList";
 // import Image from 'next/image';
 
