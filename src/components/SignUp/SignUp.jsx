@@ -48,56 +48,45 @@ function SignUpForm({ isVisible, backgroundClick }) {
             <TitleStyled>Sign up now to start helping!</TitleStyled>
 
             <Form.Item>
-              <InputStyled placeholder="Name" />
+              <InputStyled
+                placeholder="Name"
+                onChange={(e) => setData({ ...data, name: e.target.value })}
+              />
             </Form.Item>
 
-          <Form.Item>
-            <InputStyled
-              placeholder="Name"
-              onChange={(e) => setData({ ...data, name: e.target.value })}
-            />
-          </Form.Item>
-
-          <Form.Item>
-            <InputStyled
-              placeholder="  Email"
-              prefix={<EmailIconSVG />}
-              onChange={(e) => setData({ ...data, email: e.target.value })}
-            />
-          </Form.Item>
-
-          <Form.Item>
-            <InputPasswordStyled
-              placeholder="Password"
-              onChange={(e) => setData({ ...data, password: e.target.value })}
-            />
-          </Form.Item>
-
-          <Form.Item>
-            <InputPasswordStyled
-              placeholder="Repeat Password"
-              onChange={(e) =>
-                setData({ ...data, confirmPass: e.target.value })
-              }
-            />
-          </Form.Item>
-
+            <Form.Item>
+              <InputStyled
+                placeholder="  Email"
+                prefix={<EmailIconSVG />}
+                onChange={(e) => setData({ ...data, email: e.target.value })}
+              />
+            </Form.Item>
 
             <Form.Item>
-              <ButtonStyled type="primary" htmlType="submit">
+              <InputPasswordStyled
+                placeholder="Password"
+                onChange={(e) => setData({ ...data, password: e.target.value })}
+              />
+            </Form.Item>
+
+            <Form.Item>
+              <InputPasswordStyled
+                placeholder="Repeat Password"
+                onChange={(e) =>
+                  setData({ ...data, confirmPass: e.target.value })
+                }
+              />
+            </Form.Item>
+
+            <Form.Item>
+              <ButtonStyled
+                type="primary"
+                htmlType="submit"
+                onClick={() => signUp(data)}
+              >
                 Sign up
               </ButtonStyled>
             </Form.Item>
-
-          <Form.Item>
-            <ButtonStyled
-              type="primary"
-              htmlType="submit"
-              onClick={() => signUp(data)}
-            >
-              Sign up
-            </ButtonStyled>
-          </Form.Item>
 
             <Form.Item>
               <Button

@@ -3,7 +3,11 @@ import { useRouter } from "next/router";
 import Firebase from "../../Firebase";
 import { getUser } from "../FirebaseUtilities";
 
-export const AuthContext = createContext({ currentUser: false, loading: true });
+export const AuthContext = createContext({
+  currentUser: false,
+  loading: true,
+  userData: null,
+});
 
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -12,7 +16,7 @@ export const AuthProvider = ({ children }) => {
 
   const authStateChange = (user) => {
     if (user) getUser(user.uid).then(setUserData);
-    else setUserData({});
+    else setUserData(null);
     setCurrentUser(user);
     setLoading(!loading);
   };

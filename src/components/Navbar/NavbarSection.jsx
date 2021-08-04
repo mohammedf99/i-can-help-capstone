@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Input } from "antd";
 import Link from "next/link";
 import { SearchOutlined } from "@ant-design/icons";
 import { Navbar } from "./Navbar.styled";
 import SignedinNavbar from "./SignedinNavbar";
 import SignedoutNavbar from "./SignedoutNavbar";
+import { AuthContext } from "../../Utilities/auth/Auth";
 
-const user = true;
+const NavbarSection = ({ transparent, auth }) => {
+  const user = useContext(AuthContext).userData;
 
-const NavbarSection = ({ transparent }) => {
+  useEffect(() => console.log(user), [user]);
+
   const Links = () => {
     if (!user)
       return (
@@ -51,7 +54,7 @@ const NavbarSection = ({ transparent }) => {
           />
         </div>
 
-        {!user ? <SignedoutNavbar /> : <SignedinNavbar />}
+        {!user ? <SignedoutNavbar auth={auth} /> : <SignedinNavbar />}
       </div>
     </Navbar>
   );
