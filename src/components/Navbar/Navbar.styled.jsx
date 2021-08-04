@@ -5,12 +5,11 @@ export const Navbar = styled.div`
   .Navbar {
     font-family: Roboto;
     color: #1c1259;
-    min-height: 14.12vh;
+    min-height: 10vh;
     background: FFFFFF;
     box-shadow: 0px 1px 10px #aaa;
     display: flex;
     flex-direction: row;
-
     align-items: center;
     justify-content: center;
   }

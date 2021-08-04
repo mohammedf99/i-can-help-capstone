@@ -1,47 +1,47 @@
 import React from "react";
-// import { Button } from "antd";
+import { Input } from "antd";
+import Link from "next/link";
+import { SearchOutlined } from "@ant-design/icons";
 import { Navbar } from "./Navbar.styled";
-import { Button, Tooltip } from "antd";
-import { Input, Space } from "antd";
-import { SearchOutlined, DownOutlined, UserOutlined } from "@ant-design/icons";
 import SignedinNavbar from "./SignedinNavbar";
 import SignedoutNavbar from "./SignedoutNavbar";
 
-const { Search } = Input;
-const onSearch = (value) => console.log(value);
-const user=true
-const NavbarSection = () => (
-  <Navbar>
-    <div className="Navbar">
-      <div className="site-logo">
-        <h1>I Can Help</h1>
-      </div>
+const user = true;
 
-      <div className="nav" style={{ margin: 0 }}>
-        <div
-          className="navcontent"
-          style={{
-            display: "flex",
-            justifyContent: "space-evenly",
-          }}
-        >
-          <a href="#">About</a>
-          <a href="#">Find Work</a>
-          <a href="#">Find Talent</a>
+const NavbarSection = ({ transparent }) => {
+  const Links = () => {
+    if (!user)
+      return (
+        <div className="navcontent">
+          <Link href="/">About</Link>
+          <Link href="/">Find Work</Link>
+          <Link href="/">Find Talent</Link>
         </div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          {/* <Button
-            className="Searchbtn"
-            type="input"
-            icon={<SearchOutlined />}
-            style={{
-              display: "flex",
-              flexDirection: "row-reverse",
-              justifyContent: "space-between",
-            }}
-          >
-            Search here
-          </Button> */}
+      );
+
+    return (
+      <div className="navcontent">
+        <Link href="/home">Post </Link>
+        <Link href="/">My Posts</Link>
+        <Link href="/">Pinned Posts</Link>
+      </div>
+    );
+  };
+
+  return (
+    <Navbar>
+      <div
+        className="Navbar"
+        style={
+          transparent && { backgroundColor: "transparent", boxShadow: "none" }
+        }
+      >
+        <div className="site-logo">
+          <h1>I Can Help</h1>
+        </div>
+
+        <div className="nav" style={{ margin: 0 }}>
+          <Links />
 
           <Input
             className="Searchbtn"
@@ -50,10 +50,11 @@ const NavbarSection = () => (
             suffix={<SearchOutlined />}
           />
         </div>
+
+        {!user ? <SignedoutNavbar /> : <SignedinNavbar />}
       </div>
-      {!user?<SignedoutNavbar/>:<SignedinNavbar />}
-    </div>
-  </Navbar>
-);
+    </Navbar>
+  );
+};
 
 export default NavbarSection;
