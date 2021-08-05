@@ -3,7 +3,7 @@ import { Tag, Button, Modal } from "antd";
 
 export const PostDiv = styled.div`
   box-sizing: border-box;
-  width: 75%;
+  width: 99%;
   height: auto;
   padding: 2rem 3rem;
   display: flex;
@@ -12,10 +12,12 @@ export const PostDiv = styled.div`
   border: 1.5px solid #4e4e9f;
   border-radius: 5px;
   background-color: #fafaff;
+  margin-bottom: 1rem;
 
   &:hover {
     border: 0;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 1.25rem;
   }
 
   .post-upper-section {
@@ -79,7 +81,7 @@ export const LocationTag = styled.div`
   align-items: center;
   border: 1px solid #ee4266;
   color: #ee4266;
-  width: 90%;
+  width: 95%;
   height: 40px;
   padding: 0.5rem 1rem;
   border-radius: 25px;
@@ -101,6 +103,7 @@ export const Tags = styled(Tag)`
   border-radius: 25px;
   border: 1px solid #ee4266;
   margin-right: 0.5rem;
+  background-color: transparent;
 `;
 
 export const PinButton = styled.button`
@@ -146,6 +149,12 @@ export const ContactBtn = styled(Button)`
 
   .msg-icon {
     margin: 0px 30px 0px -30px;
+  }
+
+  &:focus {
+    background-color: #cacaea;
+    border: none;
+    outline: none;
   }
 `;
 

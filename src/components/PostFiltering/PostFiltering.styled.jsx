@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const FilterContainer = styled.div`
   background-color: #fafaff;
-  width: 30%;
+  width: 100%;
   height: auto;
   padding: 1.25rem;
   border-radius: 5px;
