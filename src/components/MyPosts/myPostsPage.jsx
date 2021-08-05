@@ -11,7 +11,11 @@ function MyPostsPage({ myPosts }) {
   const { userData } = useContext(DataContext);
   const { t } = useTranslation("common");
   return (
+<<<<<<< HEAD
     <div style={{ paddingBlock: "50px" }}>
+=======
+    <Layout>
+>>>>>>> add layout to the page
       <ProfileSection>
         <UpperSection />
       </ProfileSection>
@@ -22,7 +26,11 @@ function MyPostsPage({ myPosts }) {
           {myPosts && myPosts?.map((post) => <ProfilePost data={{ userData, post }} />)}
         </div>
       </PostsContainer>
+<<<<<<< HEAD
     </div>
+=======
+    </Layout>
+>>>>>>> add layout to the page
   );
 }
 
