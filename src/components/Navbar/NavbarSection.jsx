@@ -10,8 +10,6 @@ import { AuthContext } from "../../Utilities/auth/Auth";
 const NavbarSection = ({ transparent, auth }) => {
   const user = useContext(AuthContext).userData;
 
-  useEffect(() => console.log(user), [user]);
-
   const Links = () => {
     if (!user)
       return (

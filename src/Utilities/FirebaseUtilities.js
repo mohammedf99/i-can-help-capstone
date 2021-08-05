@@ -3,8 +3,8 @@
 import Firebase from "../Firebase";
 
 // Add the functions used in firebase here.
-const usersRef = Firebase.firestore().collection("users");
-const postsRef = Firebase.firestore().collection("posts");
+export const usersRef = Firebase.firestore().collection("users");
+export const postsRef = Firebase.firestore().collection("posts");
 
 // adds user with info to users collection
 
@@ -21,8 +21,6 @@ export const setUser = ({ email, name }, id) =>
       location: null,
       picture: null,
       languages: [],
-      posts: [],
-      pinnedPosts: [],
     })
     .catch((e) => alert(e));
 
@@ -90,29 +88,6 @@ export const signIn = ({ email, password, remember }, callback) => {
   }
 };
 
-export const post = (values, user) => {
-  try {
-    postsRef
-      .add({
-        createdDate: values.createdDate,
-        description: values.description,
-        employment: values.employment,
-        gender: user.gender,
-        location: user.location,
-        pictures: values.pictures,
-        price: values.price,
-        time: values.time,
-        title: values.title,
-        type: values.type,
-        user: user.id,
-        views: 0,
-      })
-      .catch((e) => alert(e));
-  } catch (error) {
-    alert(error);
-  }
-};
-
 export const signout = (callback) => {
   try {
     Firebase.auth()
@@ -132,4 +107,83 @@ export const getUser = async (id) => {
     .catch((e) => alert(e.message));
 
   return data;
+};
+
+export const getPosts = (callback) => {
+  const posts = [];
+
+  usersRef
+    .get()
+    .then((snapshot) =>
+      snapshot.docs.forEach((user) =>
+        usersRef
+          .doc(user.id)
+          .collection("posts")
+          .get()
+          .then((snapshot) => snapshot.docs.forEach((post) => posts.push(post)))
+      )
+    )
+    .then(() => callback(posts));
+};
+
+export const deletePost = (postId, userId) =>
+  postsRef
+    .doc(postId)
+    .delete()
+    .then(() => usersRef.doc(userId).collection("posts").doc(postId).delete())
+    .catch((e) => alert(e));
+
+export const uploadImage = (image, callback) => {
+  const storageRef = Firebase.storage().ref();
+  const imageRef = storageRef.child(image.name);
+
+  if (image) {
+    imageRef
+      .put(image)
+      .then(() => {
+        alert("Image uploaded successfully to Firebase.");
+      })
+      .then(() => callback(imageRef));
+  } else {
+    alert("Please upload an image first.");
+  }
+
+  return imageRef;
+};
+
+export const updatePicture = (image, userId) => {
+  uploadImage(image, (ref) =>
+    ref
+      .getDownloadURL()
+      .then((url) => updateUser({ picture: url }, userId))
+      .catch((e) => console.log(e))
+  );
+};
+
+export const post = (values, userId) => {
+  uploadImage(values.picture, (ref) => {
+    ref.getDownloadURL().then((url) => {
+      const data = {
+        createdDate: values.createdDate,
+        description: values.description,
+        employment: values.employment,
+        price: values.price,
+        time: values.time,
+        title: values.title,
+        type: values.type,
+        picture: url,
+      };
+
+      try {
+        usersRef
+          .doc(userId)
+          .collection("posts")
+          .add(data)
+          .then(() => alert("success"))
+          .catch((e) => console.log(e));
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  });
 };
