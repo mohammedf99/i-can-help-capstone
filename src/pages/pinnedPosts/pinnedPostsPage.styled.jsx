@@ -5,14 +5,14 @@ export const ProfileSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: 4rem;
 `;
 
 export const PostsContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  margin-top: 2rem;
+  margin: 2rem 0 4rem 0;
   padding: 0 15rem;
 
   .my-post-title {
