@@ -8,6 +8,7 @@ export const Container = styled.div`
   padding-block: 40px;
   width: 80%;
   margin: 10%;
+  margin-block: 2%;
   border-radius: 5px;
   box-shadow: 0px 6px 15px rgba(000, 000, 000, 0.2);
 `;

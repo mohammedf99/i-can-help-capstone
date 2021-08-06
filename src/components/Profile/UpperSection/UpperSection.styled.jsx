@@ -19,10 +19,11 @@ export const UpperSectionCont = styled.section`
   .img-div {
     height: 150px;
     background-color: #1c1250;
+    overflow: hidden;
   }
 
   img {
-    object-fit: cover;
+    object-fit: scale-down;
   }
 
   .img-div,
@@ -87,7 +88,6 @@ export const MyPostsCard = styled.div`
     height: 40%;
   }
 
-
   .post-number,
   .post-title {
     color: #fafaff;
@@ -114,7 +114,6 @@ export const MyPostsCard = styled.div`
   }
 `;
 
-
 export const PinnedPostCard = styled.div`
   box-sizing: border-box;
   width: 45%;
@@ -139,7 +138,6 @@ export const PinnedPostCard = styled.div`
   .card-lower {
     height: 40%;
   }
-
 
   .post-number,
   .post-title {

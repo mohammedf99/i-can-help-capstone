@@ -2,7 +2,7 @@ import { Col, Row, Typography } from "antd";
 import DetailInfo from "./DetailInfo";
 import { PrimaryButton, SecondaryButton, Container } from "./PostDetail.styled";
 
-function PostDetail({ image, name, title }) {
+function PostDetail({ data }) {
   return (
     <Container>
       <Row style={{ width: "80%" }}>
@@ -14,11 +14,11 @@ function PostDetail({ image, name, title }) {
               fontSize: "40px",
             }}
           >
-            {name || "Name"}
+            {data?.name || "Name"}
           </Typography.Title>
 
           <img
-            src={image}
+            src={data?.picture}
             style={{ width: "100%", height: "594px", objectFit: "cover" }}
           />
         </Col>
@@ -32,7 +32,7 @@ function PostDetail({ image, name, title }) {
               color: "#1C1259",
             }}
           >
-            {title || "Title"}
+            {data?.title || "Title"}
           </Typography.Title>
 
           <div
@@ -43,12 +43,12 @@ function PostDetail({ image, name, title }) {
               paddingLeft: "10px",
             }}
           >
-            <DetailInfo title="Job Description" text="Electric" />
-            <DetailInfo title="Price" text="$2/m" />
-            <DetailInfo title="Employment" text="Full-time" />
-            <DetailInfo title="Location" text="DarinGroup Erbil" />
-            <DetailInfo title="Time" text="10 days" />
-            <DetailInfo title="Gender" text="Male" />
+            <DetailInfo title="Job Description" text={data?.jobDescription} />
+            <DetailInfo title="Price" text={data?.price} />
+            <DetailInfo title="Employment" text={data?.employment} />
+            <DetailInfo title="Location" text={data?.location} />
+            <DetailInfo title="Time" text={data?.time} />
+            <DetailInfo title="Gender" text={data?.gender} />
 
             <Row
               style={{

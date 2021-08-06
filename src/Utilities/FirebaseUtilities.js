@@ -60,71 +60,49 @@ export const signUp = ({ email, password, name }, callback) => {
   }
 };
 
-export const signIn = ({ email, password, remember }, callback) => {
-  const { LOCAL, SESSION } = Firebase.auth.Auth.Persistence;
+export const signout = () =>
+  Firebase.auth()
+    .signOut()
+    .catch((e) => alert(e.message));
 
-  try {
-    // check remember state
+const { LOCAL, SESSION } = Firebase.auth.Auth.Persistence;
 
-    Firebase.auth()
-      .setPersistence(remember ? LOCAL : SESSION)
-      .then(() =>
-        // sign in with credentials
+export const signIn = ({ email, password, remember }, callback) =>
+  // check remember state
 
-        Firebase.auth()
-          .signInWithEmailAndPassword(email, password)
-          .then((r) => {
-            // check verification
+  Firebase.auth()
+    .setPersistence(remember ? LOCAL : SESSION)
+    .then(() =>
+      // sign in with credentials
 
-            if (!r.user.emailVerified) return alert("please verify to log in");
-            alert("signin success");
-            if (callback) callback();
-          })
-          .catch((e) => alert(e.message))
-      )
-      .catch((e) => alert(e));
-  } catch (error) {
-    alert(error.message);
-  }
-};
+      Firebase.auth()
+        .signInWithEmailAndPassword(email, password)
+        .then((r) => {
+          // check verification
 
-export const signout = (callback) => {
-  try {
-    Firebase.auth()
-      .signOut()
-      .then(callback)
-      .catch((e) => alert(e.message));
-  } catch (e) {
-    alert(e.message);
-  }
-};
+          if (!r.user.emailVerified) {
+            signout();
+            return alert("please verify to log in");
+          }
+
+          alert("signin success");
+          if (callback) callback();
+        })
+        .catch((e) => alert(e.message))
+    )
+    .catch((e) => alert(e));
 
 export const getUser = async (id) => {
   const data = await usersRef
     .doc(id)
     .get()
-    .then((snapshot) => snapshot.data())
+    .then((snapshot) => snapshot)
     .catch((e) => alert(e.message));
 
   return data;
 };
 
-export const getPosts = (callback) => {
-  const posts = [];
-
-  usersRef
-    .get()
-    .then((snapshot) =>
-      snapshot.docs.forEach((user) =>
-        usersRef
-          .doc(user.id)
-          .collection("posts")
-          .get()
-          .then((snapshot) => snapshot.docs.forEach((post) => posts.push(post)))
-      )
-    )
-    .then(() => callback(posts));
-};
+export const getusers = () => usersRef.get();
 
 export const deletePost = (postId, userId) =>
   postsRef
@@ -172,6 +150,7 @@ export const post = (values, userId) => {
         title: values.title,
         type: values.type,
         picture: url,
+        userId,
       };
 
       try {
