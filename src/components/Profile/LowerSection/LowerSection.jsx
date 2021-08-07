@@ -62,14 +62,6 @@ const LowerSection = () => (
           </li>
         </ul>
       </div>
-      <h2 className="detail-titles">Settings</h2>
-      <div className="setting-lang-div">
-        <h3 className="setting-lang-title">Language:</h3>
-        <form action="#">
-          <button className="setting-lang-btn">English</button>
-          <button className="setting-lang-btn">Kurdish</button>
-        </form>
-      </div>
     </RightSection>
   </ProfileDetailCont>
 );
