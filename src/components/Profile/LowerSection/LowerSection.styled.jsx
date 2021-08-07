@@ -2,12 +2,14 @@ import styled from "styled-components";
 import { Tag } from "antd";
 
 export const ProfileDetailCont = styled.div`
-  width: 80%;
+  width: 68.25%;
   display: flex;
   flex-direction: row;
   background-color: #cacaea;
   color: #1c1259;
   box-sizing: border-box;
+  padding: 0 1.25rem;
+  border-radius: 5px;
 `;
 
 export const LeftSection = styled.div`
@@ -44,13 +46,13 @@ export const LeftSection = styled.div`
     flex-direction: row;
     justify-content: start;
     align-items: center;
-    padding: 0 2rem 0 2rem;
+    padding: 0 1.5rem 0 1.5rem;
   }
 
   input {
     height: 50px;
     border-radius: 50px;
-    width: 320px;
+    width: 260px;
     padding-left: 1rem;
     border: 1px solid #9dafbd;
     outline: none;
@@ -159,6 +161,10 @@ export const FormDiv = styled.div`
     height: 100px;
     outline: none;
     padding-left: 0.5rem;
+  }
+
+  .input-fields {
+    color: #1c1259;
   }
 `;
 
