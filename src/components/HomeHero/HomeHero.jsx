@@ -1,4 +1,5 @@
 import { Row, Col } from "antd";
+import router from "next/router";
 import {
   ImageStyled,
   TitleStyled,
@@ -20,8 +21,12 @@ const HomeHero = () => (
       <DescriptionStyled>Take your career to the next level.</DescriptionStyled>
 
       <Row>
-        <SecondaryButton>Hire a talent</SecondaryButton>
-        <PrimaryButton>Find a Job</PrimaryButton>
+        <SecondaryButton onClick={() => router.push("/search")}>
+          Hire a talent
+        </SecondaryButton>
+        <PrimaryButton onClick={() => router.push("/search")}>
+          Find a Job
+        </PrimaryButton>
       </Row>
     </Col>
     <Col span={14}>
