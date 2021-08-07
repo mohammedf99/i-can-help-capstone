@@ -30,14 +30,14 @@ const EmailIconSVG = () => (
   </svg>
 );
 
-function SignInForm({ isVisible, backgroundClick }) {
+function SignInForm({ isVisible, backgroundClick, changeForm }) {
   const [data, setData] = useState({
     email: "",
     password: "",
     remember: false,
   });
 
-  const route = useRouter();
+  const router = useRouter();
 
   return isVisible ? (
     <div>
@@ -72,8 +72,11 @@ function SignInForm({ isVisible, backgroundClick }) {
             <Form.Item>
               <ButtonStyled
                 type="primary"
-                htmlType="submit"
-                onClick={() => signIn(data, () => route.push("home"))}
+                onClick={() =>
+                  signIn(data, () => backgroundClick()).then(
+                    (r) => r && router.push("/home")
+                  )
+                }
               >
                 Sign in
               </ButtonStyled>
@@ -94,6 +97,7 @@ function SignInForm({ isVisible, backgroundClick }) {
               <Button
                 type="text"
                 style={{ color: "#1c1259", fontFamily: "Roboto" }}
+                onClick={() => changeForm()}
               >
                 Don't have account yet?
               </Button>

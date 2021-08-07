@@ -3,19 +3,26 @@ import React, { useContext } from "react";
 import { Avatar } from "antd";
 
 import { createFromIconfontCN } from "@ant-design/icons";
+import { useRouter } from "next/router";
 import { signout } from "../../Utilities/FirebaseUtilities";
-import { AuthContext } from "../../Utilities/auth/Auth";
-
+import DataContext from "../../Utilities/Contexts/DataContext";
 
 const IconFont = createFromIconfontCN({
   scriptUrl: "//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js",
 });
 
 const SignedinNavbar = () => {
-  const { userData } = useContext(AuthContext);
+  const { userData } = useContext(DataContext);
+
+  const router = useRouter();
   return (
     <div className="btn">
-      <Avatar className="avatar" src={userData?.picture} size={35} />
+      <Avatar
+        className="avatar"
+        src={userData?.picture}
+        size={35}
+        onClick={() => router.push("/profile")}
+      />
 
       <Avatar
         className="avatar"
@@ -27,6 +34,5 @@ const SignedinNavbar = () => {
     </div>
   );
 };
-
 
 export default SignedinNavbar;

@@ -1,42 +1,42 @@
 import React from "react";
+import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { PostCardCont, PostCardBody } from "./ProfilePost.styled";
+import { deletePost } from "../../Utilities/FirebaseUtilities";
 
-const ProfilePost = () => {
-  const { Meta } = PostCardCont;
+const ProfilePost = ({ data }) => {
+  const postData = data?.post?.data();
+  const user = data?.userData;
+
+  const deleteHandler = (e) => {
+    e.stopPropagation();
+    deletePost(data?.post?.id, data?.post?.data()?.userId);
+  };
 
   return (
-    <PostCardCont
-      hoverable
-      style={{ width: 240 }}
-      cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" width="240" />}
-    >
-      <PostCardBody>
-        <div className="upper-body">
-          <h4 className="name">John Doe</h4>
-          <h4 className="salary">$5/day</h4>
-        </div>
-        <div className="middle-body">
-          <a href="#">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet tenetur dicta nobis
-              ullam quisquam eius dolorem nesciunt minima error maxime natus, voluptate nihil
-              delectus corporis fugiat id cupiditate iure in aliquid ut voluptatem non ex eligendi.
-              Cum expedita dolorum accusantium beatae dolores laborum aliquid veritatis quod odit,
-              consequuntur velit nesciunt.
-            </p>
-          </a>
-        </div>
-        <div className="lower-body">
-          <form action="">
-            <button type="submit">
+    <Link href={`/postDetails/${data?.post?.id}`}>
+      <PostCardCont
+        hoverable
+        style={{ width: 240 }}
+        cover={<img alt="example" src={postData?.picture} width="240" />}
+      >
+        <PostCardBody>
+          <div className="upper-body">
+            <h4 className="name">{user?.name}</h4>
+            <h4 className="salary">{postData?.price}</h4>
+          </div>
+          <div className="middle-body">
+            <p>{postData?.jobDescription}</p>
+          </div>
+          <div className="lower-body">
+            <button onClick={deleteHandler} type="button">
               <FontAwesomeIcon icon={faTrashAlt} />
             </button>
-          </form>
-        </div>
-      </PostCardBody>
-    </PostCardCont>
+          </div>
+        </PostCardBody>
+      </PostCardCont>
+    </Link>
   );
 };
 
