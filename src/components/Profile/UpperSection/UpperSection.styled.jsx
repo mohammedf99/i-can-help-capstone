@@ -19,10 +19,11 @@ export const UpperSectionCont = styled.section`
   .img-div {
     height: 150px;
     background-color: #1c1250;
+    overflow: hidden;
   }
 
   img {
-    object-fit: cover;
+    object-fit: scale-down;
   }
 
   .img-div,
@@ -129,6 +130,7 @@ export const MyPostsCard = styled.div`
   a:hover {
     opacity: 0.8;
   }
+
 
   @media (max-width: 768px) {
     width: 90%;
