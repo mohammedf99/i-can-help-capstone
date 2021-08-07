@@ -6,7 +6,17 @@ export const JobPostingContainer = styled.div`
   border-radius: 5px;
   background-color: #fafaff;
   color: #1c1259;
-  width: 60%;
+  width: 99%;
+
+  #title {
+    border: none;
+    outline: none;
+    width: 300px;
+    background-color: inherit;
+    font-size: 1rem;
+    border-bottom: 2px solid #cacaea;
+    margin-bottom: 1rem;
+  }
 
   textarea {
     resize: none;
@@ -17,6 +27,11 @@ export const JobPostingContainer = styled.div`
     background-color: transparent;
     font-size: 1rem;
     font-weight: 500;
+  }
+
+  #title::placeholder,
+  textarea::placeholder {
+    color: #cacaea;
   }
 
   #salary,
@@ -36,7 +51,7 @@ export const JobPostingContainer = styled.div`
     color: #1c1259;
   }
 
-  button {
+  .post-btn {
     color: #fafaff;
     background-color: #1c1259;
     width: 15%;
@@ -45,5 +60,21 @@ export const JobPostingContainer = styled.div`
     margin-right: 1rem;
     border: none;
     border-radius: 25px;
+  }
+
+  .post-btn:hover {
+    opacity: 0.8;
+  }
+
+  .upload-btn {
+    background-color: #cacaea;
+    color: #1c1259;
+    border: 2px solid #cacaea;
+    width: 185px;
+    height: 40px;
+  }
+
+  .btn-row {
+    margin-top: 1.5rem;
   }
 `;

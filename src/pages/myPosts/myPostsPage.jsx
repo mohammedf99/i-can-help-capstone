@@ -2,7 +2,9 @@ import React, { useContext } from "react";
 import UpperSection from "../../components/Profile/UpperSection/UpperSection";
 import ProfilePost from "../../components/ProfilePost/ProfilePost";
 import { ProfileSection, PostsContainer } from "./myPostsPage.styled";
+
 import DataContext from "../../Utilities/Contexts/DataContext";
+
 
 function MyPostsPage({ myPosts }) {
   const { userData } = useContext(DataContext);
