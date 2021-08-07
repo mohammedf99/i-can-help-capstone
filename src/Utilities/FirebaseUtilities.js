@@ -82,11 +82,12 @@ export const signIn = ({ email, password, remember }, callback) =>
 
           if (!r.user.emailVerified) {
             signout();
-            return alert("please verify to log in");
+            alert("please verify to log in");
+            return false;
           }
-
           alert("signin success");
           if (callback) callback();
+          return true;
         })
         .catch((e) => alert(e.message))
     )

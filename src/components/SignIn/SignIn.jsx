@@ -72,10 +72,9 @@ function SignInForm({ isVisible, backgroundClick, changeForm }) {
             <Form.Item>
               <ButtonStyled
                 type="primary"
-                htmlType="submit"
                 onClick={() =>
-                  signIn(data, () => backgroundClick()).then(() =>
-                    router.push("/home")
+                  signIn(data, () => backgroundClick()).then(
+                    (r) => r && router.push("/home")
                   )
                 }
               >
