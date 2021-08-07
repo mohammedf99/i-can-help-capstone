@@ -1,10 +1,14 @@
 import React from "react";
 import { Row, Col } from "antd";
 import { JobPostingContainer } from "./JobPostingForm.styled";
+import UploadPng from "./UploadPng";
 
 const JobPostingForm = () => (
   <JobPostingContainer>
     <form action="">
+      <Row>
+        <input type="text" name="title" id="title" placeholder="Job title" />
+      </Row>
       <Row>
         <Col>
           <textarea name="post" id="post" cols="140" rows="3" placeholder="Job description..." />
@@ -63,8 +67,11 @@ const JobPostingForm = () => (
           </select>
         </Col>
       </Row>
-      <Row justify="end">
-        <button type="submit">Post</button>
+      <Row justify="space-between" align="middle" className="btn-row">
+        <UploadPng />
+        <button className="post-btn" type="submit">
+          Post
+        </button>
       </Row>
     </form>
   </JobPostingContainer>

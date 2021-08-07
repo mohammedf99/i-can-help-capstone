@@ -22,6 +22,10 @@ export const Navbar = styled.div`
     font-style: normal;
     font-size: 36px;
     line-height: 20px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .Searchbtn {
