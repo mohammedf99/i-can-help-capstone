@@ -36,7 +36,7 @@ const EditFormModal = () => {
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
-        footer={[]}
+        footer={null}
       >
         <form action="#">
           <FormDiv>
@@ -44,6 +44,7 @@ const EditFormModal = () => {
               size="large"
               placeholder="Full name"
               prefix={<FontAwesomeIcon icon={faUser} />}
+              className="input-fields"
             />
           </FormDiv>
           <FormDiv>
@@ -51,6 +52,7 @@ const EditFormModal = () => {
               size="large"
               placeholder="Email"
               prefix={<FontAwesomeIcon icon={faEnvelope} />}
+              className="input-fields"
             />
           </FormDiv>
           <FormDiv>
@@ -58,6 +60,7 @@ const EditFormModal = () => {
               size="large"
               placeholder="Facebook"
               prefix={<FontAwesomeIcon icon={faFacebook} />}
+              className="input-fields"
             />
           </FormDiv>
           <FormDiv>
@@ -65,6 +68,7 @@ const EditFormModal = () => {
               size="large"
               placeholder="Phone No."
               prefix={<FontAwesomeIcon icon={faPhoneAlt} />}
+              className="input-fields"
             />
           </FormDiv>
           <FormDiv>
@@ -74,7 +78,9 @@ const EditFormModal = () => {
             <button type="submit">Save changes</button>
           </BtnDiv>
         </form>
-        <Divider orientation="left">Change password</Divider>
+        <Divider orientation="left" style={{ color: "#1c1259" }}>
+          Change password
+        </Divider>
         <form action="">
           <FormDiv>
             <Input.Password
