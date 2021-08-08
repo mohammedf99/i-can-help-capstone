@@ -87,6 +87,7 @@ export const MyPostsCard = styled.div`
     height: 40%;
   }
 
+
   .post-number,
   .post-title {
     color: #fafaff;
@@ -113,6 +114,7 @@ export const MyPostsCard = styled.div`
   }
 `;
 
+
 export const PinnedPostCard = styled.div`
   box-sizing: border-box;
   width: 45%;
@@ -137,6 +139,7 @@ export const PinnedPostCard = styled.div`
   .card-lower {
     height: 40%;
   }
+
 
   .post-number,
   .post-title {

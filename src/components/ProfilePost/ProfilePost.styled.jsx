@@ -38,6 +38,7 @@ export const PostCardBody = styled.div`
     font-weight: 700;
     font-size: 1rem;
   }
+
   .middle-body {
     height: 70px;
     overflow: hidden;
@@ -53,6 +54,7 @@ export const PostCardBody = styled.div`
     display: flex;
     justify-content: flex-end;
   }
+
   button {
     color: #ff9b00;
     background-color: transparent;
@@ -61,6 +63,7 @@ export const PostCardBody = styled.div`
     padding: 0.25rem 0.5rem;
     border-radius: 5px;
   }
+
   button:hover {
     background-color: #ff9b00;
     color: #ffffff;

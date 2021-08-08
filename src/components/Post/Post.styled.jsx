@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Tag } from "antd";
+import { Tag, Button, Modal } from "antd";
 
 export const PostDiv = styled.div`
   box-sizing: border-box;
@@ -114,11 +114,61 @@ export const PinButton = styled.button`
   font-size: 1rem;
   width: 175px;
 
+  &:hover {
+    background-color: #1c1259;
+    color: #fafaff;
+    outline: none;
+    transition: all 0.5s 0s ease;
+  }
+
   .pin-icon {
     margin-right: 50px;
+    align-self: center;
+  }
+`;
+
+export const ContactBtn = styled(Button)`
+  background-color: transparent;
+  border: 1px solid #1c1259;
+  width: 175px;
+  height: 45px;
+  color: #1c1259;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+
+  &:hover {
+    background-color: #1c1259;
+    color: #fafaff;
+    outline: none;
+    transition: all 0.5s 0s ease;
   }
 
   .msg-icon {
-    margin-right: 30px;
+    margin: 0px 30px 0px -30px;
+  }
+`;
+
+export const ConModal = styled(Modal)`
+  .col-style {
+    width: fit-content;
+    box-sizing: border-box;
+    font-size: 1rem;
+    border: 1px solid #1c1259;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    color: #1c1259;
+    transition: all 0.5s 0s ease-in-out;
+  }
+
+  .col-style:hover {
+    color: #ee4266;
+    border: 1px solid #ee4266;
+    font-size: 1.25rem;
+    transition: all 0.5s 0s ease-in-out;
+  }
+
+  .icon {
+    margin: 0 1rem 0 1rem;
   }
 `;
