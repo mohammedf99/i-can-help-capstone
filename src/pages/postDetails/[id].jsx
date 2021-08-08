@@ -35,7 +35,7 @@ function PostDetailsPage() {
 
   return (
     <Layout>
-      <PostDetail data={{ ...post.data(), name: user?.name }} />
+      <PostDetail data={{ ...post?.data(), user, id: post?.id }} />
     </Layout>
   );
 }

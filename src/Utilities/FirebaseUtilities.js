@@ -106,13 +106,6 @@ export const getUser = async (id) => {
 
 export const getusers = () => usersRef.get();
 
-export const deletePost = (postId, userId) =>
-  postsRef
-    .doc(postId)
-    .delete()
-    .then(() => usersRef.doc(userId).collection("posts").doc(postId).delete())
-    .catch((e) => alert(e));
-
 export const uploadImage = (image, callback) => {
   const storageRef = Firebase.storage().ref();
   const imageRef = storageRef.child(image.name);
@@ -140,19 +133,22 @@ export const updatePicture = (image, userId) => {
   );
 };
 
-export const post = (values, userId) => {
+export const post = (values, userId, callback) => {
   uploadImage(values.picture, (ref) => {
     ref.getDownloadURL().then((url) => {
       const data = {
         createdDate: values.createdDate,
-        description: values.description,
+        jobDescription: values.jobDescription,
         employment: values.employment,
         price: values.price,
-        time: values.time,
+        time: values.time || values.employment,
         title: values.title,
         type: values.type,
         picture: url,
         userId,
+        jobType: values.jobType,
+        location: values.location,
+        gender: values.gender,
       };
 
       try {
@@ -160,7 +156,10 @@ export const post = (values, userId) => {
           .doc(userId)
           .collection("posts")
           .add(data)
-          .then(() => alert("success"))
+          .then(() => {
+            alert("success");
+            callback();
+          })
           .catch((e) => console.log(e));
       } catch (error) {
         console.log(error);
@@ -175,6 +174,7 @@ export const pinPost = (userId, postId) =>
     .update({
       pinnedPosts: Firebase.firestore.FieldValue.arrayUnion(postId),
     })
+    .then(() => console.log("pinned"))
     .catch((e) => console.log(e));
 
 export const unPinPost = (userId, postId) =>
@@ -183,4 +183,20 @@ export const unPinPost = (userId, postId) =>
     .update({
       pinnedPosts: Firebase.firestore.FieldValue.arrayRemove(postId),
     })
+    .then(() => console.log("un pin"))
     .catch((e) => console.log(e));
+
+export const deletePost = (postId, userId) =>
+  postsRef
+    .doc(postId)
+    .delete()
+    .then(() => usersRef.doc(userId).collection("posts").doc(postId).delete())
+    .then(() =>
+      usersRef.get().then((snapshot) =>
+        snapshot.docs.forEach((user) => {
+          if (user?.data()?.pinnedPosts?.includes(postId))
+            unPinPost(user?.id, postId);
+        })
+      )
+    )
+    .catch((e) => alert(e));
