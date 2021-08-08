@@ -13,7 +13,7 @@ const testimonialsData = [
     profilePosition: "CEO at ABC Corporation",
   },
   {
-    cardTitle: "Efficient Collaborating",
+    cardTitle: "Intuitive Design",
     cardParagraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor neque sed imperdiet nibh lectus feugiat nunc sem.",
     profileImg:
@@ -22,7 +22,7 @@ const testimonialsData = [
     profilePosition: "CEO at ABC Corporation",
   },
   {
-    cardTitle: "Efficient Collaborating",
+    cardTitle: "Mindblowing Service",
     cardParagraph:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor neque sed imperdiet nibh lectus feugiat nunc sem.",
     profileImg:
