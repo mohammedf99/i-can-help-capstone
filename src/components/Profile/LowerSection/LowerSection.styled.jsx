@@ -10,6 +10,12 @@ export const ProfileDetailCont = styled.div`
   box-sizing: border-box;
   padding: 0 1.25rem;
   border-radius: 5px;
+
+  @media (max-width: 768px) {
+    width: 72%;
+    flex-direction: column;
+    padding: 0.5rem;
+  }
 `;
 
 export const LeftSection = styled.div`
@@ -73,6 +79,12 @@ export const LeftSection = styled.div`
 
   .lang-button:hover {
     opacity: 0.9;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    border-right: none;
+    padding: 0.5rem 1rem;
   }
 `;
 
@@ -139,6 +151,13 @@ export const RightSection = styled.div`
   .setting-lang-btn:active {
     color: #fafaff;
     background-color: #ee4266;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    justify-content: center;
+    margin: 0;
   }
 `;
 
