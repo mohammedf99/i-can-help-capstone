@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import { useRouter } from "next/router";
 import { Form, Button } from "antd";
+import { signIn } from "../../Utilities/FirebaseUtilities";
 import Checkbox from "../Checkbox/Checkbox";
 import {
   InputStyled,
@@ -8,7 +10,7 @@ import {
   ButtonStyled,
   CardStyled,
   TitleStyled,
-  Backdrop,
+  BackDrop,
 } from "../SignUp/SignUp.styled";
 
 const EmailIconSVG = () => (
@@ -28,30 +30,54 @@ const EmailIconSVG = () => (
   </svg>
 );
 
-function SignInForm({ isVisible, backgroundClick }) {
+function SignInForm({ isVisible, backgroundClick, changeForm }) {
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+    remember: false,
+  });
+
+  const router = useRouter();
+
   return isVisible ? (
     <div>
-
-      <Backdrop onClick={backgroundClick}>
-        <CardStyled>
+      <BackDrop onClick={backgroundClick}>
+        <CardStyled onClick={(e) => e.stopPropagation()}>
           <Form>
             <HeaderStyled>Sign In</HeaderStyled>
             <TitleStyled>Sign in now to start helping!</TitleStyled>
 
             <Form.Item>
-              <InputStyled placeholder="  Email" prefix={<EmailIconSVG />} />
+              <InputStyled
+                placeholder="  Email"
+                prefix={<EmailIconSVG />}
+                onChange={(e) => setData({ ...data, email: e.target.value })}
+              />
             </Form.Item>
 
             <Form.Item>
-              <InputPasswordStyled placeholder="Password" />
+              <InputPasswordStyled
+                placeholder="Password"
+                onChange={(e) => setData({ ...data, password: e.target.value })}
+              />
             </Form.Item>
 
             <Form.Item style={{ textAlign: "left" }}>
-              <Checkbox label="Remember me" />
+              <Checkbox
+                label="Remember me"
+                change={(value) => setData({ ...data, remember: value })}
+              />
             </Form.Item>
 
             <Form.Item>
-              <ButtonStyled type="primary" htmlType="submit">
+              <ButtonStyled
+                type="primary"
+                onClick={() =>
+                  signIn(data, () => backgroundClick()).then(
+                    (r) => r && router.push("/home")
+                  )
+                }
+              >
                 Sign in
               </ButtonStyled>
             </Form.Item>
@@ -71,13 +97,14 @@ function SignInForm({ isVisible, backgroundClick }) {
               <Button
                 type="text"
                 style={{ color: "#1c1259", fontFamily: "Roboto" }}
+                onClick={() => changeForm()}
               >
                 Don't have account yet?
               </Button>
             </Form.Item>
           </Form>
         </CardStyled>
-      </Backdrop>
+      </BackDrop>
     </div>
   ) : (
     <></>

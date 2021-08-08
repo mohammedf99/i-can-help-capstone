@@ -40,7 +40,7 @@ export const PostCardBody = styled.div`
   }
 
   .middle-body {
-    height: 70px;
+    height: 72px;
     overflow: hidden;
     margin-bottom: 1rem;
   }

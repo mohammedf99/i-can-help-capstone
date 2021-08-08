@@ -3,8 +3,7 @@
 
 exports[`renders Profile post correctly 1`] = `
 <div
-  className="ant-card ant-card-bordered ant-card-hoverable ProfilePoststyled__PostCardCont-sc-ab9iyo-0 cANdEp"
-
+  className="ant-card ant-card-bordered ant-card-hoverable ProfilePoststyled__PostCardCont-sc-ab9iyo-0 kWaetX"
   style={
     Object {
       "width": 240,
@@ -25,7 +24,6 @@ exports[`renders Profile post correctly 1`] = `
     style={Object {}}
   >
     <div
-
       className="ProfilePoststyled__PostCardBody-sc-ab9iyo-1 jYerBU"
     >
       <div

@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMapMarkerAlt, faCheck, faComments } from "@fortawesome/free-solid-svg-icons";
+import { faMapMarkerAlt, faCheck } from "@fortawesome/free-solid-svg-icons";
 import { PostDiv, LocationTag, Tags, PinButton } from "./Post.styled";
 import ContactModal from "./ContactModal";
 

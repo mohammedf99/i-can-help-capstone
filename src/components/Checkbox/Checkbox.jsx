@@ -1,10 +1,14 @@
 import { Col, Row } from "antd";
 import React, { useState } from "react";
 
-function Checkbox({ checked, label }) {
-  const [isChecked, setIsChecked] = useState(checked);
+function Checkbox({ checked, label, change }) {
+  const [isChecked, setIsChecked] = useState(checked || false);
 
-  const clickHandler = () => setIsChecked((prev) => !prev);
+  const clickHandler = () => {
+    setIsChecked(!isChecked);
+    change(!isChecked);
+  };
+
   return (
     <div
       style={{
