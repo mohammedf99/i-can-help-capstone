@@ -53,4 +53,15 @@ export const HomePageCont = styled.div`
   #latest-title {
     margin-top: 2rem;
   }
+
+  @media only screen and (max-width: 768px) {
+    .left-section {
+      display: none;
+    }
+
+    .right-section {
+      margin: 0 auto;
+      width: 90%;
+    }
+  }
 `;

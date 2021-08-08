@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useState, useEffect, useContext } from "react";
 import AuthContext from "../Contexts/AuthContext";
 import DataContext from "../Contexts/DataContext";
@@ -9,7 +10,7 @@ const DataProvider = ({ children }) => {
   const [userData, setUserData] = useState(null);
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const router = useRouter();
   useEffect(() => {
     if (currentUser) {
       usersRef
@@ -18,7 +19,8 @@ const DataProvider = ({ children }) => {
     } else setUserData(null);
   }, [currentUser]);
 
-  useEffect(() => {
+  const getPosts = () => {
+    setPosts([]);
     getusers()
       .then((users) =>
         users.docs.forEach((user) =>
@@ -35,10 +37,14 @@ const DataProvider = ({ children }) => {
         )
       )
       .then(() => setLoading(false));
-  }, []);
+  };
+
+  useEffect(() => {
+    getPosts();
+  }, [router.route]);
 
   return (
-    <DataContext.Provider value={{ userData, posts, loading }}>
+    <DataContext.Provider value={{ userData, posts, loading, getPosts }}>
       {children}
     </DataContext.Provider>
   );

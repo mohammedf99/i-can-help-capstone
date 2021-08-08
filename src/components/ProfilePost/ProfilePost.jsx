@@ -48,7 +48,7 @@ const ProfilePost = ({ data, isPin }) => {
         <PostCardBody>
           <div className="upper-body">
             <h4 className="name">{user?.name}</h4>
-            <h4 className="salary">{postData?.price}</h4>
+            <h4 className="salary">{`$${postData?.price}/${postData?.time}`}</h4>
           </div>
           <div className="middle-body">
             <p>{postData?.jobDescription}</p>
