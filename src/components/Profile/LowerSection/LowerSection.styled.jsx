@@ -81,10 +81,34 @@ export const LeftSection = styled.div`
     opacity: 0.9;
   }
 
-  @media (max-width: 768px) {
+  @media only screen and (max-width: 1506px) {
+    input {
+      width: 230px;
+    }
+  }
+
+  @media only screen and (max-width: 1408px) {
+    input {
+      width: 200px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
     width: 100%;
     border-right: none;
     padding: 0.5rem 1rem;
+  }
+
+  @media only screen and (max-width: 704px) {
+    input {
+      width: 200px;
+    }
+  }
+
+  @media only screen and (max-width: 612px) {
+    input {
+      width: 160px;
+    }
   }
 `;
 
