@@ -35,6 +35,7 @@ const ContactModal = () => {
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
+        footer={null}
       >
         <Row gutter={[8, 8]}>
           <Col span={24} className="col-style">

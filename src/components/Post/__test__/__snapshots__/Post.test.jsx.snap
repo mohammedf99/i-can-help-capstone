@@ -88,7 +88,7 @@ exports[`renders Post component correctly 1`] = `
       className="lower-right"
     >
       <button
-        className="Poststyled__PinButton-sc-r6hdig-3 jreKdE"
+        className="Poststyled__PinButton-sc-r6hdig-3 hGdgTj"
       >
         <svg
           aria-hidden="true"
@@ -110,7 +110,9 @@ exports[`renders Post component correctly 1`] = `
         Pin
       </button>
       <button
-        className="Poststyled__PinButton-sc-r6hdig-3 jreKdE"
+        className="ant-btn ant-btn-primary Poststyled__ContactBtn-sc-r6hdig-4 hTUXpc"
+        onClick={[Function]}
+        type="button"
       >
         <svg
           aria-hidden="true"
@@ -129,7 +131,9 @@ exports[`renders Post component correctly 1`] = `
             style={Object {}}
           />
         </svg>
-        Message
+        <span>
+           Contact
+        </span>
       </button>
     </div>
   </div>
