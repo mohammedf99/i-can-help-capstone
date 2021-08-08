@@ -1,8 +1,8 @@
 import * as React from "react";
 import * as renderer from "react-test-renderer";
-import Navbar from "../NavbarSection";
+import JobPostingForm from "../JobPostingForm";
 
 it("renders Navbar correctly", () => {
-  const tree = renderer.create(<Navbar />).toJSON();
+  const tree = renderer.create(<JobPostingForm />).toJSON();
   expect(tree).toMatchSnapshot();
 });
