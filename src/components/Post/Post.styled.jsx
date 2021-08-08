@@ -3,7 +3,7 @@ import { Tag, Button, Modal } from "antd";
 
 export const PostDiv = styled.div`
   box-sizing: border-box;
-  width: 75%;
+  width: 99%;
   height: auto;
   padding: 2rem 3rem;
   display: flex;
@@ -12,10 +12,12 @@ export const PostDiv = styled.div`
   border: 1.5px solid #4e4e9f;
   border-radius: 5px;
   background-color: #fafaff;
+  margin-bottom: 1rem;
 
   &:hover {
     border: 0;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 1.25rem;
   }
 
   .post-upper-section {
@@ -71,6 +73,40 @@ export const PostDiv = styled.div`
     display: flex;
     justify-content: flex-end;
   }
+
+  @media only screen and (max-width: 768px) {
+    padding: 1rem 2rem;
+    
+    .post-upper-section {
+      flex-direction: column;
+    }
+
+    .upper-right,
+    .upper-left {
+      width: 100%;
+    }
+
+    .user-full-name {
+      font-size: 18px;
+    }
+
+    .user-type {
+      font-size: 16px;
+    }
+
+    .upper-right {
+      justify-content: start;
+    }
+    .lower-left {
+      width: 40%;
+    }
+    
+    .lower-right {
+      width: 60%;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
 `;
 
 export const LocationTag = styled.div`
@@ -79,7 +115,7 @@ export const LocationTag = styled.div`
   align-items: center;
   border: 1px solid #ee4266;
   color: #ee4266;
-  width: 90%;
+  width: 95%;
   height: 40px;
   padding: 0.5rem 1rem;
   border-radius: 25px;
@@ -93,6 +129,34 @@ export const LocationTag = styled.div`
   .address {
     padding-left: 100px;
   }
+
+  @media only screen and (max-width: 1200px) {
+    .address {
+      padding-left: 40px;
+    }
+  }
+
+  @media only screen and (max-width: 992px) {
+    .address {
+      padding-left: 20px;
+      font-size: 0.85rem;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 50%;
+    margin: 0;
+    font-size: 0.75rem;
+    .address {
+      padding-left: 30%;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .address {
+      padding-left: 50px;
+    }
+  }
 `;
 
 export const Tags = styled(Tag)`
@@ -101,6 +165,11 @@ export const Tags = styled(Tag)`
   border-radius: 25px;
   border: 1px solid #ee4266;
   margin-right: 0.5rem;
+  background-color: transparent;
+
+  @media only screen and (max-width: 600px) {
+    padding: 0.25rem 0.5rem;
+  }
 `;
 
 export const PinButton = styled.button`
@@ -125,6 +194,68 @@ export const PinButton = styled.button`
     margin-right: 50px;
     align-self: center;
   }
+
+  @media only screen and (max-width: 1200px) {
+    .pin-icon {
+      margin-right: 30px;
+    }
+  }
+
+  @media only screen and (max-width: 992px) {
+    .pin-icon {
+      margin-right: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 120px;
+    height: 35px;
+    align-items: center;
+
+    .pin-icon {
+      margin-right: 25px;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 100px;
+    height: 30px;
+    font-size: 0.75rem;
+  }
+
+`;
+export const PinnedButton = styled.button`
+  display: flex;
+  color: #fafaff;
+  background-color: #ff9b00;
+  border: 1px solid #ff9b00;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  width: 175px;
+
+  &:hover {
+    background-color: #fafaff;
+    color: #1c1259;
+    outline: none;
+    transition: all 0.5s 0s ease;
+  }
+
+  .pin-icon {
+    margin-right: 50px;
+    align-self: center;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 120px;
+    height: 35px;
+    align-items: center;
+
+    .pin-icon {
+      margin-right: 25px;
+    }
+  }
 `;
 
 export const ContactBtn = styled(Button)`
@@ -147,6 +278,41 @@ export const ContactBtn = styled(Button)`
   .msg-icon {
     margin: 0px 30px 0px -30px;
   }
+
+  &:focus {
+    background-color: #cacaea;
+    border: none;
+    outline: none;
+  }
+
+
+  @media only screen and (max-width: 1200px) {
+    .msg-icon {
+      margin: 0px 15px 0px -15px;
+    }
+  }
+
+  @media only screen and (max-width: 992px) {
+    .msg-icon {
+      margin: 0px 10px 0px -10px;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    width: 120px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+
+    .msg-icon {
+      margin: 0px 10px 0px -5px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      width: 100px;
+      height: 30px;
+      font-size: 0.75rem;
+    }
 `;
 
 export const ConModal = styled(Modal)`

@@ -29,7 +29,7 @@ const EmailIconSVG = () => (
   </svg>
 );
 
-function SignUpForm({ isVisible, backgroundClick }) {
+function SignUpForm({ isVisible, backgroundClick, changeForm }) {
   const [data, setData] = useState({
     name: null,
     email: null,
@@ -92,6 +92,7 @@ function SignUpForm({ isVisible, backgroundClick }) {
               <Button
                 type="text"
                 style={{ color: "#1c1259", fontFamily: "Roboto" }}
+                onClick={() => changeForm()}
               >
                 Have account?
               </Button>

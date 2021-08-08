@@ -10,7 +10,7 @@ import {
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { ContactBtn, ConModal } from "./Post.styled";
 
-const ContactModal = () => {
+const ContactModal = ({ button, user }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const showModal = () => {
@@ -27,40 +27,53 @@ const ContactModal = () => {
 
   return (
     <>
-      <ContactBtn type="primary" onClick={showModal}>
-        <FontAwesomeIcon icon={faComments} className="msg-icon" /> Contact
-      </ContactBtn>
+      {button ? (
+        button({ onClick: () => showModal() })
+      ) : (
+        <ContactBtn type="primary" onClick={showModal}>
+          <FontAwesomeIcon icon={faComments} className="msg-icon" /> Contact
+        </ContactBtn>
+      )}
       <ConModal
-        title="NAME's contact information"
+        title={`${user?.name}'s contact information`}
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
+        footer={null}
       >
         <Row gutter={[8, 8]}>
-          <Col span={24} className="col-style">
-            <span className="icon">
-              <FontAwesomeIcon icon={faEnvelope} />
-            </span>
-            mohammed@gmail.com
-          </Col>
-          <Col span={24} className="col-style">
-            <span className="icon">
-              <FontAwesomeIcon icon={faFacebook} />
-            </span>
-            mohammed.test
-          </Col>
-          <Col span={24} className="col-style">
-            <span className="icon">
-              <FontAwesomeIcon icon={faPhoneAlt} />
-            </span>
-            +964-770-123-4567
-          </Col>
-          <Col span={24} className="col-style">
-            <span className="icon">
-              <FontAwesomeIcon icon={faMapMarkerAlt} />
-            </span>
-            Sulaymaniyah, Iraq
-          </Col>
+          {user?.contact?.email && (
+            <Col span={24} className="col-style">
+              <span className="icon">
+                <FontAwesomeIcon icon={faEnvelope} />
+              </span>
+              {user?.contact?.email}
+            </Col>
+          )}
+          {user?.contact?.facebook && (
+            <Col span={24} className="col-style">
+              <span className="icon">
+                <FontAwesomeIcon icon={faFacebook} />
+              </span>
+              {user?.contact?.facebook}
+            </Col>
+          )}
+          {user?.contact?.phone && (
+            <Col span={24} className="col-style">
+              <span className="icon">
+                <FontAwesomeIcon icon={faPhoneAlt} />
+              </span>
+              {user?.contact?.phone}
+            </Col>
+          )}
+          {user?.location && (
+            <Col span={24} className="col-style">
+              <span className="icon">
+                <FontAwesomeIcon icon={faMapMarkerAlt} />
+              </span>
+              {user?.location}
+            </Col>
+          )}
         </Row>
       </ConModal>
     </>

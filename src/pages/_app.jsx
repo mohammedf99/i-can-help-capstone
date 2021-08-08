@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import "../styles/globals.css";
 import { appWithTranslation, i18n } from "next-i18next";
 import "antd/dist/antd.css";
-import { AuthProvider } from "../Utilities/auth/Auth";
-
+import AuthProvider from "../Utilities/Providers/AuthProvider";
+import DataProvider from "../Utilities/Providers/DataProvider";
 // eslint-disable-next-line react/prop-types
 function App({ Component, pageProps }) {
   useEffect(() => {
@@ -12,7 +12,9 @@ function App({ Component, pageProps }) {
 
   return (
     <AuthProvider>
-      <Component {...pageProps} />
+      <DataProvider>
+        <Component {...pageProps} />
+      </DataProvider>
     </AuthProvider>
   );
 }
