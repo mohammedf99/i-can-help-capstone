@@ -10,7 +10,13 @@ const ProfilePost = () => {
     <PostCardCont
       hoverable
       style={{ width: 240 }}
-      cover={<img alt="example" src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" width="240" />}
+      cover={
+        <img
+          alt="example"
+          src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+          style={{ width: "240", height: "200px", overflow: "hidden", objectFit: "cover" }}
+        />
+      }
     >
       <PostCardBody>
         <div className="upper-body">
