@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
@@ -36,7 +37,13 @@ const ProfilePost = ({ data, isPin }) => {
       <PostCardCont
         hoverable
         style={{ width: 240 }}
-        cover={<img alt="example" src={postData?.picture} width="240" />}
+        cover={
+          <img
+            alt="example"
+            src={postData?.picture}
+            style={{ width: "240", height: "200px", overflow: "hidden", objectFit: "cover" }}
+          />
+        }
       >
         <PostCardBody>
           <div className="upper-body">

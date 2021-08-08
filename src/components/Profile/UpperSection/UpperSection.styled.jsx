@@ -5,6 +5,7 @@ export const UpperSectionCont = styled.section`
   display: flex;
   flex-direction: row;
 
+
   .left-section,
   .right-section {
     display: flex;
@@ -187,7 +188,7 @@ export const PinnedPostCard = styled.div`
   a:hover {
     opacity: 0.8;
   }
-
+  
   @media (max-width: 768px) {
     width: 90%;
     margin: 0.5rem auto;

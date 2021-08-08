@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Row, Col } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt, faUser } from "@fortawesome/free-solid-svg-icons";
+
 import Link from "next/link";
 import {
   UpperSectionCont,
