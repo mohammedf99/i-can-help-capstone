@@ -176,6 +176,39 @@ export const PinButton = styled.button`
     }
   }
 `;
+export const PinnedButton = styled.button`
+  display: flex;
+  color: #fafaff;
+  background-color: #ff9b00;
+  border: 1px solid #ff9b00;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+  width: 175px;
+
+  &:hover {
+    background-color: #fafaff;
+    color: #1c1259;
+    outline: none;
+    transition: all 0.5s 0s ease;
+  }
+
+  .pin-icon {
+    margin-right: 50px;
+    align-self: center;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 120px;
+    height: 35px;
+    align-items: center;
+
+    .pin-icon {
+      margin-right: 25px;
+    }
+  }
+`;
 
 export const ContactBtn = styled(Button)`
   background-color: transparent;
