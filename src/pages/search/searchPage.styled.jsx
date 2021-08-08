@@ -22,4 +22,19 @@ export const SearchContainer = styled.div`
     font-weight: 700;
     font-size: 1.5rem;
   }
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0 2rem 0;
+
+    .filter-section,
+    .post-section {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    .post-section {
+      margin-top: 2rem;
+    }
+  }
 `;
