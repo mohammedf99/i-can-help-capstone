@@ -21,6 +21,7 @@ export const setUser = ({ email, name }, id) =>
       location: null,
       picture: null,
       languages: [],
+      pinnedPosts: [],
     })
     .catch((e) => alert(e));
 
@@ -167,3 +168,19 @@ export const post = (values, userId) => {
     });
   });
 };
+
+export const pinPost = (userId, postId) =>
+  usersRef
+    .doc(userId)
+    .update({
+      pinnedPosts: Firebase.firestore.FieldValue.arrayUnion(postId),
+    })
+    .catch((e) => console.log(e));
+
+export const unPinPost = (userId, postId) =>
+  usersRef
+    .doc(userId)
+    .update({
+      pinnedPosts: Firebase.firestore.FieldValue.arrayRemove(postId),
+    })
+    .catch((e) => console.log(e));

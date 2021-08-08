@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from "react";
 import AuthContext from "../Contexts/AuthContext";
 import DataContext from "../Contexts/DataContext";
-import { getUser, getusers, usersRef } from "../FirebaseUtilities";
+import { getusers, usersRef } from "../FirebaseUtilities";
 
 const DataProvider = ({ children }) => {
   const { currentUser } = useContext(AuthContext);
@@ -12,7 +12,9 @@ const DataProvider = ({ children }) => {
 
   useEffect(() => {
     if (currentUser) {
-      getUser(currentUser.uid).then((user) => setUserData(user.data()));
+      usersRef
+        .doc(currentUser.uid)
+        .onSnapshot((snapshot) => setUserData(snapshot.data()));
     } else setUserData(null);
   }, [currentUser]);
 

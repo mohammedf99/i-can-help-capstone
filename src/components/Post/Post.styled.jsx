@@ -76,9 +76,11 @@ export const PostDiv = styled.div`
 
   @media only screen and (max-width: 768px) {
     padding: 1rem 2rem;
+    
     .post-upper-section {
       flex-direction: column;
     }
+
     .upper-right,
     .upper-left {
       width: 100%;
@@ -98,6 +100,7 @@ export const PostDiv = styled.div`
     .lower-left {
       width: 40%;
     }
+    
     .lower-right {
       width: 60%;
       justify-content: flex-end;
@@ -208,6 +211,7 @@ export const PinButton = styled.button`
     width: 120px;
     height: 35px;
     align-items: center;
+
     .pin-icon {
       margin-right: 25px;
     }
@@ -218,6 +222,7 @@ export const PinButton = styled.button`
     height: 30px;
     font-size: 0.75rem;
   }
+
 `;
 
 export const ContactBtn = styled(Button)`
@@ -247,6 +252,7 @@ export const ContactBtn = styled(Button)`
     outline: none;
   }
 
+
   @media only screen and (max-width: 1200px) {
     .msg-icon {
       margin: 0px 15px 0px -15px;
@@ -258,12 +264,13 @@ export const ContactBtn = styled(Button)`
       margin: 0px 10px 0px -10px;
     }
   }
-
+  
   @media only screen and (max-width: 768px) {
     width: 120px;
     height: 35px;
     display: flex;
     align-items: center;
+
     .msg-icon {
       margin: 0px 10px 0px -5px;
     }

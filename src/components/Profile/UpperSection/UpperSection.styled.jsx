@@ -5,6 +5,7 @@ export const UpperSectionCont = styled.section`
   display: flex;
   flex-direction: row;
 
+
   .left-section,
   .right-section {
     display: flex;
@@ -61,6 +62,24 @@ export const UpperSectionCont = styled.section`
     padding-right: 0.5rem;
     color: #ee4266;
   }
+
+  @media (max-width: 768px) {
+    width: 80%;
+    flex-direction: column;
+
+    .left-section,
+    .right-section {
+      width: 100%;
+    }
+
+    .left-section {
+      justify-content: center;
+    }
+
+    .right-section {
+      flex-direction: column;
+    }
+  }
 `;
 
 export const MyPostsCard = styled.div`
@@ -112,6 +131,12 @@ export const MyPostsCard = styled.div`
   a:hover {
     opacity: 0.8;
   }
+
+
+  @media (max-width: 768px) {
+    width: 90%;
+    margin: 0.5rem auto;
+  }
 `;
 
 export const PinnedPostCard = styled.div`
@@ -162,5 +187,10 @@ export const PinnedPostCard = styled.div`
 
   a:hover {
     opacity: 0.8;
+  }
+  
+  @media (max-width: 768px) {
+    width: 90%;
+    margin: 0.5rem auto;
   }
 `;

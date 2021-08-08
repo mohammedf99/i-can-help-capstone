@@ -27,4 +27,11 @@ export const PostsContainer = styled.div`
     flex-wrap: wrap;
     flex: 1 1 auto;
   }
+
+  @media only screen and (max-width: 768px) {
+    padding: 0 6.5rem;
+    .posts {
+      justify-content: start;
+    }
+  }
 `;

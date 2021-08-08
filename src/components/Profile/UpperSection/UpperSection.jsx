@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Row, Col } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt, faUser } from "@fortawesome/free-solid-svg-icons";
+
 import Link from "next/link";
 import {
   UpperSectionCont,
@@ -17,17 +18,11 @@ const UpperSection = () => {
   const data = useContext(DataContext).userData;
   const { currentUser } = useContext(AuthContext);
   useEffect(() => {
-    getUser(currentUser.uid).then((user) => {
-      user.ref
+    getUser(currentUser?.uid).then((user) => {
+      user?.ref
         .collection("posts")
         .onSnapshot((snapshot) =>
           setUserPosts((prev) => ({ ...prev, myPosts: snapshot.docs.length }))
-        );
-
-      user.ref
-        .collection("pinned")
-        .onSnapshot((snapshot) =>
-          setUserPosts((prev) => ({ ...prev, pinned: snapshot.docs.length }))
         );
     });
   }, [currentUser]);
@@ -63,7 +58,7 @@ const UpperSection = () => {
         </MyPostsCard>
         <PinnedPostCard>
           <div className="card-upper">
-            <h3 className="post-number">{userPosts.pinned}</h3>
+            <h3 className="post-number">{data?.pinnedPosts?.length || 0}</h3>
           </div>
           <div className="card-lower">
             <h3 className="post-title">
