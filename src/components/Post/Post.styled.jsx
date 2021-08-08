@@ -73,6 +73,37 @@ export const PostDiv = styled.div`
     display: flex;
     justify-content: flex-end;
   }
+
+  @media only screen and (max-width: 768px) {
+    padding: 1rem 2rem;
+    .post-upper-section {
+      flex-direction: column;
+    }
+    .upper-right,
+    .upper-left {
+      width: 100%;
+    }
+
+    .user-full-name {
+      font-size: 18px;
+    }
+
+    .user-type {
+      font-size: 16px;
+    }
+
+    .upper-right {
+      justify-content: start;
+    }
+    .lower-left {
+      width: 40%;
+    }
+    .lower-right {
+      width: 60%;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
 `;
 
 export const LocationTag = styled.div`
@@ -95,6 +126,34 @@ export const LocationTag = styled.div`
   .address {
     padding-left: 100px;
   }
+
+  @media only screen and (max-width: 1200px) {
+    .address {
+      padding-left: 40px;
+    }
+  }
+
+  @media only screen and (max-width: 992px) {
+    .address {
+      padding-left: 20px;
+      font-size: 0.85rem;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 50%;
+    margin: 0;
+    font-size: 0.75rem;
+    .address {
+      padding-left: 30%;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .address {
+      padding-left: 50px;
+    }
+  }
 `;
 
 export const Tags = styled(Tag)`
@@ -104,6 +163,10 @@ export const Tags = styled(Tag)`
   border: 1px solid #ee4266;
   margin-right: 0.5rem;
   background-color: transparent;
+
+  @media only screen and (max-width: 600px) {
+    padding: 0.25rem 0.5rem;
+  }
 `;
 
 export const PinButton = styled.button`
@@ -127,6 +190,33 @@ export const PinButton = styled.button`
   .pin-icon {
     margin-right: 50px;
     align-self: center;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    .pin-icon {
+      margin-right: 30px;
+    }
+  }
+
+  @media only screen and (max-width: 992px) {
+    .pin-icon {
+      margin-right: 10px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 120px;
+    height: 35px;
+    align-items: center;
+    .pin-icon {
+      margin-right: 25px;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 100px;
+    height: 30px;
+    font-size: 0.75rem;
   }
 `;
 
@@ -156,6 +246,33 @@ export const ContactBtn = styled(Button)`
     border: none;
     outline: none;
   }
+
+  @media only screen and (max-width: 1200px) {
+    .msg-icon {
+      margin: 0px 15px 0px -15px;
+    }
+  }
+
+  @media only screen and (max-width: 992px) {
+    .msg-icon {
+      margin: 0px 10px 0px -10px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 120px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    .msg-icon {
+      margin: 0px 10px 0px -5px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      width: 100px;
+      height: 30px;
+      font-size: 0.75rem;
+    }
 `;
 
 export const ConModal = styled(Modal)`
