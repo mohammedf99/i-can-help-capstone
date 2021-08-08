@@ -73,6 +73,33 @@ export const PostDiv = styled.div`
     display: flex;
     justify-content: flex-end;
   }
+
+  @media only screen and (max-width: 768px) {
+    padding: 1rem 2rem;
+
+    .post-upper-section {
+      flex-direction: column;
+    }
+
+    .upper-right,
+    .upper-left {
+      width: 100%;
+    }
+
+    .upper-right {
+      justify-content: start;
+    }
+
+    .lower-left {
+      width: 40%;
+    }
+
+    .lower-right {
+      width: 60%;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
 `;
 
 export const LocationTag = styled.div`
@@ -94,6 +121,16 @@ export const LocationTag = styled.div`
 
   .address {
     padding-left: 100px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 50%;
+    margin: 0;
+    font-size: 0.75rem;
+
+    .address {
+      padding-left: 30%;
+    }
   }
 `;
 
@@ -128,6 +165,16 @@ export const PinButton = styled.button`
     margin-right: 50px;
     align-self: center;
   }
+
+  @media only screen and (max-width: 768px) {
+    width: 120px;
+    height: 35px;
+    align-items: center;
+
+    .pin-icon {
+      margin-right: 25px;
+    }
+  }
 `;
 
 export const ContactBtn = styled(Button)`
@@ -156,6 +203,17 @@ export const ContactBtn = styled(Button)`
     border: none;
     outline: none;
   }
+
+  @media only screen and (max-width: 768px) {
+    width: 120px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+
+
+    .msg-icon {
+      margin: 0px 10px 0px -5px;
+    }
 `;
 
 export const ConModal = styled(Modal)`

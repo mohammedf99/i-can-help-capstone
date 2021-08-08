@@ -1,17 +1,35 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
+
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { PostCardCont, PostCardBody } from "./ProfilePost.styled";
-import { deletePost } from "../../Utilities/FirebaseUtilities";
+import {
+  deletePost,
+  unPinPost,
+  usersRef,
+} from "../../Utilities/FirebaseUtilities";
+import AuthContext from "../../Utilities/Contexts/AuthContext";
 
-const ProfilePost = ({ data }) => {
+const ProfilePost = ({ data, isPin }) => {
+  const [user, setUser] = useState(null);
   const postData = data?.post?.data();
-  const user = data?.userData;
+  const { currentUser } = useContext(AuthContext);
+
+  useEffect(() => {
+    if (postData && postData.userId)
+      usersRef
+        .doc(postData?.userId)
+        .onSnapshot((snapshot) => setUser(snapshot.data()));
+  }, [postData]);
 
   const deleteHandler = (e) => {
     e.stopPropagation();
-    deletePost(data?.post?.id, data?.post?.data()?.userId);
+    if (!isPin) {
+      deletePost(data?.post?.id, data?.post?.data()?.userId);
+    } else {
+      unPinPost(currentUser?.uid, data?.post?.id);
+    }
   };
 
   return (
@@ -19,7 +37,13 @@ const ProfilePost = ({ data }) => {
       <PostCardCont
         hoverable
         style={{ width: 240 }}
-        cover={<img alt="example" src={postData?.picture} width="240" />}
+        cover={
+          <img
+            alt="example"
+            src={postData?.picture}
+            style={{ width: "240", height: "200px", overflow: "hidden", objectFit: "cover" }}
+          />
+        }
       >
         <PostCardBody>
           <div className="upper-body">
