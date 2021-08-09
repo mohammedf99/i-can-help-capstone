@@ -13,6 +13,8 @@ const PostFiltering = ({ setFilteredPosts, posts, type }) => {
     type: null,
   });
 
+  const { t } = useTranslation("search");
+
   useEffect(() => {
     setFiltering((prev) => ({ ...prev, type }));
   }, [type]);

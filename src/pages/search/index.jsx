@@ -4,6 +4,6 @@ export { default } from "./searchPage";
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["search", "common", "footer"])),
+    ...(await serverSideTranslations(locale, ["search", "home", "footer", "navbar"])),
   },
 });
