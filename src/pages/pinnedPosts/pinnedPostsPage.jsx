@@ -9,7 +9,7 @@ import DataContext from "../../Utilities/Contexts/DataContext";
 
 function PinnedPostsPage() {
   const { posts, userData } = useContext(DataContext);
-  const { t } = useTranslation();
+  const { t } = useTranslation("pinnedPosts");
   return (
     <Layout>
       <ProfileSection>
@@ -34,6 +34,6 @@ export default PinnedPostsPage;
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common", "pinnedPosts", "footer", "navbar"])),
+    ...(await serverSideTranslations(locale, ["pinnedPosts", "footer", "navbar", "myPosts"])),
   },
 });

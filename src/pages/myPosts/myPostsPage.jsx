@@ -10,7 +10,7 @@ import DataContext from "../../Utilities/Contexts/DataContext";
 
 function MyPostsPage({ myPosts }) {
   const { userData } = useContext(DataContext);
-  const { t } = useTranslation("common");
+  const { t } = useTranslation("myPosts");
   return (
     <div style={{ paddingBlock: "50px" }}>
       <ProfileSection>
@@ -31,6 +31,6 @@ export default MyPostsPage;
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common", "footer", "navbar"])),
+    ...(await serverSideTranslations(locale, ["common", "footer", "navbar", "myPosts"])),
   },
 });
