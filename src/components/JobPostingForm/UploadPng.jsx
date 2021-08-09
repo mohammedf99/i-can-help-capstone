@@ -10,9 +10,7 @@ const UploadPng = () => {
       }
       return file.type === "image/png" ? true : Upload.LIST_IGNORE;
     },
-    onChange: (info) => {
-      console.log(info.fileList);
-    },
+    onChange: (info) => {},
   };
   return (
     <Upload {...props}>
