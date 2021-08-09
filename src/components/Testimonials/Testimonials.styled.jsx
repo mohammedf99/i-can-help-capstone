@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const TestimonialsSection = styled.div`
   background-color: #f4f5f7;
-  height: 100vh;
+  height: 70vh;
   padding: 2rem 10%;
+
   .title-wrapper {
     margin: 0 auto;
     text-align: center;

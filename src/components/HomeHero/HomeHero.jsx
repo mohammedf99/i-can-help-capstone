@@ -7,11 +7,12 @@ import {
   ImageWrapper,
   SecondaryButton,
   PrimaryButton,
+  Container,
 } from "./HomeHero.styled";
 
 const HomeHero = () => (
-  <Row style={{ height: "81vh", margin: "40px", marginTop: "70px" }}>
-    <Col span={10}>
+  <Container>
+    <Col style={{ flex: 1.2 }}>
       <TitleStyled>Hire the best workers in Kurdistan </TitleStyled>
 
       <DescriptionStyled>
@@ -29,12 +30,12 @@ const HomeHero = () => (
         </PrimaryButton>
       </Row>
     </Col>
-    <Col span={14}>
+    <Col style={{ flex: 1.6 }}>
       <ImageWrapper>
         <ImageStyled src="https://images.unsplash.com/photo-1513692398020-cbaea622c427?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" />
       </ImageWrapper>
     </Col>
-  </Row>
+  </Container>
 );
 
 export default HomeHero;
