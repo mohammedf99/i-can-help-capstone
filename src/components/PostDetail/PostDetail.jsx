@@ -49,12 +49,12 @@ function PostDetail({ data }) {
             paddingLeft: "10px",
           }}
         >
-          <DetailInfo title="Job Description" text={data?.jobDescription} />
-          <DetailInfo title="Price" text={`$${data?.price}`} />
-          <DetailInfo title="Employment" text={data?.employment} />
-          <DetailInfo title="Location" text={data?.location} />
-          <DetailInfo title="Time" text={data?.time} />
-          <DetailInfo title="Gender" text={data?.gender} />
+          <DetailInfo title={t("jobDesc")} text={data?.jobDescription} />
+          <DetailInfo title={t("price")} text={`$${data?.price}`} />
+          <DetailInfo title={t("employment")} text={data?.employment} />
+          <DetailInfo title={t("location")} text={data?.location} />
+          <DetailInfo title={t("time")} text={data?.time} />
+          <DetailInfo title={t("gender")} text={data?.gender} />
 
           <Row
             style={{
