@@ -41,17 +41,9 @@ const Category = () => {
       <div className="container">
         <div className="col">
           <h1>Categories</h1>
-
           <CategoryList categoryData={categoryData} />
         </div>
       </div>
-      <button className="btn">
-        View all
-        <img
-          className="icon"
-          src="https://image.flaticon.com/icons/png/512/545/545682.png"
-        />
-      </button>
     </CategoryStyle>
   );
 };

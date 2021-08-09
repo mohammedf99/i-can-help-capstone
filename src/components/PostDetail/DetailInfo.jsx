@@ -1,12 +1,11 @@
 import { Row } from "antd";
+import { InfoStyled } from "./PostDetail.styled";
 
 function DetailInfo({ title, text }) {
   return (
-    <Row
-      style={{ paddingBlock: "10px", fontSize: "26px", fontFamily: "roboto" }}
-    >
+    <InfoStyled>
       {title}: {text}
-    </Row>
+    </InfoStyled>
   );
 }
 
