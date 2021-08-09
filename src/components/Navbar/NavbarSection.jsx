@@ -36,7 +36,7 @@ const NavbarSection = ({ transparent, auth }) => {
 
           {!user && (
             <div className="navcontent">
-              <Link href="/">About</Link>
+              <Link href="/about">About</Link>
               <a
                 onClick={() =>
                   router.push({ pathname: "/search", query: { type: 1 } })
