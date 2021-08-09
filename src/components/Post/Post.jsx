@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useTranslation, appWithTranslation, i18n } from "next-i18next";
+import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt, faCheck } from "@fortawesome/free-solid-svg-icons";
