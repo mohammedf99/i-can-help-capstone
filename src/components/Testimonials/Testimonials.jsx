@@ -1,34 +1,32 @@
 import React from "react";
 import { TestimonialsSection } from "./Testimonials.styled";
-import { Carousel } from "antd";
 import TestimonialsList from "./TestimonialsList";
+
 const testimonialsData = [
   {
-    cardTitle: "Efficient Collaborating",
-    cardParagraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor neque sed imperdiet nibh lectus feugiat nunc sem.",
+    cardTitle: "Fast",
+    cardParagraph: "Through this website i can easily find someone to help me.",
     profileImg:
-      "https://www.civillo.com/wp-content/uploads/elementor/thumbs/Rectangle-52-1-oojl7ocgchwhqkun45q5vi7dujwj3fylwr4ug9xbe8.png",
-    profileName: "Jane Cooper",
-    profilePosition: "CEO at ABC Corporation",
+      "https://images.unsplash.com/photo-1627419741847-40e93af705fe?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=658&q=80",
+    profileName: "Yakub Aziz",
+    profilePosition: "",
   },
   {
-    cardTitle: "Efficient Collaborating",
-    cardParagraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor neque sed imperdiet nibh lectus feugiat nunc sem.",
+    cardTitle: "Diverse",
+    cardParagraph: "Having people in different regions makes the work easier.",
     profileImg:
-      "https://www.civillo.com/wp-content/uploads/elementor/thumbs/Rectangle-52-1-oojl7ocgchwhqkun45q5vi7dujwj3fylwr4ug9xbe8.png",
+      "https://images.unsplash.com/flagged/photo-1557898246-9fd78587bcc7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
     profileName: "Jane Cooper",
-    profilePosition: "CEO at ABC Corporation",
+    profilePosition: "",
   },
   {
-    cardTitle: "Efficient Collaborating",
+    cardTitle: "Helpful",
     cardParagraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor neque sed imperdiet nibh lectus feugiat nunc sem.",
+      "You need help and you can't find someone?, it is not a problem anymore",
     profileImg:
-      "https://www.civillo.com/wp-content/uploads/elementor/thumbs/Rectangle-52-1-oojl7ocgchwhqkun45q5vi7dujwj3fylwr4ug9xbe8.png",
-    profileName: "Jane Cooper",
-    profilePosition: "CEO at ABC Corporation",
+      "https://images.unsplash.com/photo-1606122017369-d782bbb78f32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=80",
+    profileName: "Sevim Aksoy",
+    profilePosition: "",
   },
 ];
 const Testimonials = () => {
@@ -38,17 +36,9 @@ const Testimonials = () => {
         <h1>Our Clients Speak</h1>
         <h3>We have been working with clients around the world</h3>
       </div>
-      <Carousel>
-        <div>
-          <TestimonialsList testimonialsData={testimonialsData} />
-        </div>
-        <div>
-          <TestimonialsList testimonialsData={testimonialsData} />
-        </div>
-        <div>
-          <TestimonialsList testimonialsData={testimonialsData} />
-        </div>
-      </Carousel>
+      <div>
+        <TestimonialsList testimonialsData={testimonialsData} />
+      </div>
     </TestimonialsSection>
   );
 };

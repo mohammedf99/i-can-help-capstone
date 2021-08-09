@@ -2,9 +2,11 @@ import styled from "styled-components";
 
 export const TestimonialsSection = styled.div`
   background-color: #f4f5f7;
-  height: 70vh;
   padding: 2rem 10%;
 
+  @media screen and(max-width:1000px) {
+    align-content: center;
+  }
   .title-wrapper {
     margin: 0 auto;
     text-align: center;
@@ -51,20 +53,19 @@ export const TestimonialsListContainer = styled.div`
   display: flex;
   margin-bottom: 4rem;
   @media screen and (max-width: 1024px) {
-    flex-wrap: wrap;
-  }
-  @media screen and (max-width: 830px){
-      flex-direction: column;
-      flex-wrap: nowrap:
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `;
 
 export const CustomCardStyle = styled.div`
   width: 30%;
-  margin: 0 2rem;
+  margin:2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+
   .card {
     width: 100%;
     margin: 2rem;
