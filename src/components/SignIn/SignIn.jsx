@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { Form, Button } from "antd";
-import { signIn } from "../../Utilities/FirebaseUtilities";
+import { resetPassword, signIn } from "../../Utilities/FirebaseUtilities";
 import Checkbox from "../Checkbox/Checkbox";
 import {
   InputStyled,
@@ -88,6 +88,7 @@ function SignInForm({ isVisible, backgroundClick, changeForm }) {
               <Button
                 type="text"
                 style={{ color: "#1c1259", fontFamily: "Roboto" }}
+                onClick={() => resetPassword(data.email)}
               >
                 Forgot password?
               </Button>
