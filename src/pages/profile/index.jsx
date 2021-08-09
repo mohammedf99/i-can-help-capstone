@@ -12,6 +12,6 @@ export default function Profile() {
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common", "footer"])),
+    ...(await serverSideTranslations(locale, ["common", "footer", "navbar", "myPosts", "profile"])),
   },
 });

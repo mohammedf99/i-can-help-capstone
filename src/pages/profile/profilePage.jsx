@@ -1,4 +1,5 @@
 import React from "react";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import LowerSection from "../../components/Profile/LowerSection/LowerSection";
 import UpperSection from "../../components/Profile/UpperSection/UpperSection";
 import { ProfileContainer } from "./profilePage.styled";
@@ -20,3 +21,9 @@ function ProfilePage() {
 }
 
 export default ProfilePage;
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common", "footer", "navbar", "myPosts", "profile"])),
+  },
+});
