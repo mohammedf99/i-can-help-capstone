@@ -51,6 +51,12 @@ export const CategoryListStyle = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   height: 1000px;
+
+  @media screen and (max-width: 784px) {
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+  }
 `;
 
 export const CustomCategoryStyle = styled.div`
@@ -63,6 +69,9 @@ export const CustomCategoryStyle = styled.div`
     width: 100%;
     height: 300px;
 
+    @media screen and (max-width: 784px) {
+      height: 200px;
+    }
     border-radius: 8px;
   }
 
@@ -71,6 +80,14 @@ export const CustomCategoryStyle = styled.div`
     font-weight: bold;
     font-size: 28px;
     line-height: 40px;
+
+    @media screen and (max-width: 1000px) {
+      font-size: 20px;
+    }
+    @media screen and (max-width: 500px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
 
     font-feature-settings: "salt" on, "liga" off;
     color: #1c1259;
