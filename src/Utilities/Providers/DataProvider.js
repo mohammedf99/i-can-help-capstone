@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useState, useEffect, useContext } from "react";
+import { toast } from "react-toastify";
 import AuthContext from "../Contexts/AuthContext";
 import DataContext from "../Contexts/DataContext";
 import { getusers, usersRef } from "../FirebaseUtilities";
@@ -33,7 +34,17 @@ const DataProvider = ({ children }) => {
                 setPosts((prev) => [...prev, post])
               );
             })
-            .catch((e) => console.log(e))
+            .catch((e) =>
+              toast.error(e.message, {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+              })
+            )
         )
       )
       .then(() => setLoading(false));
