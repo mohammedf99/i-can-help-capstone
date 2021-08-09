@@ -3,22 +3,12 @@ import styled from "styled-components";
 export const CategoryStyle = styled.div`
   padding: 1rem 5%;
   margin: 0 auto;
-  max-width: 1440px;
-  background-color: e5e5e5;
-  box-shadow: 0 25px 25px 0 rgba(0, 0, 0, 0.3);
-
+  height: 900px;
   .col {
     display: flex;
     flex-direction: column;
     width: 70%;
     margin-left: 6%;
-  }
-  .col:nth-child(odd) {
-    // margin-top: 2rem;
-  }
-
-  .col:last-child {
-    // margin-right: 0;
   }
 
   h1 {
@@ -60,19 +50,29 @@ export const CategoryListStyle = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  height: 2200px;
+  height: 1000px;
+
+  @media screen and (max-width: 784px) {
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+  }
 `;
 
 export const CustomCategoryStyle = styled.div`
-  width: 80%;
+  width: 50%;
   margin-right: 5%;
+  margin-bottom: 10px;
+  border-radius: 8px;
 
   img {
     width: 100%;
-    height: 600px;
+    height: 300px;
 
+    @media screen and (max-width: 784px) {
+      height: 200px;
+    }
     border-radius: 8px;
-    margin: 24px 0px;
   }
 
   h3 {
@@ -81,11 +81,19 @@ export const CustomCategoryStyle = styled.div`
     font-size: 28px;
     line-height: 40px;
 
+    @media screen and (max-width: 1000px) {
+      font-size: 20px;
+    }
+    @media screen and (max-width: 500px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
     font-feature-settings: "salt" on, "liga" off;
     color: #1c1259;
     flex: none;
     order: 0;
     flex-grow: 0;
-    margin: 8px 0px;
+    margin: 8px;
   }
 `;

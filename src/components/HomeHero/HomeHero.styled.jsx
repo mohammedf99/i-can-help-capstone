@@ -1,13 +1,36 @@
 import styled from "styled-components";
 import { Button } from "antd";
 
+export const Container = styled.div`
+  display: flex;
+  height: 100%;
+  width:100%
+  margin-top: 70px;
+  margin-bottom: 140px;
+  padding: 40px;
+
+  @media only screen and (max-width: 1000px) {
+    flex-direction: column-reverse;
+    margin-top: 10px;
+    height: 100%;
+  }
+`;
+
 export const ImageWrapper = styled.div`
   perspective: 1200px;
+
+  @media only screen and (max-width: 1000px) {
+    width: 100%;
+  }
 `;
 export const ImageStyled = styled.img`
   width: 750px;
   border-radius: 8px;
   transform: rotateY(20deg);
+
+  @media only screen and (max-width: 1000px) {
+    width: 100%;
+  }
 `;
 
 export const TitleStyled = styled.h1`

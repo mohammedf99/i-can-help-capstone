@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Row, Col } from "antd";
+import { toast } from "react-toastify";
 import { JobPostingContainer } from "./JobPostingForm.styled";
-import UploadPng from "./UploadPng";
-import { post } from "src/Utilities/FirebaseUtilities";
-import AuthContext from "src/Utilities/Contexts/AuthContext";
-import DataContext from "src/Utilities/Contexts/DataContext";
 import { useTranslation } from "next-i18next";
+import { post } from "../../Utilities/FirebaseUtilities";
+import AuthContext from "../../Utilities/Contexts/AuthContext";
+import DataContext from "../../Utilities/Contexts/DataContext";
 
 const JobPostingForm = () => {
   const { currentUser } = useContext(AuthContext);
@@ -36,7 +36,6 @@ const JobPostingForm = () => {
     if (file) {
       reader.onload = () => {
         if (reader.readyState === 2) {
-          console.log(file);
           setValues((prev) => ({ ...prev, picture: file }));
         }
       };
@@ -59,7 +58,15 @@ const JobPostingForm = () => {
     if (!hasNull()) {
       if (currentUser) post(values, currentUser.uid, () => getPosts());
     } else {
-      alert("please fill the form");
+      toast.error("Please fill the Form", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   };
 

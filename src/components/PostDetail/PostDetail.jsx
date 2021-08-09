@@ -7,6 +7,7 @@ import DataContext from "../../Utilities/Contexts/DataContext";
 import DetailInfo from "./DetailInfo";
 import { PrimaryButton, SecondaryButton, Container } from "./PostDetail.styled";
 import ContactModal from "../Post/ContactModal";
+import { ImageStyled } from "./PostDetail.styled";
 
 function PostDetail({ data }) {
   const { userData } = useContext(DataContext);
@@ -14,82 +15,77 @@ function PostDetail({ data }) {
   const { t } = useTranslation("postDetails");
   return (
     <Container>
-      <Row style={{ width: "80%" }}>
-        <Col span={13} style={{ textAlign: "center" }}>
-          <Typography.Title
-            style={{
-              fontFamily: "Roboto",
-              fontWeight: "bold",
-              fontSize: "40px",
-            }}
-          >
-            {data?.user?.name || "Name"}
-          </Typography.Title>
+      <Col style={{ textAlign: "center", flex: 1.6 }}>
+        <Typography.Title
+          style={{
+            fontFamily: "Roboto",
+            fontWeight: "bold",
+            fontSize: "40px",
+          }}
+        >
+          {data?.user?.name || "Name"}
+        </Typography.Title>
 
-          <img
-            src={data?.picture}
-            style={{ width: "100%", height: "594px", objectFit: "cover" }}
-          />
-        </Col>
+        <ImageStyled src={data?.picture} />
+      </Col>
 
-        <Col span={11} style={{ textAlign: "center" }}>
-          <Typography.Title
-            style={{
-              fontFamily: "Roboto",
-              fontWeight: "normal",
-              fontSize: "36px",
-              color: "#1C1259",
-            }}
-          >
-            {data?.title || "Title"}
-          </Typography.Title>
+      <Col style={{ textAlign: "center", flex: 1.4 }}>
+        <Typography.Title
+          style={{
+            fontFamily: "Roboto",
+            fontWeight: "normal",
+            fontSize: "36px",
+            color: "#1C1259",
+          }}
+        >
+          {data?.title || "Title"}
+        </Typography.Title>
 
-          <div
+        <div
+          style={{
+            marginLeft: "30px",
+            marginTop: "20%",
+            borderLeft: "#1C1259 1px solid",
+            paddingLeft: "10px",
+          }}
+        >
+          <DetailInfo title="Job Description" text={data?.jobDescription} />
+          <DetailInfo title="Price" text={`$${data?.price}`} />
+          <DetailInfo title="Employment" text={data?.employment} />
+          <DetailInfo title="Location" text={data?.location} />
+          <DetailInfo title="Time" text={data?.time} />
+          <DetailInfo title="Gender" text={data?.gender} />
+
+          <Row
             style={{
-              marginLeft: "30px",
+              display: "flex",
+              justifyContent: "space-evenly",
               marginTop: "20%",
-              borderLeft: "#1C1259 1px solid",
-              paddingLeft: "10px",
             }}
           >
-            <DetailInfo title={t("jobDesc")} text={data?.jobDescription} />
-            <DetailInfo title={t("price")} text={`$${data?.price}`} />
-            <DetailInfo title={t("employment")} text={data?.employment} />
-            <DetailInfo title={t("location")} text={data?.location} />
-            <DetailInfo title={t("time")} text={data?.time} />
-            <DetailInfo title={t("gender")} text={data?.gender} />
+            {userData?.pinnedPosts.includes(data.id) ? (
+              <PrimaryButton
+                onClick={() => unPinPost(currentUser?.uid, data.id)}
+              >
+                {t("pinned")}
+              </PrimaryButton>
+            ) : (
+              <SecondaryButton
+                onClick={() => pinPost(currentUser?.uid, data.id)}
+              >
+                {t("pin")}
+              </SecondaryButton>
+            )}
 
-            <Row
-              style={{
-                display: "flex",
-                justifyContent: "space-evenly",
-                marginTop: "20%",
-              }}
-            >
-              {userData?.pinnedPosts.includes(data.id) ? (
-                <PrimaryButton
-                  onClick={() => unPinPost(currentUser?.uid, data.id)}
-                >
-                  {t("pinned")}
-                </PrimaryButton>
-              ) : (
-                <SecondaryButton
-                  onClick={() => pinPost(currentUser?.uid, data.id)}
-                >
-                  {t("pin")}
-                </SecondaryButton>
+            <ContactModal
+              button={(props) => (
+                <PrimaryButton {...props}>{t("contact")}</PrimaryButton>
               )}
-
-              <ContactModal
-                button={(props) => (
-                  <PrimaryButton {...props}>{t("contact")}</PrimaryButton>
-                )}
-                user={data?.user}
-              />
-            </Row>
-          </div>
-        </Col>
-      </Row>
+              user={data?.user}
+            />
+          </Row>
+        </div>
+      </Col>
     </Container>
   );
 }
