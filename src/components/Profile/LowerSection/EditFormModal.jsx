@@ -13,7 +13,7 @@ import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import { FormDiv, BtnDiv } from "./LowerSection.styled";
 import DataContext from "../../../Utilities/Contexts/DataContext";
-import { updateUser } from "src/Utilities/FirebaseUtilities";
+import { resetPassword, updateUser } from "src/Utilities/FirebaseUtilities";
 import AuthContext from "src/Utilities/Contexts/AuthContext";
 
 const EditFormModal = () => {
@@ -27,6 +27,7 @@ const EditFormModal = () => {
   useEffect(() => {
     setValues(userData);
   }, [userData]);
+
   const showModal = () => {
     setIsModalVisible(true);
   };
@@ -121,14 +122,17 @@ const EditFormModal = () => {
             />
           </FormDiv>
 
-          {/* <FormDiv>
+          <FormDiv>
             <Input
+              defaultValue={userData?.contact?.email}
+              disabled
               size="large"
               placeholder="Email"
               prefix={<FontAwesomeIcon icon={faEnvelope} />}
               className="input-fields"
             />
-          </FormDiv> */}
+          </FormDiv>
+
           <FormDiv>
             <Input
               onChange={(e) => {
@@ -202,30 +206,14 @@ const EditFormModal = () => {
             </button>
           </BtnDiv>
         </form>
-        <Divider orientation="left" style={{ color: "#1c1259" }}>
-          Change password
-        </Divider>
-        <form action="">
-          <FormDiv>
-            <Input.Password
-              placeholder="Current password"
-              iconRender={(visible) =>
-                visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
-              }
-            />
-          </FormDiv>
-          <FormDiv>
-            <Input.Password
-              placeholder="New password"
-              iconRender={(visible) =>
-                visible ? <EyeTwoTone /> : <EyeInvisibleOutlined />
-              }
-            />
-          </FormDiv>
-          <BtnDiv>
-            <button type="submit">Change password</button>
-          </BtnDiv>
-        </form>
+        <BtnDiv>
+          <button
+            type="button"
+            onClick={() => resetPassword(userData?.contact?.email)}
+          >
+            Change password
+          </button>
+        </BtnDiv>
       </Modal>
     </>
   );

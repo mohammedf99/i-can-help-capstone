@@ -85,7 +85,7 @@ const LowerSection = () => {
                 <span className="contact-icons">
                   <FontAwesomeIcon icon={faFacebook} />
                 </span>
-                example.ex
+                {userData?.contact?.facebook}
               </li>
             )}
             {userData?.contact?.phone && (

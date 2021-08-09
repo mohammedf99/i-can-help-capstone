@@ -374,3 +374,41 @@ export const removeLanguage = (userId, language) =>
   usersRef
     .doc(userId)
     .update({ languages: Firebase.firestore.FieldValue.arrayRemove(language) });
+
+export const resetPassword = (email) => {
+  if (email)
+    return Firebase.auth()
+      .sendPasswordResetEmail(email)
+      .then(() =>
+        toast.success("Reset Email sent", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        })
+      )
+      .catch((e) =>
+        toast.error(e.message, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        })
+      );
+
+  return toast.error("Please Enter an Email", {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
+};
