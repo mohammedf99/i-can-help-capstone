@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useTranslation } from "next-i18next";
 import { Modal, Button, Input, Divider, Select } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -23,6 +24,7 @@ const EditFormModal = () => {
   const { userData } = useContext(DataContext);
   const { currentUser } = useContext(AuthContext);
   const [values, setValues] = useState(userData);
+  const { t } = useTranslation("profile");
 
   useEffect(() => {
     setValues(userData);
@@ -75,7 +77,7 @@ const EditFormModal = () => {
         <FontAwesomeIcon icon={faPencilAlt} />
       </Button>
       <Modal
-        title="Edit information"
+        title={t("editInfo")}
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
@@ -86,7 +88,7 @@ const EditFormModal = () => {
             <Input
               defaultValue={userData?.name}
               size="large"
-              placeholder="Full name"
+              placeholder={t("name")}
               prefix={<FontAwesomeIcon icon={faUser} />}
               className="input-fields"
               onChange={(e) => {
@@ -99,7 +101,7 @@ const EditFormModal = () => {
             <Input
               defaultValue={userData?.job}
               size="large"
-              placeholder="Job"
+              placeholder={t("job")}
               prefix={<FontAwesomeIcon icon={faBriefcase} />}
               className="input-fields"
               onChange={(e) => {
@@ -112,7 +114,7 @@ const EditFormModal = () => {
             <Input
               defaultValue={userData?.location}
               size="large"
-              placeholder="Location"
+              placeholder={t("location")}
               prefix={<FontAwesomeIcon icon={faLocationArrow} />}
               className="input-fields"
               onChange={(e) => {
@@ -153,7 +155,7 @@ const EditFormModal = () => {
             <Input
               defaultValue={userData?.contact?.phone}
               size="large"
-              placeholder="Phone No."
+              placeholder={t("phoneNo")}
               prefix={<FontAwesomeIcon icon={faPhoneAlt} />}
               className="input-fields"
               onChange={(e) => {
@@ -168,7 +170,7 @@ const EditFormModal = () => {
           <FormDiv>
             <TextArea
               rows={2}
-              placeholder="Description"
+              placeholder={t("description")}
               defaultValue={userData?.description}
               onChange={(e) => {
                 e.persist();
@@ -180,11 +182,11 @@ const EditFormModal = () => {
             />
           </FormDiv>
           <FormDiv>
-            <h2>Update Picture</h2>
+            <h2>{t("updatePic")}</h2>
             <input type="file" placeholder="Update" onChange={onImageChange} />
           </FormDiv>
           <FormDiv>
-            <h2>Gender</h2>
+            <h2>{t("gender")}</h2>
             <Select
               defaultValue={userData?.gender}
               size="large"
@@ -202,13 +204,16 @@ const EditFormModal = () => {
           </FormDiv>
           <BtnDiv>
             <button onClick={handleSave} type="button">
-              Save changes
+              {t("saveChanges")}
             </button>
           </BtnDiv>
         </form>
         <BtnDiv>
-          <button type="button" onClick={() => resetPassword(userData?.contact?.email)}>
-            Change password
+          <button
+            type="button"
+            onClick={() => resetPassword(userData?.contact?.email)}
+          >
+            {t("changePass")}
           </button>
         </BtnDiv>
       </Modal>

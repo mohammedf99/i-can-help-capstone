@@ -1,6 +1,16 @@
 {
-    "description": "Tanımlama",
-    "languages": "Diller",
-    "add": "Ekle",
-    "contact": "İletişim"
+    "description": "Description",
+    "languages": "Languages",
+    "add": "Add",
+    "addLang": "Add language",
+    "contact": "Contact",
+    "gender": "Gender",
+    "editInfo": "Edit information",
+    "saveChanges": "Save changes",
+    "changePass": "Change password",
+    "updatePic": "Update Picture",
+    "name": "Name",
+    "job": "Job",
+    "location": "Location",
+    "phoneNo": "Phone No."
 }
