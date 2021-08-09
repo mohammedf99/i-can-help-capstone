@@ -11,7 +11,7 @@ function SearchPage() {
   const { posts } = useContext(DataContext);
   const [filteredPosts, setFilteredPosts] = useState(posts);
   useEffect(() => setFilteredPosts(posts), [posts]);
-
+  
   useEffect(() => {
     if (query.q && posts.length > 0) {
       console.log({ posts });

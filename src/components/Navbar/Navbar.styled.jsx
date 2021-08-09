@@ -17,12 +17,16 @@ export const Navbar = styled.div`
     margin-left: 35px;
     width: 20%;
   }
+
   .site-logo h1 {
     color: #1c1259;
     font-style: normal;
     font-size: 36px;
     line-height: 20px;
 
+    @media only screen and (max-width: 1000px) {
+      font-size: 20px;
+    }
     &:hover {
       cursor: pointer;
     }
@@ -34,13 +38,14 @@ export const Navbar = styled.div`
     border-radius: 40px;
 
     width: 263px;
+    min-width: 40px;
   }
   .ant-input-lg {
     color: #1c1259;
   }
   .nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 0 4rem 0 0;
     margin-top: 30px;
     width: 55%;
@@ -132,6 +137,10 @@ export const Navbar = styled.div`
     font-weight: 500;
     font-size: 18px;
     line-height: 20px;
+
+    @media only screen and (max-width: 1000px) {
+      font-size: 14px;
+    }
   }
   .anticon-search {
     margin-top: 5px;

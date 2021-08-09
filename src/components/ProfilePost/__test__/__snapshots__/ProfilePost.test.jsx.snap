@@ -1,6 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-
 exports[`renders Profile post correctly 1`] = `
 <div
   className="ant-card ant-card-bordered ant-card-hoverable ProfilePoststyled__PostCardCont-sc-ab9iyo-0 kWaetX"

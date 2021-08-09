@@ -1,42 +1,48 @@
 import { Col, Row } from "antd";
-import { TitleStyled, DescriptionStyled } from "./StatsCounter.styled";
+import {
+  TitleStyled,
+  DescriptionStyled,
+  RowStyled,
+  ColStyled,
+} from "./StatsCounter.styled";
 import CounterBg from "./BackgroundSvg";
 import Counter from "./Counter";
 
 function StatsCounter() {
   return (
-    <div>
-      <CounterBg />
-      <div style={{ textAlign: "center", padding: "64px" }}>
-        <TitleStyled>Some Count that matters</TitleStyled>
-        <DescriptionStyled>
-          Our achievement in the journey depicted in numbers
-        </DescriptionStyled>
-        <Row>
-          <Col span={6}>
-            <Counter title="+35" sub="Categories" />
-          </Col>
+    // <div>
+    // {/* <CounterBg /> */}
+    <div
+      style={{
+        width: "100%",
+        textAlign: "center",
+        padding: "64px",
+        backgroundColor: "#FF9B00",
+      }}
+    >
+      <TitleStyled>Some Count that matters</TitleStyled>
+      <DescriptionStyled>
+        Our achievement in the journey depicted in numbers
+      </DescriptionStyled>
+      <RowStyled>
+        <ColStyled>
+          <Counter title="+35" sub="Categories" />
+        </ColStyled>
 
-          <Col
-            span={6}
-            style={{ borderInline: "1px  solid rgba(255,255,255,0.4)" }}
-          >
-            <Counter title="30" sub="Fortune 500 employees" />
-          </Col>
+        <ColStyled>
+          <Counter title="30" sub="Fortune 500 employees" />
+        </ColStyled>
 
-          <Col
-            span={6}
-            style={{ borderRight: "1px  solid rgba(255,255,255,0.4)" }}
-          >
-            <Counter title="300" sub="Workers" />
-          </Col>
+        <ColStyled>
+          <Counter title="300" sub="Workers" />
+        </ColStyled>
 
-          <Col span={6}>
-            <Counter title="3" sub="Years of Journey" />
-          </Col>
-        </Row>
-      </div>
+        <ColStyled>
+          <Counter title="3" sub="Years of Journey" />
+        </ColStyled>
+      </RowStyled>
     </div>
+    // </div>
   );
 }
 

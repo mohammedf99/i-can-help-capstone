@@ -1,7 +1,11 @@
 import React from "react";
 import { Row, Col } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebook,
+  faGithub,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 
 import {
@@ -21,7 +25,7 @@ import {
 const Footer = () => (
   <FooterSty>
     <Row>
-      <Col span={12}>
+      <Col xs={24} sm={12} md={12}>
         <Row>
           <Col span={24}>
             <LogoSty>I can help</LogoSty>
@@ -51,9 +55,9 @@ const Footer = () => (
           </Col>
         </Row>
       </Col>
-      <Col span={12}>
+      <Col xs={24} sm={24} md={12}>
         <Row>
-          <Col span={7}>
+          <Col xs={12} sm={12} md={7}>
             <FooterH2Sty>Company</FooterH2Sty>
             <Ul>
               <Li>
@@ -78,7 +82,7 @@ const Footer = () => (
               </Li>
             </Ul>
           </Col>
-          <Col span={7}>
+          <Col xs={12} sm={12} md={7}>
             <FooterH2Sty>Support</FooterH2Sty>
             <Ul>
               <Li>
@@ -103,7 +107,7 @@ const Footer = () => (
               </Li>
             </Ul>
           </Col>
-          <Col span={10}>
+          <Col xs={24} sm={24} md={10}>
             <FooterH2Sty>Contact Us</FooterH2Sty>
             <form action="">
               <InputDivSty>

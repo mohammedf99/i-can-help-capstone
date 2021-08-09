@@ -6,6 +6,7 @@ export const FooterSty = styled.footer`
   color: #fafaff;
   background-color: #1c1256;
   padding: 65px 165px;
+  bottom: 0;
 
   .a-no-style {
     text-decoration: none;
@@ -14,6 +15,10 @@ export const FooterSty = styled.footer`
 
   .a-no-style:hover {
     opacity: 0.8;
+  }
+
+  @media only screen and (max-width: 992px) {
+    padding: 2rem;
   }
 `;
 
