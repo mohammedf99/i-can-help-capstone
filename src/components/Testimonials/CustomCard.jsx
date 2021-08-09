@@ -16,7 +16,7 @@ const CustomCard = ({
 
     <div className="details">
       <div className="imgbx">
-        <img src={cardImage} alt="" />
+        <img src={cardImage} alt="" style={{ objectFit: "cover" }} />
       </div>
       <h2>{profileName}</h2>
       <span>{profilePosition}</span>

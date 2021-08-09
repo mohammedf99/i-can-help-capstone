@@ -1,0 +1,14 @@
+{
+    "salary": "Salary",
+    "from": "From",
+    "to": "To",
+    "empType": "Employment Type",
+    "location": "Location",
+    "gender": "Gender",
+    "showOnly": "Show only",
+    "searchRes": "Search Result",
+    "filterBy": "Filter by",
+    "pin": "Pin",
+    "pinned": "Pinned",
+    "contact": "Contact"
+}

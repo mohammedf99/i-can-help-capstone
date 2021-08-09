@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Row, Col } from "antd";
+import { toast } from "react-toastify";
 import { JobPostingContainer } from "./JobPostingForm.styled";
-import UploadPng from "./UploadPng";
-import { post } from "src/Utilities/FirebaseUtilities";
-import AuthContext from "src/Utilities/Contexts/AuthContext";
-import DataContext from "src/Utilities/Contexts/DataContext";
+import { useTranslation } from "next-i18next";
+import { post } from "../../Utilities/FirebaseUtilities";
+import AuthContext from "../../Utilities/Contexts/AuthContext";
+import DataContext from "../../Utilities/Contexts/DataContext";
 
 const JobPostingForm = () => {
   const { currentUser } = useContext(AuthContext);
@@ -22,6 +23,8 @@ const JobPostingForm = () => {
     gender: userData?.gender || null,
   });
 
+  const { t } = useTranslation("home");
+
   useEffect(() => {
     if (userData) setValues((prev) => ({ ...prev, gender: userData?.gender }));
   }, [userData]);
@@ -33,7 +36,6 @@ const JobPostingForm = () => {
     if (file) {
       reader.onload = () => {
         if (reader.readyState === 2) {
-          console.log(file);
           setValues((prev) => ({ ...prev, picture: file }));
         }
       };
@@ -56,7 +58,15 @@ const JobPostingForm = () => {
     if (!hasNull()) {
       if (currentUser) post(values, currentUser.uid, () => getPosts());
     } else {
-      alert("please fill the form");
+      toast.error("Please fill the Form", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     }
   };
 
@@ -68,7 +78,7 @@ const JobPostingForm = () => {
             type="text"
             name="title"
             id="title"
-            placeholder="Job title"
+            placeholder={t("jobTitle")}
             onChange={(e) => {
               e.persist();
               setValues((prev) => ({
@@ -85,7 +95,7 @@ const JobPostingForm = () => {
               id="post"
               cols="140"
               rows="3"
-              placeholder="Job description..."
+              placeholder={t("jobDesc")}
               onChange={(e) => {
                 e.persist();
                 setValues((prev) => ({
@@ -107,7 +117,7 @@ const JobPostingForm = () => {
               type="number"
               name="salary"
               id="salary"
-              placeholder="Salary in USD"
+              placeholder={t("salaryInUsd")}
               onChange={(e) => {
                 e.persist();
                 setValues((prev) => ({
@@ -129,7 +139,7 @@ const JobPostingForm = () => {
               }}
             >
               <option selected disabled>
-                You are a(n)
+                {t("youAreAn")}
               </option>
               <option value={1}>Employer</option>
               <option value={2}>Jobseeker</option>
@@ -147,7 +157,7 @@ const JobPostingForm = () => {
               }}
             >
               <option selected disabled>
-                Job type
+                {t("jobType")}
               </option>
               <option value="Babysitter">Babysitter</option>
               <option value="Cleaner">Cleaner</option>
@@ -173,7 +183,7 @@ const JobPostingForm = () => {
               }}
             >
               <option selected disabled>
-                Employment
+                {t("employment")}
               </option>
               <option value="Contract">Contract</option>
               <option value="Full-time">Full-time</option>
@@ -207,7 +217,7 @@ const JobPostingForm = () => {
               }}
             >
               <option selected disabled>
-                Location
+                {t("location")}
               </option>
               <option value="Erbil">Erbil</option>
               <option value="Duhok">Duhok</option>
@@ -224,7 +234,7 @@ const JobPostingForm = () => {
             type="button"
             onClick={() => handlePost()}
           >
-            Post
+            {t("post")}
           </button>
         </Row>
       </form>

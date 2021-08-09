@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 
+import { toast } from "react-toastify";
 import Firebase from "../Firebase";
 
 // Add the functions used in firebase here.
@@ -23,20 +24,17 @@ export const setUser = ({ email, name }, id) =>
       languages: [],
       pinnedPosts: [],
     })
-    .catch((e) => alert(e));
-
-export const updateUser = (values, id) => {
-  try {
-    usersRef
-      .doc(id)
-      .update({
-        ...values,
+    .catch((e) =>
+      toast.error(e.message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
       })
-      .catch((e) => alert(e));
-  } catch (error) {
-    alert(error);
-  }
-};
+    );
 
 export const signUp = ({ email, password, name }, callback) => {
   try {
@@ -47,24 +45,59 @@ export const signUp = ({ email, password, name }, callback) => {
           url: "https://i-can-help-20773.web.app",
         });
 
-        setUser({ email, name }, user.uid).then(() =>
-          Firebase.auth().signOut()
-        );
+        setUser({ email, name }, user.uid).then(() => Firebase.auth().signOut());
       })
       .then(() => {
-        alert("signup success");
+        toast.success("Email verification sent", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
+
         if (callback) callback();
       })
-      .catch((e) => alert(e));
+      .catch((e) =>
+        toast.error(e.message, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        })
+      );
   } catch (error) {
-    alert(error);
+    toast.error(error.message, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   }
 };
 
 export const signout = () =>
   Firebase.auth()
     .signOut()
-    .catch((e) => alert(e.message));
+    .catch((e) =>
+      toast.error(e.message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+    );
 
 const { LOCAL, SESSION } = Firebase.auth.Auth.Persistence;
 
@@ -83,23 +116,69 @@ export const signIn = ({ email, password, remember }, callback) =>
 
           if (!r.user.emailVerified) {
             signout();
-            alert("please verify to log in");
+            toast.error("Please verify to log in", {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            });
             return false;
           }
-          alert("signin success");
+          toast.success("Welcome Back 👋", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
           if (callback) callback();
           return true;
         })
-        .catch((e) => alert(e.message))
+        .catch((e) =>
+          toast.error(e.message, {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          })
+        )
     )
-    .catch((e) => alert(e));
+    .catch((e) =>
+      toast.error(e.message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+    );
 
 export const getUser = async (id) => {
   const data = await usersRef
     .doc(id)
     .get()
     .then((snapshot) => snapshot)
-    .catch((e) => alert(e.message));
+    .catch((e) =>
+      toast.error(e.message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+    );
 
   return data;
 };
@@ -111,27 +190,24 @@ export const uploadImage = (image, callback) => {
   const imageRef = storageRef.child(image.name);
 
   if (image) {
-    imageRef
-      .put(image)
-      .then(() => {
-        alert("Image uploaded successfully to Firebase.");
-      })
-      .then(() => callback(imageRef));
+    imageRef.put(image).then(() => callback(imageRef));
   } else {
-    alert("Please upload an image first.");
+    toast.error("Please upload an image first.", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   }
 
   return imageRef;
 };
 
-export const updatePicture = (image, userId) => {
-  uploadImage(image, (ref) =>
-    ref
-      .getDownloadURL()
-      .then((url) => updateUser({ picture: url }, userId))
-      .catch((e) => console.log(e))
-  );
-};
+export const updatePicture = (image) =>
+  uploadImage(image, (ref) => ref.getDownloadURL());
 
 export const post = (values, userId, callback) => {
   uploadImage(values.picture, (ref) => {
@@ -157,7 +233,15 @@ export const post = (values, userId, callback) => {
           .collection("posts")
           .add(data)
           .then(() => {
-            alert("success");
+            toast.success("Posted ✔️", {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            });
             callback();
           })
           .catch((e) => console.log(e));
@@ -168,14 +252,35 @@ export const post = (values, userId, callback) => {
   });
 };
 
-export const pinPost = (userId, postId) =>
-  usersRef
-    .doc(userId)
-    .update({
-      pinnedPosts: Firebase.firestore.FieldValue.arrayUnion(postId),
-    })
-    .then(() => console.log("pinned"))
-    .catch((e) => console.log(e));
+export const pinPost = (userId, postId) => {
+  if (Firebase.auth().currentUser)
+    return usersRef
+      .doc(userId)
+      .update({
+        pinnedPosts: Firebase.firestore.FieldValue.arrayUnion(postId),
+      })
+      .catch((e) =>
+        toast.error(e.message, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        })
+      );
+
+  return toast.error("Log in to Pin Posts", {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
+};
 
 export const unPinPost = (userId, postId) =>
   usersRef
@@ -183,8 +288,17 @@ export const unPinPost = (userId, postId) =>
     .update({
       pinnedPosts: Firebase.firestore.FieldValue.arrayRemove(postId),
     })
-    .then(() => console.log("un pin"))
-    .catch((e) => console.log(e));
+    .catch((e) =>
+      toast.error(e.message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+    );
 
 export const deletePost = (postId, userId) =>
   postsRef
@@ -194,9 +308,104 @@ export const deletePost = (postId, userId) =>
     .then(() =>
       usersRef.get().then((snapshot) =>
         snapshot.docs.forEach((user) => {
-          if (user?.data()?.pinnedPosts?.includes(postId))
-            unPinPost(user?.id, postId);
+          if (user?.data()?.pinnedPosts?.includes(postId)) unPinPost(user?.id, postId);
+        }),
+      ),
+    )
+    .catch((e) =>
+      toast.error(e.message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+    );
+
+export const updateUser = async (values, id) => {
+  if (typeof values.picture === "object")
+    return usersRef
+      .doc(id)
+      .update({
+        ...values,
+        picture: await updatePicture(values.picture, id).getDownloadURL(),
+      })
+      .catch((e) =>
+        toast.error(e.message, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        })
+      );
+
+  return usersRef
+    .doc(id)
+    .update({
+      ...values,
+    })
+    .catch((e) =>
+      toast.error(e.message, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      })
+    );
+};
+
+export const addLanguage = (userId, language) =>
+  usersRef
+    .doc(userId)
+    .update({ languages: Firebase.firestore.FieldValue.arrayUnion(language) });
+
+export const removeLanguage = (userId, language) =>
+  usersRef
+    .doc(userId)
+    .update({ languages: Firebase.firestore.FieldValue.arrayRemove(language) });
+
+export const resetPassword = (email) => {
+  if (email)
+    return Firebase.auth()
+      .sendPasswordResetEmail(email)
+      .then(() =>
+        toast.success("Reset Email sent", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
         })
       )
-    )
-    .catch((e) => alert(e));
+      .catch((e) =>
+        toast.error(e.message, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        })
+      );
+
+  return toast.error("Please Enter an Email", {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  });
+};

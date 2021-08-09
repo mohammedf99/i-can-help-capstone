@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "next-i18next";
 import { Row, Col } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,6 +13,7 @@ import { ContactBtn, ConModal } from "./Post.styled";
 
 const ContactModal = ({ button, user }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const { t } = useTranslation("common");
 
   const showModal = () => {
     setIsModalVisible(true);
@@ -31,11 +33,11 @@ const ContactModal = ({ button, user }) => {
         button({ onClick: () => showModal() })
       ) : (
         <ContactBtn type="primary" onClick={showModal}>
-          <FontAwesomeIcon icon={faComments} className="msg-icon" /> Contact
+          <FontAwesomeIcon icon={faComments} className="msg-icon" /> {t("contact")}
         </ContactBtn>
       )}
       <ConModal
-        title={`${user?.name}'s contact information`}
+        title={`${user?.name} ${t("userContactInfo")}`}
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}
