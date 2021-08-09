@@ -21,4 +21,5 @@ function App({ Component, pageProps }) {
     </AuthProvider>
   );
 }
+
 export default appWithTranslation(App);

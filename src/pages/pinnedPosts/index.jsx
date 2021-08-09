@@ -12,6 +12,6 @@ export default function PinnedPosts() {
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common"])),
+    ...(await serverSideTranslations(locale, ["common", "pinnedPosts", "footer", "navbar"])),
   },
 });

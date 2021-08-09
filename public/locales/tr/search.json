@@ -1,0 +1,14 @@
+{
+    "salary": "Maaş",
+    "from": "Kaçtan",
+    "to": "kaça",
+    "empType": "Meslek türü",
+    "location": "Yer",
+    "gender": "Cinsiyet",
+    "showOnly": "Saadece göster",
+    "searchRes": "Arama sonuçları",
+    "filterBy": "Tarafından filtre",
+    "pin": "Sabitle",
+    "pinned": "Sabitlendi",
+    "contact": "İletişim"
+}

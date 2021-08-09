@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { useTranslation, appWithTranslation, i18n } from "next-i18next";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt, faCheck } from "@fortawesome/free-solid-svg-icons";
@@ -22,6 +23,7 @@ const Post = ({ data }) => {
   const { currentUser } = useContext(AuthContext);
   const { userData } = useContext(DataContext);
   const [user, setUser] = useState(null);
+  const { t } = useTranslation("home");
 
   useEffect(() => {
     if (data && data.userId) {
@@ -70,7 +72,7 @@ const Post = ({ data }) => {
               }}
             >
               <FontAwesomeIcon icon={faCheck} className="pin-icon" />
-              Pinned
+              {t("pinned")}
             </PinnedButton>
           ) : (
             <PinButton
@@ -80,7 +82,7 @@ const Post = ({ data }) => {
               }}
             >
               <FontAwesomeIcon icon={faCheck} className="pin-icon" />
-              Pin
+              {t("pin")}
             </PinButton>
           )}
 

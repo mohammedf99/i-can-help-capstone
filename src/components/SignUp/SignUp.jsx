@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "next-i18next";
 import { Form, Button } from "antd";
 import { useRouter } from "next/router";
 import { signUp } from "../../Utilities/FirebaseUtilities";
@@ -38,14 +39,15 @@ function SignUpForm({ isVisible, backgroundClick, changeForm }) {
   });
 
   const route = useRouter();
+  const { t } = useTranslation("common");
 
   return isVisible ? (
     <div>
       <BackDrop onClick={backgroundClick}>
         <CardStyled onClick={(e) => e.stopPropagation()}>
           <Form>
-            <HeaderStyled>Sign up</HeaderStyled>
-            <TitleStyled>Sign up now to start helping!</TitleStyled>
+            <HeaderStyled>{t("signUp")}</HeaderStyled>
+            <TitleStyled>{t("signUpNow")}</TitleStyled>
 
             <Form.Item>
               <InputStyled
@@ -56,7 +58,7 @@ function SignUpForm({ isVisible, backgroundClick, changeForm }) {
 
             <Form.Item>
               <InputStyled
-                placeholder="  Email"
+                placeholder={t("email")}
                 prefix={<EmailIconSVG />}
                 onChange={(e) => setData({ ...data, email: e.target.value })}
               />
@@ -64,14 +66,14 @@ function SignUpForm({ isVisible, backgroundClick, changeForm }) {
 
             <Form.Item>
               <InputPasswordStyled
-                placeholder="Password"
+                placeholder={t("password")}
                 onChange={(e) => setData({ ...data, password: e.target.value })}
               />
             </Form.Item>
 
             <Form.Item>
               <InputPasswordStyled
-                placeholder="Repeat Password"
+                placeholder={t("repeatPassword")}
                 onChange={(e) =>
                   setData({ ...data, confirmPass: e.target.value })
                 }
@@ -84,7 +86,7 @@ function SignUpForm({ isVisible, backgroundClick, changeForm }) {
                 htmlType="submit"
                 onClick={() => signUp(data)}
               >
-                Sign up
+                {t("signUp")}
               </ButtonStyled>
             </Form.Item>
 
@@ -94,7 +96,7 @@ function SignUpForm({ isVisible, backgroundClick, changeForm }) {
                 style={{ color: "#1c1259", fontFamily: "Roboto" }}
                 onClick={() => changeForm()}
               >
-                Have account?
+                {t("haveAcc")}
               </Button>
             </Form.Item>
           </Form>

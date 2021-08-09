@@ -23,11 +23,7 @@ const AuthProvider = ({ children }) => {
     return () => unsubscribe();
   }, []);
 
-  return (
-    <AuthContext.Provider value={{ currentUser, loading }}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={{ currentUser, loading }}>{children}</AuthContext.Provider>;
 };
 
 export default AuthProvider;

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useTranslation } from "next-i18next";
 import { Input } from "antd";
 import Link from "next/link";
 import { SearchOutlined } from "@ant-design/icons";
@@ -10,7 +11,11 @@ import AuthContext from "../../Utilities/Contexts/AuthContext";
 
 const NavbarSection = ({ transparent, auth }) => {
   const user = useContext(AuthContext).currentUser;
+  
+  const { t } = useTranslation("navbar");
+  
   const router = useRouter();
+  
   return (
     <Navbar>
       <div
@@ -28,28 +33,28 @@ const NavbarSection = ({ transparent, auth }) => {
         <div className="nav" style={{ margin: 0 }}>
           {user && (
             <div className="navcontent">
-              <Link href="/home">Post </Link>
-              <Link href="/myPosts">My Posts</Link>
-              <Link href="/pinnedPosts">Pinned Posts</Link>
+              <Link href="/home">{t("post")}</Link>
+              <Link href="/myPosts">{t("myPosts")}</Link>
+              <Link href="/pinnedPosts">{t("pinnedPost")}</Link>
             </div>
           )}
 
           {!user && (
             <div className="navcontent">
-              <Link href="/about">About</Link>
+              <Link href="/about">{t("about")}</Link>
               <a
                 onClick={() =>
                   router.push({ pathname: "/search", query: { type: 1 } })
                 }
               >
-                Find Work
+                {t("findWork")}
               </a>
               <a
                 onClick={() =>
                   router.push({ pathname: "/search", query: { type: 2 } })
                 }
               >
-                Find Talent
+                {t("findTalent")}
               </a>
             </div>
           )}
@@ -57,7 +62,7 @@ const NavbarSection = ({ transparent, auth }) => {
           <Input
             className="Searchbtn"
             size="large"
-            placeholder="Search here"
+            placeholder={t("searchHere")}
             suffix={<SearchOutlined />}
             onPressEnter={(e) => {
               if (!e.target.value) router.push("/search");

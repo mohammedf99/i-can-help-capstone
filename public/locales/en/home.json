@@ -1,0 +1,17 @@
+{
+    "home": "Home",
+    "jobTitle": "Job title",
+    "jobDesc": "Job description",
+    "salaryInUsd": "Salary in USD",
+    "youAreAn": "You are a(n)",
+    "jobType": "Job type",
+    "employment": "Employment",
+    "location": "Location",
+    "post": "Post",
+    "latestJobOpp": "Latest job opportunities",
+    "pin": "Pin",
+    "pinned": "Pinned",
+    "contact": "Contact",
+    "contactInfo": "' Contact information",
+    "profile": "Profile"
+}

@@ -1,0 +1,11 @@
+{
+    "jobDesc": "Job description",
+    "price": "Price",
+    "employment": "Employment",
+    "location": "Location",
+    "time": "Time",
+    "gender": "Gender",
+    "pin": "Pin",
+    "contact": "Contact",
+    "userContactInfo": "'s contact information"
+}

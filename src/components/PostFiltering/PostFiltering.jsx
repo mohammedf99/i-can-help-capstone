@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "next-i18next";
 import { Row, Col } from "antd";
 import { FilterContainer } from "./PostFiltering.styled";
 
@@ -51,13 +52,13 @@ const PostFiltering = ({ setFilteredPosts, posts, type }) => {
               className="salary-title"
               style={{ backgroundColor: "#CACAEA", color: "#1C1259" }}
             >
-              Salary
+              {t("salary")}
             </h3>
           </Col>
         </Row>
         <Row gutter={[8, 8]} className="salary-row">
           <Col span={4} className="from-to-title">
-            <label htmlFor="from">From</label>
+            <label htmlFor="from">{t("from")}</label>
           </Col>
           <Col span={8}>
             <input
@@ -78,7 +79,7 @@ const PostFiltering = ({ setFilteredPosts, posts, type }) => {
             />
           </Col>
           <Col span={4} className="from-to-title">
-            <label htmlFor="to">To</label>
+            <label htmlFor="to">{t("to")}</label>
           </Col>
           <Col span={8}>
             <input
@@ -112,7 +113,7 @@ const PostFiltering = ({ setFilteredPosts, posts, type }) => {
               }}
             >
               <option selected disabled>
-                Employment type
+                {t("empType")}
               </option>
               <option value="Contract">Contract</option>
               <option value="Full-time">Full-time</option>
@@ -132,7 +133,7 @@ const PostFiltering = ({ setFilteredPosts, posts, type }) => {
               }}
             >
               <option selected disabled>
-                Location
+                {t("location")}
               </option>
               <option value="Erbil">Erbil</option>
               <option value="Duhok">Duhok</option>
@@ -154,7 +155,7 @@ const PostFiltering = ({ setFilteredPosts, posts, type }) => {
               }}
             >
               <option selected disabled>
-                Gender
+                {t("gender")}
               </option>
               <option value="Female">Female</option>
               <option value="Male">Male</option>

@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import { Col, Row, Typography } from "antd";
 import { useContext } from "react";
 import AuthContext from "../../Utilities/Contexts/AuthContext";
@@ -11,6 +12,7 @@ import { ImageStyled } from "./PostDetail.styled";
 function PostDetail({ data }) {
   const { userData } = useContext(DataContext);
   const { currentUser } = useContext(AuthContext);
+  const { t } = useTranslation("postDetails");
   return (
     <Container>
       <Col style={{ textAlign: "center", flex: 1.6 }}>
@@ -65,19 +67,19 @@ function PostDetail({ data }) {
               <PrimaryButton
                 onClick={() => unPinPost(currentUser?.uid, data.id)}
               >
-                Pinned
+                {t("pinned")}
               </PrimaryButton>
             ) : (
               <SecondaryButton
                 onClick={() => pinPost(currentUser?.uid, data.id)}
               >
-                Pin
+                {t("pin")}
               </SecondaryButton>
             )}
 
             <ContactModal
               button={(props) => (
-                <PrimaryButton {...props}>Contact</PrimaryButton>
+                <PrimaryButton {...props}>{t("contact")}</PrimaryButton>
               )}
               user={data?.user}
             />

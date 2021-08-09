@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { Form, Button } from "antd";
 import { resetPassword, signIn } from "../../Utilities/FirebaseUtilities";
@@ -38,18 +39,19 @@ function SignInForm({ isVisible, backgroundClick, changeForm }) {
   });
 
   const router = useRouter();
+  const { t } = useTranslation("common");
 
   return isVisible ? (
     <div>
       <BackDrop onClick={backgroundClick}>
         <CardStyled onClick={(e) => e.stopPropagation()}>
           <Form>
-            <HeaderStyled>Sign In</HeaderStyled>
-            <TitleStyled>Sign in now to start helping!</TitleStyled>
+            <HeaderStyled>{t("signIn")}</HeaderStyled>
+            <TitleStyled>{t("signInNow")}</TitleStyled>
 
             <Form.Item>
               <InputStyled
-                placeholder="  Email"
+                placeholder={t("email")}
                 prefix={<EmailIconSVG />}
                 onChange={(e) => setData({ ...data, email: e.target.value })}
               />
@@ -57,14 +59,14 @@ function SignInForm({ isVisible, backgroundClick, changeForm }) {
 
             <Form.Item>
               <InputPasswordStyled
-                placeholder="Password"
+                placeholder={t("password")}
                 onChange={(e) => setData({ ...data, password: e.target.value })}
               />
             </Form.Item>
 
             <Form.Item style={{ textAlign: "left" }}>
               <Checkbox
-                label="Remember me"
+                label={t("remember")}
                 change={(value) => setData({ ...data, remember: value })}
               />
             </Form.Item>
@@ -78,7 +80,7 @@ function SignInForm({ isVisible, backgroundClick, changeForm }) {
                   )
                 }
               >
-                Sign in
+                {t("signIn")}
               </ButtonStyled>
             </Form.Item>
 
@@ -90,7 +92,7 @@ function SignInForm({ isVisible, backgroundClick, changeForm }) {
                 style={{ color: "#1c1259", fontFamily: "Roboto" }}
                 onClick={() => resetPassword(data.email)}
               >
-                Forgot password?
+                {t("forgot")}
               </Button>
             </Form.Item>
 
@@ -100,7 +102,7 @@ function SignInForm({ isVisible, backgroundClick, changeForm }) {
                 style={{ color: "#1c1259", fontFamily: "Roboto" }}
                 onClick={() => changeForm()}
               >
-                Don't have account yet?
+                {t("noAcc")}
               </Button>
             </Form.Item>
           </Form>

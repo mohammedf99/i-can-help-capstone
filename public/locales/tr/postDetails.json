@@ -1,0 +1,11 @@
+{
+    "jobDesc": "İş tanımı",
+    "price": "Fiyat",
+    "employment": "İş",
+    "location": "Adres",
+    "time": "Zaman",
+    "gender": "Cinsiyet",
+    "pin": "Sabitle",
+    "pinned": "Sabitlendi",
+    "contact": "İletişim"
+}

@@ -45,9 +45,7 @@ export const signUp = ({ email, password, name }, callback) => {
           url: "https://i-can-help-20773.web.app",
         });
 
-        setUser({ email, name }, user.uid).then(() =>
-          Firebase.auth().signOut()
-        );
+        setUser({ email, name }, user.uid).then(() => Firebase.auth().signOut());
       })
       .then(() => {
         toast.success("Email verification sent", {
@@ -310,10 +308,9 @@ export const deletePost = (postId, userId) =>
     .then(() =>
       usersRef.get().then((snapshot) =>
         snapshot.docs.forEach((user) => {
-          if (user?.data()?.pinnedPosts?.includes(postId))
-            unPinPost(user?.id, postId);
-        })
-      )
+          if (user?.data()?.pinnedPosts?.includes(postId)) unPinPost(user?.id, postId);
+        }),
+      ),
     )
     .catch((e) =>
       toast.error(e.message, {

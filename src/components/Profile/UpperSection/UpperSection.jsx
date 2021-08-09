@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useTranslation } from "next-i18next";
 import { Row, Col } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt, faUser } from "@fortawesome/free-solid-svg-icons";
@@ -17,6 +18,7 @@ const UpperSection = () => {
   const [userPosts, setUserPosts] = useState({});
   const data = useContext(DataContext).userData;
   const { currentUser } = useContext(AuthContext);
+  const { t } = useTranslation("common")
   useEffect(() => {
     getUser(currentUser?.uid).then((user) => {
       user?.ref
@@ -52,7 +54,7 @@ const UpperSection = () => {
           </div>
           <div className="card-lower">
             <h3 className="post-title">
-              <Link href="/myPosts">My posts</Link>
+              <Link href="/myPosts">{t("myPosts")}</Link>
             </h3>
           </div>
         </MyPostsCard>
@@ -62,7 +64,7 @@ const UpperSection = () => {
           </div>
           <div className="card-lower">
             <h3 className="post-title">
-              <Link href="/pinnedPosts">Pinned posts</Link>
+              <Link href="/pinnedPosts">{t("pinnedPosts")}</Link>
             </h3>
           </div>
         </PinnedPostCard>

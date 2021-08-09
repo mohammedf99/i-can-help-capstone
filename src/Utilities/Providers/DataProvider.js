@@ -14,9 +14,7 @@ const DataProvider = ({ children }) => {
   const router = useRouter();
   useEffect(() => {
     if (currentUser) {
-      usersRef
-        .doc(currentUser.uid)
-        .onSnapshot((snapshot) => setUserData(snapshot.data()));
+      usersRef.doc(currentUser.uid).onSnapshot((snapshot) => setUserData(snapshot.data()));
     } else setUserData(null);
   }, [currentUser]);
 
@@ -30,9 +28,7 @@ const DataProvider = ({ children }) => {
             .collection("posts")
             .get()
             .then((snapshot) => {
-              snapshot.docs.forEach((post) =>
-                setPosts((prev) => [...prev, post])
-              );
+              snapshot.docs.forEach((post) => setPosts((prev) => [...prev, post]));
             })
             .catch((e) =>
               toast.error(e.message, {
