@@ -1,0 +1,29 @@
+{
+    "myPosts": {
+
+    },
+
+    "pinnedPosts": {
+        "myPosts": "",
+        "pinnedPosts": ""
+    },
+    "myPosts": "Gönderilerim",
+    "pinnedPosts": "Sabitlenmiş",
+    "userContactInfo": "iletişim bilgileri",
+    "contact": "İletişim",
+    "myPosts": "My posts",
+    "pinnedPosts": "Pinned posts",
+    "userContactInfo": "'s contact information",
+    "contact": "contact",
+    "signIn": "giriş yap",
+    "signInNow": "Yardım etmeye başlamak için şimdi giriş yapın!",
+    "email": "E-posta",
+    "password": "şifre",
+    "remember": "Beni hatırla",
+    "forgot": "şifrenizi mi unuttunuz?",
+    "noAcc": "hesabınız yok mu?",
+    "signUp": "üye ol",
+    "signUpNow": "Yardım etmeye başlamak için şimdi kaydolun!",
+    "repeatPassword": "Şifreyi tekrar yazınız",
+    "haveAcc": "hesabın var mı?"
+}
