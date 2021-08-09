@@ -23,7 +23,7 @@ const LowerSection = () => {
     if (language && language !== "") addLanguage(currentUser?.uid, language);
   };
 
-  const handleRemoveLanguage = () => {
+  const handleRemoveLanguage = (language) => {
     if (language && language !== "") removeLanguage(currentUser?.uid, language);
   };
 
