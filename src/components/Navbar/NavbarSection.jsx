@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Input } from "antd";
 import Link from "next/link";
 import { SearchOutlined } from "@ant-design/icons";
+import { useRouter } from "next/router";
 import { Navbar } from "./Navbar.styled";
 import SignedinNavbar from "./SignedinNavbar";
 import SignedoutNavbar from "./SignedoutNavbar";
@@ -9,7 +10,7 @@ import AuthContext from "../../Utilities/Contexts/AuthContext";
 
 const NavbarSection = ({ transparent, auth }) => {
   const user = useContext(AuthContext).currentUser;
-
+  const router = useRouter();
   return (
     <Navbar>
       <div
@@ -36,8 +37,20 @@ const NavbarSection = ({ transparent, auth }) => {
           {!user && (
             <div className="navcontent">
               <Link href="/">About</Link>
-              <Link href="/search">Find Work</Link>
-              <Link href="/search">Find Talent</Link>
+              <a
+                onClick={() =>
+                  router.push({ pathname: "/search", query: { type: 1 } })
+                }
+              >
+                Find Work
+              </a>
+              <a
+                onClick={() =>
+                  router.push({ pathname: "/search", query: { type: 2 } })
+                }
+              >
+                Find Talent
+              </a>
             </div>
           )}
 
