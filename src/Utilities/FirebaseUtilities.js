@@ -47,9 +47,7 @@ export const signUp = ({ email, password, name }, callback) => {
           url: "https://i-can-help-20773.web.app",
         });
 
-        setUser({ email, name }, user.uid).then(() =>
-          Firebase.auth().signOut()
-        );
+        setUser({ email, name }, user.uid).then(() => Firebase.auth().signOut());
       })
       .then(() => {
         alert("signup success");
@@ -90,7 +88,7 @@ export const signIn = ({ email, password, remember }, callback) =>
           if (callback) callback();
           return true;
         })
-        .catch((e) => alert(e.message))
+        .catch((e) => alert(e.message)),
     )
     .catch((e) => alert(e));
 
@@ -129,7 +127,7 @@ export const updatePicture = (image, userId) => {
     ref
       .getDownloadURL()
       .then((url) => updateUser({ picture: url }, userId))
-      .catch((e) => console.log(e))
+      .catch((e) => console.log(e)),
   );
 };
 
@@ -194,9 +192,8 @@ export const deletePost = (postId, userId) =>
     .then(() =>
       usersRef.get().then((snapshot) =>
         snapshot.docs.forEach((user) => {
-          if (user?.data()?.pinnedPosts?.includes(postId))
-            unPinPost(user?.id, postId);
-        })
-      )
+          if (user?.data()?.pinnedPosts?.includes(postId)) unPinPost(user?.id, postId);
+        }),
+      ),
     )
     .catch((e) => alert(e));

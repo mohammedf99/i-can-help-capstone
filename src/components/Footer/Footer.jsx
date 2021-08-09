@@ -3,6 +3,7 @@ import { Row, Col } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
+import { useTranslation } from "next-i18next";
 
 import {
   FooterSty,
@@ -18,8 +19,11 @@ import {
   InputIconSty,
 } from "./Footer.styled";
 
-const Footer = () => (
-  <FooterSty>
+const Footer = () => {
+  const { t } = useTranslation("footer");
+
+  return (
+    <FooterSty>
     <Row>
       <Col xs={24} sm={12} md={12}>
         <Row>
@@ -27,8 +31,8 @@ const Footer = () => (
             <LogoSty>I can help</LogoSty>
           </Col>
           <Col span={24}>
-            <FooterParaSty>Copyright &copy; 2021 ICH team.</FooterParaSty>
-            <FooterParaSty>All rights reserved.</FooterParaSty>
+            <FooterParaSty>{t("copyright")}</FooterParaSty>
+            <FooterParaSty>{t("allRightsReserved")}</FooterParaSty>
           </Col>
           <Col span={24}>
             <SMWrapperSty>
@@ -54,60 +58,60 @@ const Footer = () => (
       <Col xs={24} sm={24} md={12}>
         <Row>
           <Col xs={12} sm={12} md={7}>
-            <FooterH2Sty>Company</FooterH2Sty>
+            <FooterH2Sty>{t("company")}</FooterH2Sty>
             <Ul>
               <Li>
                 <a href="#" className="a-no-style">
-                  About us
+                  {t("aboutUs")}
                 </a>
               </Li>
               <Li>
                 <a href="#" className="a-no-style">
-                  Blog
+                  {t("blog")}
                 </a>
               </Li>
               <Li>
                 <a href="#" className="a-no-style">
-                  Contact us
+                  {t("contactUs")}
                 </a>
               </Li>
               <Li>
                 <a href="#" className="a-no-style">
-                  Testimonials
+                  {t("testimonial")}
                 </a>
               </Li>
             </Ul>
           </Col>
           <Col xs={12} sm={12} md={7}>
-            <FooterH2Sty>Support</FooterH2Sty>
+            <FooterH2Sty>{t("support")}</FooterH2Sty>
             <Ul>
               <Li>
                 <a href="#" className="a-no-style">
-                  Help center
+                  {t("helpCenter")}
                 </a>
               </Li>
               <Li>
                 <a href="#" className="a-no-style">
-                  Terms of service
+                  {t("termsOfService")}
                 </a>
               </Li>
               <Li>
                 <a href="#" className="a-no-style">
-                  Legal
+                  {t("legal")}
                 </a>
               </Li>
               <Li>
                 <a href="#" className="a-no-style">
-                  Privacy prolicy
+                {t("privacyPolicy")}
                 </a>
               </Li>
             </Ul>
           </Col>
           <Col xs={24} sm={24} md={10}>
-            <FooterH2Sty>Contact Us</FooterH2Sty>
+            <FooterH2Sty>{t("contactUs")}</FooterH2Sty>
             <form action="">
               <InputDivSty>
-                <InputSty placeholder="Enter your email" />
+                <InputSty placeholder={t("enterYourEmail")} />
                 <InputIconSty>
                   <FontAwesomeIcon icon={faPaperPlane} />
                 </InputIconSty>
@@ -118,6 +122,7 @@ const Footer = () => (
       </Col>
     </Row>
   </FooterSty>
-);
+  )
+};
 
 export default Footer;

@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import { Col, Row, Typography } from "antd";
 import { useContext } from "react";
 import AuthContext from "../../Utilities/Contexts/AuthContext";
@@ -10,6 +11,7 @@ import ContactModal from "../Post/ContactModal";
 function PostDetail({ data }) {
   const { userData } = useContext(DataContext);
   const { currentUser } = useContext(AuthContext);
+  const { t } = useTranslation("postDetails");
   return (
     <Container>
       <Row style={{ width: "80%" }}>
@@ -50,12 +52,12 @@ function PostDetail({ data }) {
               paddingLeft: "10px",
             }}
           >
-            <DetailInfo title="Job Description" text={data?.jobDescription} />
-            <DetailInfo title="Price" text={`$${data?.price}`} />
-            <DetailInfo title="Employment" text={data?.employment} />
-            <DetailInfo title="Location" text={data?.location} />
-            <DetailInfo title="Time" text={data?.time} />
-            <DetailInfo title="Gender" text={data?.gender} />
+            <DetailInfo title={t("jobDesc")} text={data?.jobDescription} />
+            <DetailInfo title={t("price")} text={`$${data?.price}`} />
+            <DetailInfo title={t("employment")} text={data?.employment} />
+            <DetailInfo title={t("location")} text={data?.location} />
+            <DetailInfo title={t("time")} text={data?.time} />
+            <DetailInfo title={t("gender")} text={data?.gender} />
 
             <Row
               style={{
@@ -68,19 +70,19 @@ function PostDetail({ data }) {
                 <PrimaryButton
                   onClick={() => unPinPost(currentUser?.uid, data.id)}
                 >
-                  Pinned
+                  {t("pinned")}
                 </PrimaryButton>
               ) : (
                 <SecondaryButton
                   onClick={() => pinPost(currentUser?.uid, data.id)}
                 >
-                  Pin
+                  {t("pin")}
                 </SecondaryButton>
               )}
 
               <ContactModal
                 button={(props) => (
-                  <PrimaryButton {...props}>Contact</PrimaryButton>
+                  <PrimaryButton {...props}>{t("contact")}</PrimaryButton>
                 )}
                 user={data?.user}
               />

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useTranslation } from "next-i18next";
 import { Input } from "antd";
 import Link from "next/link";
 import { SearchOutlined } from "@ant-design/icons";
@@ -9,6 +10,7 @@ import AuthContext from "../../Utilities/Contexts/AuthContext";
 
 const NavbarSection = ({ transparent, auth }) => {
   const user = useContext(AuthContext).currentUser;
+  const { t } = useTranslation("navbar");
 
   return (
     <Navbar>
@@ -27,24 +29,24 @@ const NavbarSection = ({ transparent, auth }) => {
         <div className="nav" style={{ margin: 0 }}>
           {user && (
             <div className="navcontent">
-              <Link href="/home">Post </Link>
-              <Link href="/myPosts">My Posts</Link>
-              <Link href="/pinnedPosts">Pinned Posts</Link>
+              <Link href="/home">{t("post")}</Link>
+              <Link href="/myPosts">{t("myPosts")}</Link>
+              <Link href="/pinnedPosts">{t("pinnedPost")}</Link>
             </div>
           )}
 
           {!user && (
             <div className="navcontent">
-              <Link href="/">About</Link>
-              <Link href="/search">Find Work</Link>
-              <Link href="/search">Find Talent</Link>
+              <Link href="/">{t("about")}</Link>
+              <Link href="/search">{t("findWork")}</Link>
+              <Link href="/search">{t("findTalent")}</Link>
             </div>
           )}
 
           <Input
             className="Searchbtn"
             size="large"
-            placeholder="Search here"
+            placeholder={t("searchHere")}
             suffix={<SearchOutlined />}
           />
         </div>

@@ -5,6 +5,7 @@ import UploadPng from "./UploadPng";
 import { post } from "src/Utilities/FirebaseUtilities";
 import AuthContext from "src/Utilities/Contexts/AuthContext";
 import DataContext from "src/Utilities/Contexts/DataContext";
+import { useTranslation } from "next-i18next";
 
 const JobPostingForm = () => {
   const { currentUser } = useContext(AuthContext);
@@ -21,6 +22,8 @@ const JobPostingForm = () => {
     createdDate: Date.now(),
     gender: userData?.gender || null,
   });
+
+  const { t } = useTranslation("home");
 
   useEffect(() => {
     if (userData) setValues((prev) => ({ ...prev, gender: userData?.gender }));
@@ -68,7 +71,7 @@ const JobPostingForm = () => {
             type="text"
             name="title"
             id="title"
-            placeholder="Job title"
+            placeholder={t("jobTitle")}
             onChange={(e) => {
               e.persist();
               setValues((prev) => ({
@@ -85,7 +88,7 @@ const JobPostingForm = () => {
               id="post"
               cols="140"
               rows="3"
-              placeholder="Job description..."
+              placeholder={t("jobDesc")}
               onChange={(e) => {
                 e.persist();
                 setValues((prev) => ({
@@ -107,7 +110,7 @@ const JobPostingForm = () => {
               type="number"
               name="salary"
               id="salary"
-              placeholder="Salary in USD"
+              placeholder={t("salaryInUsd")}
               onChange={(e) => {
                 e.persist();
                 setValues((prev) => ({
@@ -129,7 +132,7 @@ const JobPostingForm = () => {
               }}
             >
               <option selected disabled>
-                You are a(n)
+                {t("youAreAn")}
               </option>
               <option value={1}>Employer</option>
               <option value={2}>Jobseeker</option>
@@ -147,7 +150,7 @@ const JobPostingForm = () => {
               }}
             >
               <option selected disabled>
-                Job type
+                {t("jobType")}
               </option>
               <option value="Babysitter">Babysitter</option>
               <option value="Cleaner">Cleaner</option>
@@ -173,7 +176,7 @@ const JobPostingForm = () => {
               }}
             >
               <option selected disabled>
-                Employment
+                {t("employment")}
               </option>
               <option value="Contract">Contract</option>
               <option value="Full-time">Full-time</option>
@@ -207,7 +210,7 @@ const JobPostingForm = () => {
               }}
             >
               <option selected disabled>
-                Location
+                {t("location")}
               </option>
               <option value="Erbil">Erbil</option>
               <option value="Duhok">Duhok</option>
@@ -224,7 +227,7 @@ const JobPostingForm = () => {
             type="button"
             onClick={() => handlePost()}
           >
-            Post
+            {t("post")}
           </button>
         </Row>
       </form>
