@@ -9,13 +9,9 @@ import DataContext from "../../Utilities/Contexts/DataContext";
 
 function MyPostsPage({ myPosts }) {
   const { userData } = useContext(DataContext);
-  const { t } = useTranslation("common");
+  const { t } = useTranslation("myPosts");
   return (
-<<<<<<< HEAD
     <div style={{ paddingBlock: "50px" }}>
-=======
-    <Layout>
->>>>>>> add layout to the page
       <ProfileSection>
         <UpperSection />
       </ProfileSection>
@@ -26,12 +22,14 @@ function MyPostsPage({ myPosts }) {
           {myPosts && myPosts?.map((post) => <ProfilePost data={{ userData, post }} />)}
         </div>
       </PostsContainer>
-<<<<<<< HEAD
     </div>
-=======
-    </Layout>
->>>>>>> add layout to the page
   );
 }
 
 export default MyPostsPage;
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common", "footer", "navbar", "myPosts"])),
+  },
+});

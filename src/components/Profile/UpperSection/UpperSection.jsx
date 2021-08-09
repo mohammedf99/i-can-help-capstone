@@ -14,7 +14,7 @@ const UpperSection = () => {
   const [userPosts, setUserPosts] = useState({});
   const data = useContext(DataContext).userData;
   const { currentUser } = useContext(AuthContext);
-  const { t } = useTranslation("common");
+  const { t } = useTranslation("myPosts");
   useEffect(() => {
     getUser(currentUser?.uid).then((user) => {
       user?.ref
@@ -60,7 +60,7 @@ const UpperSection = () => {
           </div>
           <div className="card-lower">
             <h3 className="post-title">
-              <Link href="/pinnedPosts">{t("pinnedPosts")}</Link>
+              <Link href="/pinnedPosts">{t("pinned")}</Link>
             </h3>
           </div>
         </PinnedPostCard>
