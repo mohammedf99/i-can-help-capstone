@@ -25,19 +25,6 @@ export const setUser = ({ email, name }, id) =>
     })
     .catch((e) => alert(e));
 
-export const updateUser = (values, id) => {
-  try {
-    usersRef
-      .doc(id)
-      .update({
-        ...values,
-      })
-      .catch((e) => alert(e));
-  } catch (error) {
-    alert(error);
-  }
-};
-
 export const signUp = ({ email, password, name }, callback) => {
   try {
     Firebase.auth()
@@ -124,14 +111,8 @@ export const uploadImage = (image, callback) => {
   return imageRef;
 };
 
-export const updatePicture = (image, userId) => {
-  uploadImage(image, (ref) =>
-    ref
-      .getDownloadURL()
-      .then((url) => updateUser({ picture: url }, userId))
-      .catch((e) => console.log(e))
-  );
-};
+export const updatePicture = (image) =>
+  uploadImage(image, (ref) => ref.getDownloadURL());
 
 export const post = (values, userId, callback) => {
   uploadImage(values.picture, (ref) => {
@@ -200,3 +181,31 @@ export const deletePost = (postId, userId) =>
       )
     )
     .catch((e) => alert(e));
+
+export const updateUser = async (values, id) => {
+  if (typeof values.picture === "object")
+    return usersRef
+      .doc(id)
+      .update({
+        ...values,
+        picture: await updatePicture(values.picture, id).getDownloadURL(),
+      })
+      .catch((e) => alert(e));
+
+  return usersRef
+    .doc(id)
+    .update({
+      ...values,
+    })
+    .catch((e) => alert(e));
+};
+
+export const addLanguage = (userId, language) =>
+  usersRef
+    .doc(userId)
+    .update({ languages: Firebase.firestore.FieldValue.arrayUnion(language) });
+
+export const removeLanguage = (userId, language) =>
+  usersRef
+    .doc(userId)
+    .update({ languages: Firebase.firestore.FieldValue.arrayRemove(language) });
