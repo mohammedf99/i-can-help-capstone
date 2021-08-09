@@ -64,7 +64,9 @@ export const CustomCategoryStyle = styled.div`
   margin-right: 5%;
   margin-bottom: 10px;
   border-radius: 8px;
-
+  &:hover {
+    cursor: pointer;
+  }
   img {
     width: 100%;
     height: 300px;

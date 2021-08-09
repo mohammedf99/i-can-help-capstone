@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Row, Col, Button } from "antd";
+import { Row, Col } from "antd";
 import { FilterContainer } from "./PostFiltering.styled";
 
 const PostFiltering = ({ setFilteredPosts, posts, type }) => {
@@ -47,7 +47,12 @@ const PostFiltering = ({ setFilteredPosts, posts, type }) => {
       <form action="">
         <Row gutter={[8, 8]}>
           <Col span={24}>
-            <h3 className="salary-title">Salary</h3>
+            <h3
+              className="salary-title"
+              style={{ backgroundColor: "#CACAEA", color: "#1C1259" }}
+            >
+              Salary
+            </h3>
           </Col>
         </Row>
         <Row gutter={[8, 8]} className="salary-row">
@@ -77,6 +82,7 @@ const PostFiltering = ({ setFilteredPosts, posts, type }) => {
           </Col>
           <Col span={8}>
             <input
+              min={0}
               type="number"
               id="to"
               name="to"

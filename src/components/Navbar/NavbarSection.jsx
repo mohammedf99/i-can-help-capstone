@@ -59,9 +59,13 @@ const NavbarSection = ({ transparent, auth }) => {
             size="large"
             placeholder="Search here"
             suffix={<SearchOutlined />}
-            onPressEnter={(e) =>
-              router.push({ pathname: "/search", query: { q: e.target.value } })
-            }
+            onPressEnter={(e) => {
+              if (!e.target.value) router.push("/search");
+              router.push({
+                pathname: "/search",
+                query: { q: e.target.value },
+              });
+            }}
           />
         </div>
 
