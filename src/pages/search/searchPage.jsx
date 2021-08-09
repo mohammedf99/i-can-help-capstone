@@ -17,35 +17,22 @@ function SearchPage() {
   const { posts } = useContext(DataContext);
   const [filteredPosts, setFilteredPosts] = useState(posts);
   useEffect(() => setFilteredPosts(posts), [posts]);
-  
+
   useEffect(() => {
-    if (query.q && posts.length > 0) {
-      console.log({ posts });
+    if (query.q && posts.length > 0 && query.q !== "") {
       let queryPosts = posts.map((post) => {
         const foundPost = Object.values(post.data()).find((value) => {
-          console.log({
-            value: value
-              ?.toString()
-              .toLowerCase()
-              .includes(query.q.toLowerCase()),
-            value1: value,
-            value2: query.q.toString(),
-          });
           return value
             ?.toString()
             .toLowerCase()
             .includes(query.q.toLowerCase());
         });
 
-        console.log({ foundPost });
-
         if (foundPost !== undefined) return post;
       });
 
       //remove all undefined from array
       queryPosts = queryPosts.filter((post) => post !== undefined);
-
-      console.log(queryPosts);
 
       setFilteredPosts(queryPosts);
     }
@@ -63,7 +50,7 @@ function SearchPage() {
           />
         </div>
         <div className="post-section">
-          <h2 className="title">{t("searchRes")}...</h2>
+          <h2 className="title">{t("searchRes")} {query.q} ...</h2>
           {filteredPosts.map((post) => (
             <Post data={{ ...post?.data(), id: post.id }} />
           ))}

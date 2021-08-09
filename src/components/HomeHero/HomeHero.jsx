@@ -22,10 +22,18 @@ const HomeHero = () => (
       <DescriptionStyled>Take your career to the next level.</DescriptionStyled>
 
       <Row>
-        <SecondaryButton onClick={() => router.push("/search")}>
+        <SecondaryButton
+          onClick={() =>
+            router.push({ pathname: "/search", query: { type: 2 } })
+          }
+        >
           Hire a talent
         </SecondaryButton>
-        <PrimaryButton onClick={() => router.push("/search")}>
+        <PrimaryButton
+          onClick={() =>
+            router.push({ pathname: "/search", query: { type: 1 } })
+          }
+        >
           Find a Job
         </PrimaryButton>
       </Row>

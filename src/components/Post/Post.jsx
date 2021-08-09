@@ -41,6 +41,10 @@ const Post = ({ data }) => {
           <span className="user-type">
             {data?.type === 1 ? "Employeer" : "Jobseeker"}
           </span>
+          <span className="user-type">
+            ${data?.price}/{data?.time}
+          </span>
+
           <span className="user-full-name">{user?.name}</span>
           <p className="post-desc">{data?.title}</p>
         </div>
