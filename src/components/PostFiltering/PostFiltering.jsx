@@ -4,6 +4,7 @@ import { Row, Col } from "antd";
 import { FilterContainer } from "./PostFiltering.styled";
 
 const PostFiltering = ({ setFilteredPosts, posts, type }) => {
+  const { t } = useTranslation("search");
   const [filtering, setFiltering] = useState({
     employment: null,
     from: null,

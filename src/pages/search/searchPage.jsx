@@ -1,4 +1,3 @@
-
 import React, { useContext, useEffect, useState } from "react";
 import { useTranslation, appWithTranslation, i18n } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -10,7 +9,6 @@ import DataContext from "../../Utilities/Contexts/DataContext";
 import { useRouter } from "next/router";
 
 function SearchPage() {
-
   const { t } = useTranslation("search");
 
   const { query } = useRouter();
@@ -50,7 +48,9 @@ function SearchPage() {
           />
         </div>
         <div className="post-section">
-          <h2 className="title">{t("searchRes")} {query.q} ...</h2>
+          <h2 className="title">
+            {t("searchRes")} {query.q} ...
+          </h2>
           {filteredPosts.map((post) => (
             <Post data={{ ...post?.data(), id: post.id }} />
           ))}

@@ -1,18 +1,4 @@
 {
-  "title": "I Can Help",
-  "word_key": "Word",
-  "complex": {
-    "page1": {
-      "title": "Title"
-    },
-    "page2": {
-      "title": "Title"
-    }
-  },
-  "myPosts": "Gönderilerim",
-  "pinnedPosts": "Sabitlenmiş",
-  "userContactInfo": "iletişim bilgileri",
-  "contact": "İletişim",
   "myPosts": "My posts",
   "pinnedPosts": "Pinned posts",
   "userContactInfo": "'s contact information",
