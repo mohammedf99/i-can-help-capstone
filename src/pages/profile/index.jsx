@@ -1,6 +1,7 @@
+import React from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import LoggedIn from "../../Utilities/auth/Auth";
-import ProfilePage from "./profilePage";
+import ProfilePage from "../../components/ProfilePage/profilePage";
 
 export default function Profile() {
   return (

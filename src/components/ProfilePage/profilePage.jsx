@@ -1,8 +1,8 @@
 import React from "react";
-import LowerSection from "../../components/Profile/LowerSection/LowerSection";
-import UpperSection from "../../components/Profile/UpperSection/UpperSection";
+import LowerSection from "../Profile/LowerSection/LowerSection";
+import UpperSection from "../Profile/UpperSection/UpperSection";
 import { ProfileContainer } from "./profilePage.styled";
-import Layout from "../../components/Layout/Layout";
+import Layout from "../Layout/Layout";
 
 function ProfilePage() {
   return (

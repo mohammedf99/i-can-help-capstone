@@ -1,13 +1,12 @@
 import React, { useContext } from "react";
 import { useTranslation, appWithTranslation, i18n } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import JobPostingForm from "../../components/JobPostingForm/JobPostingForm";
-import Post from "../../components/Post/Post";
+import JobPostingForm from "../JobPostingForm/JobPostingForm";
+import Post from "../Post/Post";
 import { HomePageCont } from "./homePage.styled";
-import Layout from "../../components/Layout/Layout";
+import Layout from "../Layout/Layout";
 import DataContext from "../../Utilities/Contexts/DataContext";
 
 function HomePage() {
@@ -45,9 +44,3 @@ function HomePage() {
 }
 
 export default HomePage;
-
-export const getStaticProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ["home", "common", "footer", "navbar"])),
-  },
-});

@@ -1,3 +1,4 @@
+import React from "react";
 import { Row } from "antd";
 import { InfoStyled } from "./PostDetail.styled";
 
