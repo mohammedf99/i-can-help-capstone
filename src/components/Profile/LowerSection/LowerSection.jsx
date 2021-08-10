@@ -3,16 +3,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
-import {
-  ProfileDetailCont,
-  LeftSection,
-  RightSection,
-  LangTags,
-} from "./LowerSection.styled";
+import DataContext from "../../../Utilities/Contexts/DataContext";
+import AuthContext from "../../../Utilities/Contexts/AuthContext";
+import { addLanguage, removeLanguage } from "../../../Utilities/FirebaseUtilities";
 import EditFormModal from "./EditFormModal";
-import DataContext from "src/Utilities/Contexts/DataContext";
-import { addLanguage, removeLanguage } from "src/Utilities/FirebaseUtilities";
-import AuthContext from "src/Utilities/Contexts/AuthContext";
+import { ProfileDetailCont, LeftSection, RightSection, LangTags } from "./LowerSection.styled";
 
 const LowerSection = () => {
   const { userData } = useContext(DataContext);
@@ -38,13 +33,9 @@ const LowerSection = () => {
             <LangTags
               closable
               onClose={() => handleRemoveLanguage(language)}
-              closeIcon={
-                <FontAwesomeIcon icon={faTimesCircle} color="white" size="2x" />
-              }
+              closeIcon={<FontAwesomeIcon icon={faTimesCircle} color="white" size="2x" />}
             >
-              <span style={{ paddingInline: "10px", fontSize: "18px" }}>
-                {language}
-              </span>
+              <span style={{ paddingInline: "10px", fontSize: "18px" }}>{language}</span>
             </LangTags>
           ))}
         </div>
@@ -55,11 +46,7 @@ const LowerSection = () => {
               placeholder="Add language"
               onChange={(e) => setLanguage(e.target.value)}
             />
-            <button
-              className="lang-button"
-              type="button"
-              onClick={handleAddLanguage}
-            >
+            <button className="lang-button" type="button" onClick={handleAddLanguage}>
               Add
             </button>
           </form>

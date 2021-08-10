@@ -2,7 +2,7 @@
 
 exports[`renders Post filtering correctly 1`] = `
 <div
-  className="PostFilteringstyled__FilterContainer-sc-1kfb96c-0 ilPYwp"
+  className="PostFilteringstyled__FilterContainer-sc-1kfb96c-0 gbZFuv"
 >
   <form
     action=""
@@ -31,8 +31,14 @@ exports[`renders Post filtering correctly 1`] = `
       >
         <h3
           className="salary-title"
+          style={
+            Object {
+              "backgroundColor": "#CACAEA",
+              "color": "#1C1259",
+            }
+          }
         >
-          Salary
+          salary
         </h3>
       </div>
     </div>
@@ -61,7 +67,7 @@ exports[`renders Post filtering correctly 1`] = `
         <label
           htmlFor="from"
         >
-          From
+          from
         </label>
       </div>
       <div
@@ -77,8 +83,11 @@ exports[`renders Post filtering correctly 1`] = `
       >
         <input
           className="salary-input"
+          defaultValue={0}
           id="from"
+          min={0}
           name="from"
+          onChange={[Function]}
           placeholder="$"
           type="number"
         />
@@ -97,7 +106,7 @@ exports[`renders Post filtering correctly 1`] = `
         <label
           htmlFor="to"
         >
-          To
+          to
         </label>
       </div>
       <div
@@ -114,7 +123,9 @@ exports[`renders Post filtering correctly 1`] = `
         <input
           className="salary-input"
           id="to"
+          min={0}
           name="to"
+          onChange={[Function]}
           placeholder="$"
           type="number"
         />
@@ -144,27 +155,33 @@ exports[`renders Post filtering correctly 1`] = `
       >
         <select
           className="filter-select"
+          onChange={[Function]}
         >
           <option
             disabled={true}
             selected={true}
           >
-            Employment type
+            empType
           </option>
           <option
-            value="full-time"
+            value="Contract"
           >
             Contract
           </option>
           <option
-            value="full-time"
+            value="Full-time"
           >
             Full-time
           </option>
           <option
-            value="part-time"
+            value="Part-time"
           >
             Part-time
+          </option>
+          <option
+            value={false}
+          >
+            Show all
           </option>
         </select>
       </div>
@@ -181,12 +198,13 @@ exports[`renders Post filtering correctly 1`] = `
       >
         <select
           className="filter-select"
+          onChange={[Function]}
         >
           <option
             disabled={true}
             selected={true}
           >
-            Location
+            location
           </option>
           <option
             value="Erbil"
@@ -213,6 +231,11 @@ exports[`renders Post filtering correctly 1`] = `
           >
             Sulaymaniyah
           </option>
+          <option
+            value={false}
+          >
+            Show all
+          </option>
         </select>
       </div>
       <div
@@ -228,22 +251,67 @@ exports[`renders Post filtering correctly 1`] = `
       >
         <select
           className="filter-select"
+          onChange={[Function]}
         >
           <option
             disabled={true}
             selected={true}
           >
-            Show only
+            gender
           </option>
           <option
-            value="full-time"
+            value="Female"
+          >
+            Female
+          </option>
+          <option
+            value="Male"
+          >
+            Male
+          </option>
+          <option
+            value={false}
+          >
+            Show both
+          </option>
+        </select>
+      </div>
+      <div
+        className="ant-col ant-col-24"
+        style={
+          Object {
+            "paddingBottom": 4,
+            "paddingLeft": 4,
+            "paddingRight": 4,
+            "paddingTop": 4,
+          }
+        }
+      >
+        <select
+          className="filter-select"
+          onChange={[Function]}
+        >
+          <option
+            defaultValue="undefined"
+            disabled={true}
+            selected={true}
+          >
+            Jobseeker
+          </option>
+          <option
+            value="1"
           >
             Employeer
           </option>
           <option
-            value="part-time"
+            value="2"
           >
             Jobseeker
+          </option>
+          <option
+            value={false}
+          >
+            Show both
           </option>
         </select>
       </div>

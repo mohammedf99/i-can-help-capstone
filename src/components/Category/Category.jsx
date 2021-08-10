@@ -11,13 +11,11 @@ const categoryData = [
   },
   {
     categoryTitle: "Department & IT",
-    categoryImg:
-      "https://miro.medium.com/max/12000/1*avlg0U4o26ozRD2Ft6DT9Q.jpeg",
+    categoryImg: "https://miro.medium.com/max/12000/1*avlg0U4o26ozRD2Ft6DT9Q.jpeg",
   },
   {
     categoryTitle: "Video & Audio",
-    categoryImg:
-      "https://static001.geekbang.org/infoq/dd/dd1fe1c6f074f4085029c007c79a0eed.jpeg",
+    categoryImg: "https://static001.geekbang.org/infoq/dd/dd1fe1c6f074f4085029c007c79a0eed.jpeg",
   },
   {
     categoryTitle: "Translation",
@@ -35,17 +33,15 @@ const categoryData = [
   },
 ];
 
-const Category = () => {
-  return (
-    <CategoryStyle>
-      <div className="container">
-        <div className="col">
-          <h1>Categories</h1>
-          <CategoryList categoryData={categoryData} />
-        </div>
+const Category = () => (
+  <CategoryStyle>
+    <div className="container">
+      <div className="col">
+        <h1>Categories</h1>
+        <CategoryList categoryData={categoryData} />
       </div>
-    </CategoryStyle>
-  );
-};
+    </div>
+  </CategoryStyle>
+);
 
 export default Category;

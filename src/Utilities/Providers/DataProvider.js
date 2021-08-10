@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { toast } from "react-toastify";
 import AuthContext from "../Contexts/AuthContext";
 import DataContext from "../Contexts/DataContext";
@@ -39,9 +39,9 @@ const DataProvider = ({ children }) => {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-              })
-            )
-        )
+              }),
+            ),
+        ),
       )
       .then(() => setLoading(false));
   };

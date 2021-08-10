@@ -2,14 +2,14 @@
 
 exports[`renders Navbar correctly 1`] = `
 <footer
-  className="Footerstyled__FooterSty-sc-173ctjc-0 cWtodn"
+  className="Footerstyled__FooterSty-sc-173ctjc-0 eajYuW"
 >
   <div
     className="ant-row"
     style={Object {}}
   >
     <div
-      className="ant-col ant-col-12"
+      className="ant-col ant-col-xs-24 ant-col-sm-12 ant-col-md-12"
       style={Object {}}
     >
       <div
@@ -33,12 +33,12 @@ exports[`renders Navbar correctly 1`] = `
           <p
             className="Footerstyled__FooterParaSty-sc-173ctjc-2 gXzgwz"
           >
-            Copyright © 2021 ICH team.
+            copyright
           </p>
           <p
             className="Footerstyled__FooterParaSty-sc-173ctjc-2 gXzgwz"
           >
-            All rights reserved.
+            allRightsReserved
           </p>
         </div>
         <div
@@ -131,7 +131,7 @@ exports[`renders Navbar correctly 1`] = `
       </div>
     </div>
     <div
-      className="ant-col ant-col-12"
+      className="ant-col ant-col-xs-24 ant-col-sm-24 ant-col-md-12"
       style={Object {}}
     >
       <div
@@ -139,13 +139,13 @@ exports[`renders Navbar correctly 1`] = `
         style={Object {}}
       >
         <div
-          className="ant-col ant-col-7"
+          className="ant-col ant-col-xs-12 ant-col-sm-12 ant-col-md-7"
           style={Object {}}
         >
           <h2
             className="Footerstyled__FooterH2Sty-sc-173ctjc-5 kLpNjn"
           >
-            Company
+            company
           </h2>
           <ul
             className="Footerstyled__Ul-sc-173ctjc-6 jIhMnL"
@@ -157,7 +157,7 @@ exports[`renders Navbar correctly 1`] = `
                 className="a-no-style"
                 href="#"
               >
-                About us
+                aboutUs
               </a>
             </li>
             <li
@@ -167,7 +167,7 @@ exports[`renders Navbar correctly 1`] = `
                 className="a-no-style"
                 href="#"
               >
-                Blog
+                blog
               </a>
             </li>
             <li
@@ -177,7 +177,7 @@ exports[`renders Navbar correctly 1`] = `
                 className="a-no-style"
                 href="#"
               >
-                Contact us
+                contactUs
               </a>
             </li>
             <li
@@ -187,19 +187,19 @@ exports[`renders Navbar correctly 1`] = `
                 className="a-no-style"
                 href="#"
               >
-                Testimonials
+                testimonial
               </a>
             </li>
           </ul>
         </div>
         <div
-          className="ant-col ant-col-7"
+          className="ant-col ant-col-xs-12 ant-col-sm-12 ant-col-md-7"
           style={Object {}}
         >
           <h2
             className="Footerstyled__FooterH2Sty-sc-173ctjc-5 kLpNjn"
           >
-            Support
+            support
           </h2>
           <ul
             className="Footerstyled__Ul-sc-173ctjc-6 jIhMnL"
@@ -211,7 +211,7 @@ exports[`renders Navbar correctly 1`] = `
                 className="a-no-style"
                 href="#"
               >
-                Help center
+                helpCenter
               </a>
             </li>
             <li
@@ -221,7 +221,7 @@ exports[`renders Navbar correctly 1`] = `
                 className="a-no-style"
                 href="#"
               >
-                Terms of service
+                termsOfService
               </a>
             </li>
             <li
@@ -231,7 +231,7 @@ exports[`renders Navbar correctly 1`] = `
                 className="a-no-style"
                 href="#"
               >
-                Legal
+                legal
               </a>
             </li>
             <li
@@ -241,19 +241,19 @@ exports[`renders Navbar correctly 1`] = `
                 className="a-no-style"
                 href="#"
               >
-                Privacy prolicy
+                privacyPolicy
               </a>
             </li>
           </ul>
         </div>
         <div
-          className="ant-col ant-col-10"
+          className="ant-col ant-col-xs-24 ant-col-sm-24 ant-col-md-10"
           style={Object {}}
         >
           <h2
             className="Footerstyled__FooterH2Sty-sc-173ctjc-5 kLpNjn"
           >
-            Contact Us
+            contactUs
           </h2>
           <form
             action=""
@@ -263,7 +263,7 @@ exports[`renders Navbar correctly 1`] = `
             >
               <input
                 className="Footerstyled__InputSty-sc-173ctjc-9 OfVHp"
-                placeholder="Enter your email"
+                placeholder="enterYourEmail"
               />
               <button
                 className="Footerstyled__InputIconSty-sc-173ctjc-10 gGtrdC"

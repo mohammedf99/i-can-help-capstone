@@ -1,6 +1,7 @@
+import React from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import LoggedIn from "../../Utilities/auth/Auth";
-import PinnedPostsPage from "./pinnedPostsPage";
+import PinnedPostsPage from "../../components/PinnedPosts/pinnedPostsPage";
 
 export default function PinnedPosts() {
   return (

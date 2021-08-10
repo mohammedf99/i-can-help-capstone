@@ -2,7 +2,7 @@
 
 exports[`renders profile's upper section correctly 1`] = `
 <section
-  className="UpperSectionstyled__UpperSectionCont-sc-1uo74lt-0 bDnhTH"
+  className="UpperSectionstyled__UpperSectionCont-sc-1uo74lt-0 fZOuhG"
 >
   <div
     className="left-section"
@@ -11,8 +11,7 @@ exports[`renders profile's upper section correctly 1`] = `
       className="img-div"
     >
       <img
-        alt="user image"
-        src="https://widgetwhats.com/app/uploads/2019/11/free-profile-photo-whatsapp-4-300x300.png"
+        alt="user"
       />
     </div>
     <div
@@ -20,14 +19,10 @@ exports[`renders profile's upper section correctly 1`] = `
     >
       <h1
         className="name"
-      >
-        John doe
-      </h1>
+      />
       <h2
         className="job"
-      >
-        Gardner
-      </h2>
+      />
       <h3
         className="location"
       >
@@ -52,7 +47,6 @@ exports[`renders profile's upper section correctly 1`] = `
             />
           </svg>
         </span>
-        Sulaymaniyah
       </h3>
     </div>
   </div>
@@ -60,16 +54,14 @@ exports[`renders profile's upper section correctly 1`] = `
     className="right-section"
   >
     <div
-      className="UpperSectionstyled__MyPostsCard-sc-1uo74lt-1 kDZllr"
+      className="UpperSectionstyled__MyPostsCard-sc-1uo74lt-1 nXfFK"
     >
       <div
         className="card-upper"
       >
         <h3
           className="post-number"
-        >
-          5
-        </h3>
+        />
       </div>
       <div
         className="card-lower"
@@ -78,15 +70,17 @@ exports[`renders profile's upper section correctly 1`] = `
           className="post-title"
         >
           <a
-            href="#"
+            href="/myPosts"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
-            My posts
+            myPosts
           </a>
         </h3>
       </div>
     </div>
     <div
-      className="UpperSectionstyled__PinnedPostCard-sc-1uo74lt-2 iSBaBR"
+      className="UpperSectionstyled__PinnedPostCard-sc-1uo74lt-2 iiQfNE"
     >
       <div
         className="card-upper"
@@ -94,7 +88,7 @@ exports[`renders profile's upper section correctly 1`] = `
         <h3
           className="post-number"
         >
-          5
+          0
         </h3>
       </div>
       <div
@@ -104,9 +98,11 @@ exports[`renders profile's upper section correctly 1`] = `
           className="post-title"
         >
           <a
-            href="#"
+            href="/pinnedPosts"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
-            Pinned posts
+            pinnedPosts
           </a>
         </h3>
       </div>

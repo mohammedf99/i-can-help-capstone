@@ -2,11 +2,23 @@
 
 exports[`renders Navbar correctly 1`] = `
 <div
-  className="JobPostingFormstyled__JobPostingContainer-sc-1bu3b4i-0 dDncMP"
+  className="JobPostingFormstyled__JobPostingContainer-sc-1bu3b4i-0 bHIcoe"
 >
   <form
     action=""
   >
+    <div
+      className="ant-row"
+      style={Object {}}
+    >
+      <input
+        id="title"
+        name="title"
+        onChange={[Function]}
+        placeholder="jobTitle"
+        type="text"
+      />
+    </div>
     <div
       className="ant-row"
       style={Object {}}
@@ -19,181 +31,222 @@ exports[`renders Navbar correctly 1`] = `
           cols="140"
           id="post"
           name="post"
-          placeholder="Job description..."
+          onChange={[Function]}
+          placeholder="jobDesc"
           rows="3"
         />
       </div>
     </div>
     <div
       className="ant-row"
-      style={Object {}}
+      style={
+        Object {
+          "display": "flex",
+          "flexWrap": "wrap",
+        }
+      }
     >
       <div
-        className="ant-col ant-col-5"
-        style={Object {}}
+        className="ant-col"
+        style={
+          Object {
+            "flex": 1,
+            "margin": "10px",
+            "minWidth": "120px",
+          }
+        }
       >
         <input
           id="salary"
           name="salary"
-          placeholder="Salary in USD"
+          onChange={[Function]}
+          placeholder="salaryInUsd"
           type="number"
         />
       </div>
       <div
-        className="ant-col ant-col-4"
-        style={Object {}}
+        className="ant-col"
+        style={
+          Object {
+            "flex": 1,
+            "margin": "10px",
+            "minWidth": "120px",
+          }
+        }
       >
         <select
           className="post-select"
+          onChange={[Function]}
         >
           <option
             disabled={true}
             selected={true}
           >
-            You are a(n)
+            youAreAn
           </option>
           <option
-            value=""
+            value={1}
           >
             Employer
           </option>
           <option
-            value=""
+            value={2}
           >
             Jobseeker
           </option>
         </select>
       </div>
       <div
-        className="ant-col ant-col-5"
-        style={Object {}}
+        className="ant-col"
+        style={
+          Object {
+            "flex": 1,
+            "margin": "10px",
+            "minWidth": "120px",
+          }
+        }
       >
         <select
           className="post-select"
+          onChange={[Function]}
         >
           <option
             disabled={true}
             selected={true}
           >
-            Job type
+            jobType
           </option>
           <option
-            value=""
+            value="Babysitter"
           >
             Babysitter
           </option>
           <option
-            value=""
+            value="Cleaner"
           >
             Cleaner
           </option>
           <option
-            value=""
+            value="Design"
           >
             Design
           </option>
           <option
-            value=""
+            value="Gardner"
           >
             Gardner
           </option>
           <option
-            value=""
+            value="Marketing"
           >
             Marketing
           </option>
           <option
-            value=""
+            value="Production"
           >
             Production
           </option>
           <option
-            value=""
+            value="TranslatorTranslator"
           >
             Translator
           </option>
           <option
-            value=""
+            value="Worker"
           >
             Worker
           </option>
           <option
-            value=""
+            value="open"
           >
             open
           </option>
           <option
-            value=""
+            value="Others"
           >
             Others
           </option>
         </select>
       </div>
       <div
-        className="ant-col ant-col-4"
-        style={Object {}}
+        className="ant-col"
+        style={
+          Object {
+            "flex": 1,
+            "margin": "10px",
+            "minWidth": "120px",
+          }
+        }
       >
         <select
           className="post-select"
+          onChange={[Function]}
         >
           <option
             disabled={true}
             selected={true}
           >
-            Time
+            employment
           </option>
           <option
-            value=""
+            value="Contract"
           >
             Contract
           </option>
           <option
-            value=""
+            value="Full-time"
           >
             Full-time
           </option>
           <option
-            value=""
+            value="Part-time"
           >
             Part-time
           </option>
         </select>
       </div>
       <div
-        className="ant-col ant-col-6"
-        style={Object {}}
+        className="ant-col"
+        style={
+          Object {
+            "flex": 1,
+            "margin": "10px",
+            "minWidth": "120px",
+          }
+        }
       >
         <select
           className="post-select"
+          onChange={[Function]}
         >
           <option
             disabled={true}
             selected={true}
           >
-            Location
+            location
           </option>
           <option
-            value=""
+            value="Erbil"
           >
             Erbil
           </option>
           <option
-            value=""
+            value="Duhok"
           >
             Duhok
           </option>
           <option
-            value=""
+            value="Halabja"
           >
             Halabja
           </option>
           <option
-            value=""
+            value="Kerkuk"
           >
             Kerkuk
           </option>
           <option
-            value=""
+            value="Sulaymaniyah"
           >
             Sulaymaniyah
           </option>
@@ -201,13 +254,19 @@ exports[`renders Navbar correctly 1`] = `
       </div>
     </div>
     <div
-      className="ant-row ant-row-end"
+      className="ant-row ant-row-space-between ant-row-middle btn-row"
       style={Object {}}
     >
+      <input
+        onChange={[Function]}
+        type="file"
+      />
       <button
-        type="submit"
+        className="post-btn"
+        onClick={[Function]}
+        type="button"
       >
-        Post
+        post
       </button>
     </div>
   </form>

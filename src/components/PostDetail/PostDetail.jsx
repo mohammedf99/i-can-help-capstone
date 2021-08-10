@@ -1,13 +1,12 @@
 import { useTranslation } from "next-i18next";
 import { Col, Row, Typography } from "antd";
-import { useContext } from "react";
+import React, { useContext } from "react";
 import AuthContext from "../../Utilities/Contexts/AuthContext";
 import { pinPost, unPinPost } from "../../Utilities/FirebaseUtilities";
 import DataContext from "../../Utilities/Contexts/DataContext";
 import DetailInfo from "./DetailInfo";
-import { PrimaryButton, SecondaryButton, Container } from "./PostDetail.styled";
+import { PrimaryButton, SecondaryButton, Container, ImageStyled } from "./PostDetail.styled";
 import ContactModal from "../Post/ContactModal";
-import { ImageStyled } from "./PostDetail.styled";
 
 function PostDetail({ data }) {
   const { userData } = useContext(DataContext);
@@ -64,23 +63,17 @@ function PostDetail({ data }) {
             }}
           >
             {userData?.pinnedPosts.includes(data.id) ? (
-              <PrimaryButton
-                onClick={() => unPinPost(currentUser?.uid, data.id)}
-              >
+              <PrimaryButton onClick={() => unPinPost(currentUser?.uid, data.id)}>
                 {t("pinned")}
               </PrimaryButton>
             ) : (
-              <SecondaryButton
-                onClick={() => pinPost(currentUser?.uid, data.id)}
-              >
+              <SecondaryButton onClick={() => pinPost(currentUser?.uid, data.id)}>
                 {t("pin")}
               </SecondaryButton>
             )}
 
             <ContactModal
-              button={(props) => (
-                <PrimaryButton {...props}>{t("contact")}</PrimaryButton>
-              )}
+              button={(props) => <PrimaryButton {...props}>{t("contact")}</PrimaryButton>}
               user={data?.user}
             />
           </Row>

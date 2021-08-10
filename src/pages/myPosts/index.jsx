@@ -1,9 +1,10 @@
+import React, { useContext, useEffect, useState } from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useContext, useEffect, useState } from "react";
+
 import AuthContext from "../../Utilities/Contexts/AuthContext";
 import Layout from "../../components/Layout/Layout";
 import LoggedIn from "../../Utilities/auth/Auth";
-import MyPostsPage from "./myPostsPage";
+import MyPostsPage from "../../components/MyPosts/myPostsPage";
 import { usersRef } from "../../Utilities/FirebaseUtilities";
 import DataContext from "../../Utilities/Contexts/DataContext";
 

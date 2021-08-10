@@ -1,3 +1,4 @@
+import React from "react";
 import { Row, Col } from "antd";
 import router from "next/router";
 import {
@@ -15,25 +16,15 @@ const HomeHero = () => (
     <Col style={{ flex: 1.2 }}>
       <TitleStyled>Hire the best workers in Kurdistan </TitleStyled>
 
-      <DescriptionStyled>
-        Find great talent. Build your business.
-      </DescriptionStyled>
+      <DescriptionStyled>Find great talent. Build your business.</DescriptionStyled>
 
       <DescriptionStyled>Take your career to the next level.</DescriptionStyled>
 
       <Row>
-        <SecondaryButton
-          onClick={() =>
-            router.push({ pathname: "/search", query: { type: 2 } })
-          }
-        >
+        <SecondaryButton onClick={() => router.push({ pathname: "/search", query: { type: 2 } })}>
           Hire a talent
         </SecondaryButton>
-        <PrimaryButton
-          onClick={() =>
-            router.push({ pathname: "/search", query: { type: 1 } })
-          }
-        >
+        <PrimaryButton onClick={() => router.push({ pathname: "/search", query: { type: 1 } })}>
           Find a Job
         </PrimaryButton>
       </Row>

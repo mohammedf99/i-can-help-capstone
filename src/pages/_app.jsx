@@ -8,9 +8,9 @@ import AuthProvider from "../Utilities/Providers/AuthProvider";
 import DataProvider from "../Utilities/Providers/DataProvider";
 // eslint-disable-next-line react/prop-types
 function App({ Component, pageProps }) {
-  useEffect(() => {
-    document.dir = i18n.dir();
-  }, [i18n, i18n.language]);
+  // useEffect(() => {
+  //   document.dir = i18n.dir();
+  // }, [i18n, i18n.language]);
 
   return (
     <AuthProvider>

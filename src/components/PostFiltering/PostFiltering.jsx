@@ -13,6 +13,8 @@ const PostFiltering = ({ setFilteredPosts, posts, type }) => {
     type: null,
   });
 
+  const { t } = useTranslation("search");
+
   useEffect(() => {
     setFiltering((prev) => ({ ...prev, type }));
   }, [type]);
@@ -21,23 +23,13 @@ const PostFiltering = ({ setFilteredPosts, posts, type }) => {
     setFilteredPosts(
       posts.filter(
         (post) =>
-          (filtering.from
-            ? Number(post.data().price) >= Number(filtering.from)
-            : true) &&
-          (filtering.to
-            ? Number(post.data().price) <= (Number(filtering.to) || 1000000)
-            : true) &&
-          (filtering.employment
-            ? post.data().employment === filtering.employment
-            : true) &&
-          (filtering.location
-            ? post.data().location === filtering.location
-            : true) &&
+          (filtering.from ? Number(post.data().price) >= Number(filtering.from) : true) &&
+          (filtering.to ? Number(post.data().price) <= (Number(filtering.to) || 1000000) : true) &&
+          (filtering.employment ? post.data().employment === filtering.employment : true) &&
+          (filtering.location ? post.data().location === filtering.location : true) &&
           (filtering.gender ? post.data().gender === filtering.gender : true) &&
-          (filtering.type
-            ? Number(post.data().type) === Number(filtering.type)
-            : true)
-      )
+          (filtering.type ? Number(post.data().type) === Number(filtering.type) : true),
+      ),
     );
   };
 
@@ -48,10 +40,7 @@ const PostFiltering = ({ setFilteredPosts, posts, type }) => {
       <form action="">
         <Row gutter={[8, 8]}>
           <Col span={24}>
-            <h3
-              className="salary-title"
-              style={{ backgroundColor: "#CACAEA", color: "#1C1259" }}
-            >
+            <h3 className="salary-title" style={{ backgroundColor: "#CACAEA", color: "#1C1259" }}>
               {t("salary")}
             </h3>
           </Col>
@@ -107,8 +96,7 @@ const PostFiltering = ({ setFilteredPosts, posts, type }) => {
                 e.persist();
                 setFiltering((prev) => ({
                   ...prev,
-                  employment:
-                    e.target.value === "false" ? false : e.target.value,
+                  employment: e.target.value === "false" ? false : e.target.value,
                 }));
               }}
             >

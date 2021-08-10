@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import UpperSection from "../../components/Profile/UpperSection/UpperSection";
-import ProfilePost from "../../components/ProfilePost/ProfilePost";
+import UpperSection from "../Profile/UpperSection/UpperSection";
+import ProfilePost from "../ProfilePost/ProfilePost";
 import { ProfileSection, PostsContainer } from "./myPostsPage.styled";
-import Layout from "../../components/Layout/Layout";
+import Layout from "../Layout/Layout";
 
 import DataContext from "../../Utilities/Contexts/DataContext";
 
@@ -28,9 +27,3 @@ function MyPostsPage({ myPosts }) {
 }
 
 export default MyPostsPage;
-
-export const getStaticProps = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ["common", "footer", "navbar"])),
-  },
-});

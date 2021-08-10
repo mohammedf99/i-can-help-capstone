@@ -21,26 +21,23 @@ const testimonialsData = [
   },
   {
     cardTitle: "Helpful",
-    cardParagraph:
-      "You need help and you can't find someone?, it is not a problem anymore",
+    cardParagraph: "You need help and you can't find someone?, it is not a problem anymore",
     profileImg:
       "https://images.unsplash.com/photo-1606122017369-d782bbb78f32?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=700&q=80",
     profileName: "Sevim Aksoy",
     profilePosition: "",
   },
 ];
-const Testimonials = () => {
-  return (
-    <TestimonialsSection>
-      <div className="title-wrapper">
-        <h1>Our Clients Speak</h1>
-        <h3>We have been working with clients around the world</h3>
-      </div>
-      <div>
-        <TestimonialsList testimonialsData={testimonialsData} />
-      </div>
-    </TestimonialsSection>
-  );
-};
+const Testimonials = () => (
+  <TestimonialsSection>
+    <div className="title-wrapper">
+      <h1>Our Clients Speak</h1>
+      <h3>We have been working with clients around the world</h3>
+    </div>
+    <div>
+      <TestimonialsList testimonialsData={testimonialsData} />
+    </div>
+  </TestimonialsSection>
+);
 
 export default Testimonials;

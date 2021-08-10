@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
 export const Testinomails = styled.div`
-    background-color: #F4F5F7;
-    height: 100vh;
+  background-color: #f4f5f7;
+  height: 100vh;
 `;

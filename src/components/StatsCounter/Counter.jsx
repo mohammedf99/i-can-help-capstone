@@ -1,3 +1,4 @@
+import React from "react";
 import { TitleStyled, DescriptionStyled } from "./StatsCounter.styled";
 
 function Counter({ title, sub }) {
