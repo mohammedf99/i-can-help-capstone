@@ -25,7 +25,7 @@ const LanguageDropdown = () => {
       return (
         <Dropdown overlay={menu}>
         <Button>
-          Button <DownOutlined />
+          Language <DownOutlined />
         </Button>
       </Dropdown>
       )
