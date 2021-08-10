@@ -11,10 +11,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
-import { FormDiv, BtnDiv } from "./LowerSection.styled";
-import DataContext from "../../../Utilities/Contexts/DataContext";
 import { resetPassword, updateUser } from "src/Utilities/FirebaseUtilities";
 import AuthContext from "src/Utilities/Contexts/AuthContext";
+import { FormDiv, BtnDiv } from "./LowerSection.styled";
+import DataContext from "../../../Utilities/Contexts/DataContext";
 
 const EditFormModal = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -207,10 +207,7 @@ const EditFormModal = () => {
           </BtnDiv>
         </form>
         <BtnDiv>
-          <button
-            type="button"
-            onClick={() => resetPassword(userData?.contact?.email)}
-          >
+          <button type="button" onClick={() => resetPassword(userData?.contact?.email)}>
             Change password
           </button>
         </BtnDiv>

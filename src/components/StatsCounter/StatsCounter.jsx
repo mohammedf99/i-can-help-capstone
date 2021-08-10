@@ -1,10 +1,5 @@
 import { Col, Row } from "antd";
-import {
-  TitleStyled,
-  DescriptionStyled,
-  RowStyled,
-  ColStyled,
-} from "./StatsCounter.styled";
+import { TitleStyled, DescriptionStyled, RowStyled, ColStyled } from "./StatsCounter.styled";
 import CounterBg from "./BackgroundSvg";
 import Counter from "./Counter";
 
@@ -21,9 +16,7 @@ function StatsCounter() {
       }}
     >
       <TitleStyled>Some Count that matters</TitleStyled>
-      <DescriptionStyled>
-        Our achievement in the journey depicted in numbers
-      </DescriptionStyled>
+      <DescriptionStyled>Our achievement in the journey depicted in numbers</DescriptionStyled>
       <RowStyled>
         <ColStyled>
           <Counter title="+35" sub="Categories" />

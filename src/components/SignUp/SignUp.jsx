@@ -14,13 +14,7 @@ import {
 } from "./SignUp.styled";
 
 const EmailIconSVG = () => (
-  <svg
-    width="20"
-    height="20"
-    viewBox="0 0 20 20"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       fillRule="evenodd"
       clipRule="evenodd"
@@ -74,18 +68,12 @@ function SignUpForm({ isVisible, backgroundClick, changeForm }) {
             <Form.Item>
               <InputPasswordStyled
                 placeholder={t("repeatPassword")}
-                onChange={(e) =>
-                  setData({ ...data, confirmPass: e.target.value })
-                }
+                onChange={(e) => setData({ ...data, confirmPass: e.target.value })}
               />
             </Form.Item>
 
             <Form.Item>
-              <ButtonStyled
-                type="primary"
-                htmlType="submit"
-                onClick={() => signUp(data)}
-              >
+              <ButtonStyled type="primary" htmlType="submit" onClick={() => signUp(data)}>
                 {t("signUp")}
               </ButtonStyled>
             </Form.Item>

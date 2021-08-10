@@ -39,9 +39,9 @@ const DataProvider = ({ children }) => {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-              })
-            )
-        )
+              }),
+            ),
+        ),
       )
       .then(() => setLoading(false));
   };

@@ -8,13 +8,13 @@ function ProfilePage() {
   return (
     <Layout>
       <ProfileContainer>
-      <div className="upper-section">
-      <UpperSection />
-      </div>
-      <div className="lower-section">
-      <LowerSection />
-      </div>
-    </ProfileContainer>
+        <div className="upper-section">
+          <UpperSection />
+        </div>
+        <div className="lower-section">
+          <LowerSection />
+        </div>
+      </ProfileContainer>
     </Layout>
   );
 }

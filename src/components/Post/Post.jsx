@@ -3,19 +3,9 @@ import { useTranslation, appWithTranslation, i18n } from "next-i18next";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt, faCheck } from "@fortawesome/free-solid-svg-icons";
-import {
-  PostDiv,
-  LocationTag,
-  Tags,
-  PinButton,
-  PinnedButton,
-} from "./Post.styled";
+import { PostDiv, LocationTag, Tags, PinButton, PinnedButton } from "./Post.styled";
 import ContactModal from "./ContactModal";
-import {
-  pinPost,
-  unPinPost,
-  usersRef,
-} from "../../Utilities/FirebaseUtilities";
+import { pinPost, unPinPost, usersRef } from "../../Utilities/FirebaseUtilities";
 import AuthContext from "../../Utilities/Contexts/AuthContext";
 import DataContext from "../../Utilities/Contexts/DataContext";
 
@@ -27,9 +17,7 @@ const Post = ({ data }) => {
 
   useEffect(() => {
     if (data && data.userId) {
-      usersRef
-        .doc(data?.userId)
-        .onSnapshot((snapshot) => setUser(snapshot.data()));
+      usersRef.doc(data?.userId).onSnapshot((snapshot) => setUser(snapshot.data()));
     }
   }, [data]);
 
@@ -38,9 +26,7 @@ const Post = ({ data }) => {
     <PostDiv onClick={() => router.push(`/postDetails/${data?.id}`)}>
       <div className="post-upper-section">
         <div className="upper-left">
-          <span className="user-type">
-            {data?.type === 1 ? "Employeer" : "Jobseeker"}
-          </span>
+          <span className="user-type">{data?.type === 1 ? "Employeer" : "Jobseeker"}</span>
           <span className="user-type">
             ${data?.price}/{data?.time}
           </span>
@@ -50,10 +36,7 @@ const Post = ({ data }) => {
         </div>
         <div className="upper-right">
           <LocationTag className="post-location-tag">
-            <FontAwesomeIcon
-              icon={faMapMarkerAlt}
-              className="pink-icon-color"
-            />
+            <FontAwesomeIcon icon={faMapMarkerAlt} className="pink-icon-color" />
             <p className="address">{data?.location}</p>
           </LocationTag>
         </div>

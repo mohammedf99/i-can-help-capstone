@@ -5,11 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapMarkerAlt, faUser } from "@fortawesome/free-solid-svg-icons";
 
 import Link from "next/link";
-import {
-  UpperSectionCont,
-  MyPostsCard,
-  PinnedPostCard,
-} from "./UpperSection.styled";
+import { UpperSectionCont, MyPostsCard, PinnedPostCard } from "./UpperSection.styled";
 import DataContext from "../../../Utilities/Contexts/DataContext";
 import AuthContext from "../../../Utilities/Contexts/AuthContext";
 import { getUser } from "../../../Utilities/FirebaseUtilities";
@@ -18,13 +14,13 @@ const UpperSection = () => {
   const [userPosts, setUserPosts] = useState({});
   const data = useContext(DataContext).userData;
   const { currentUser } = useContext(AuthContext);
-  const { t } = useTranslation("common")
+  const { t } = useTranslation("common");
   useEffect(() => {
     getUser(currentUser?.uid).then((user) => {
       user?.ref
         .collection("posts")
         .onSnapshot((snapshot) =>
-          setUserPosts((prev) => ({ ...prev, myPosts: snapshot.docs.length }))
+          setUserPosts((prev) => ({ ...prev, myPosts: snapshot.docs.length })),
         );
     });
   }, [currentUser]);

@@ -11,18 +11,16 @@ import AuthContext from "../../Utilities/Contexts/AuthContext";
 
 const NavbarSection = ({ transparent, auth }) => {
   const user = useContext(AuthContext).currentUser;
-  
+
   const { t } = useTranslation("navbar");
-  
+
   const router = useRouter();
-  
+
   return (
     <Navbar>
       <div
         className="Navbar"
-        style={
-          transparent && { backgroundColor: "transparent", boxShadow: "none" }
-        }
+        style={transparent && { backgroundColor: "transparent", boxShadow: "none" }}
       >
         <div className="site-logo">
           <Link href="/">
@@ -42,18 +40,10 @@ const NavbarSection = ({ transparent, auth }) => {
           {!user && (
             <div className="navcontent">
               <Link href="/about">{t("about")}</Link>
-              <a
-                onClick={() =>
-                  router.push({ pathname: "/search", query: { type: 1 } })
-                }
-              >
+              <a onClick={() => router.push({ pathname: "/search", query: { type: 1 } })}>
                 {t("findWork")}
               </a>
-              <a
-                onClick={() =>
-                  router.push({ pathname: "/search", query: { type: 2 } })
-                }
-              >
+              <a onClick={() => router.push({ pathname: "/search", query: { type: 2 } })}>
                 {t("findTalent")}
               </a>
             </div>

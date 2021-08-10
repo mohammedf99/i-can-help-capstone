@@ -1,10 +1,4 @@
 import React from "react";
-import {Testinomails} from "./Testinomials.styled";
+import { Testinomails } from "./Testinomials.styled";
 
-const Testinomails = () => {
-    return(
-        <Testinomails>
-            it is Testinomails
-        </Testinomails>
-    )
-}
+const TestinomailsComponent = () => <Testinomails>it is Testinomails</Testinomails>;

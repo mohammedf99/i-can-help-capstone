@@ -1,9 +1,9 @@
 import React from "react";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Avatar from "antd/lib/avatar/avatar";
 import LoggedIn from "../../Utilities/auth/Auth";
 import Layout from "../../components/Layout/Layout";
-import Avatar from "antd/lib/avatar/avatar";
 
 function AboutPage() {
   // This controls the direction of the page for RTL languages

@@ -4,11 +4,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
 import { PostCardCont, PostCardBody } from "./ProfilePost.styled";
-import {
-  deletePost,
-  unPinPost,
-  usersRef,
-} from "../../Utilities/FirebaseUtilities";
+import { deletePost, unPinPost, usersRef } from "../../Utilities/FirebaseUtilities";
 import AuthContext from "../../Utilities/Contexts/AuthContext";
 
 const ProfilePost = ({ data, isPin }) => {
@@ -18,9 +14,7 @@ const ProfilePost = ({ data, isPin }) => {
 
   useEffect(() => {
     if (postData && postData.userId)
-      usersRef
-        .doc(postData?.userId)
-        .onSnapshot((snapshot) => setUser(snapshot.data()));
+      usersRef.doc(postData?.userId).onSnapshot((snapshot) => setUser(snapshot.data()));
   }, [postData]);
 
   const deleteHandler = (e) => {

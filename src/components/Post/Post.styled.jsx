@@ -76,7 +76,7 @@ export const PostDiv = styled.div`
 
   @media only screen and (max-width: 768px) {
     padding: 1rem 2rem;
-    
+
     .post-upper-section {
       flex-direction: column;
     }
@@ -100,7 +100,7 @@ export const PostDiv = styled.div`
     .lower-left {
       width: 40%;
     }
-    
+
     .lower-right {
       width: 60%;
       justify-content: flex-end;
@@ -222,7 +222,6 @@ export const PinButton = styled.button`
     height: 30px;
     font-size: 0.75rem;
   }
-
 `;
 export const PinnedButton = styled.button`
   display: flex;

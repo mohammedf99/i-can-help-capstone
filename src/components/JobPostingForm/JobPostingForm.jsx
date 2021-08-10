@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Row, Col } from "antd";
 import { toast } from "react-toastify";
-import { JobPostingContainer } from "./JobPostingForm.styled";
 import { useTranslation } from "next-i18next";
+import { JobPostingContainer } from "./JobPostingForm.styled";
 import { post } from "../../Utilities/FirebaseUtilities";
 import AuthContext from "../../Utilities/Contexts/AuthContext";
 import DataContext from "../../Utilities/Contexts/DataContext";
@@ -47,6 +47,7 @@ const JobPostingForm = () => {
   };
 
   const hasNull = () => {
+    // eslint-disable-next-line no-restricted-syntax
     for (const value in values) {
       if (values[value] === null) return true;
     }
@@ -229,11 +230,7 @@ const JobPostingForm = () => {
         </Row>
         <Row justify="space-between" align="middle" className="btn-row">
           <input type="file" onChange={(e) => onImageChange(e)} />
-          <button
-            className="post-btn"
-            type="button"
-            onClick={() => handlePost()}
-          >
+          <button className="post-btn" type="button" onClick={() => handlePost()}>
             {t("post")}
           </button>
         </Row>

@@ -1,13 +1,8 @@
 import React from "react";
 import { Card } from "antd";
 import { CustomCardStyle } from "./Testimonials.styled";
-const CustomCard = ({
-  cardTitle,
-  cardImage,
-  cardParagraph,
-  profileName,
-  profilePosition,
-}) => (
+
+const CustomCard = ({ cardTitle, cardImage, cardParagraph, profileName, profilePosition }) => (
   <CustomCardStyle>
     <Card className="card">
       <h2>{cardTitle}</h2>

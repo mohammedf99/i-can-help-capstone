@@ -33,7 +33,7 @@ export const setUser = ({ email, name }, id) =>
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-      })
+      }),
     );
 
 export const signUp = ({ email, password, name }, callback) => {
@@ -69,7 +69,7 @@ export const signUp = ({ email, password, name }, callback) => {
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-        })
+        }),
       );
   } catch (error) {
     toast.error(error.message, {
@@ -96,7 +96,7 @@ export const signout = () =>
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-      })
+      }),
     );
 
 const { LOCAL, SESSION } = Firebase.auth.Auth.Persistence;
@@ -148,8 +148,8 @@ export const signIn = ({ email, password, remember }, callback) =>
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-          })
-        )
+          }),
+        ),
     )
     .catch((e) =>
       toast.error(e.message, {
@@ -160,7 +160,7 @@ export const signIn = ({ email, password, remember }, callback) =>
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-      })
+      }),
     );
 
 export const getUser = async (id) => {
@@ -177,7 +177,7 @@ export const getUser = async (id) => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-      })
+      }),
     );
 
   return data;
@@ -206,8 +206,7 @@ export const uploadImage = (image, callback) => {
   return imageRef;
 };
 
-export const updatePicture = (image) =>
-  uploadImage(image, (ref) => ref.getDownloadURL());
+export const updatePicture = (image) => uploadImage(image, (ref) => ref.getDownloadURL());
 
 export const post = (values, userId, callback) => {
   uploadImage(values.picture, (ref) => {
@@ -268,7 +267,7 @@ export const pinPost = (userId, postId) => {
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-        })
+        }),
       );
 
   return toast.error("Log in to Pin Posts", {
@@ -297,7 +296,7 @@ export const unPinPost = (userId, postId) =>
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-      })
+      }),
     );
 
 export const deletePost = (postId, userId) =>
@@ -321,7 +320,7 @@ export const deletePost = (postId, userId) =>
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-      })
+      }),
     );
 
 export const updateUser = async (values, id) => {
@@ -341,7 +340,7 @@ export const updateUser = async (values, id) => {
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-        })
+        }),
       );
 
   return usersRef
@@ -358,19 +357,15 @@ export const updateUser = async (values, id) => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-      })
+      }),
     );
 };
 
 export const addLanguage = (userId, language) =>
-  usersRef
-    .doc(userId)
-    .update({ languages: Firebase.firestore.FieldValue.arrayUnion(language) });
+  usersRef.doc(userId).update({ languages: Firebase.firestore.FieldValue.arrayUnion(language) });
 
 export const removeLanguage = (userId, language) =>
-  usersRef
-    .doc(userId)
-    .update({ languages: Firebase.firestore.FieldValue.arrayRemove(language) });
+  usersRef.doc(userId).update({ languages: Firebase.firestore.FieldValue.arrayRemove(language) });
 
 export const resetPassword = (email) => {
   if (email)
@@ -385,7 +380,7 @@ export const resetPassword = (email) => {
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-        })
+        }),
       )
       .catch((e) =>
         toast.error(e.message, {
@@ -396,7 +391,7 @@ export const resetPassword = (email) => {
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-        })
+        }),
       );
 
   return toast.error("Please Enter an Email", {
