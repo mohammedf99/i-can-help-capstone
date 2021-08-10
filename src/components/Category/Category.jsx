@@ -3,6 +3,7 @@ import { CategoryStyle } from "./Category.styled";
 import CategoryList from "./CategoryList";
 // import Image from 'next/image';
 
+
 const categoryData = [
   {
     categoryTitle: "Design",

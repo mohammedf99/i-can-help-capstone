@@ -1,5 +1,18 @@
-{
-    "hireTalent": "",
-    "findJob": "",
-    "categories": ""
-}
+    {
+        "hireTalent": "Hire a talent",
+        "findJob": "Find a Job",
+        "categories": "Categories",
+        "impInNums": "Our Impacts in Numbers",
+        "design": "Design",
+        "vidAud": "Video & Audio",
+        "marketing": "Marketing",
+        "it": "Development & IT",
+        "translation": "Translation",
+        "lifeStyle": "Life Style",
+        "testimonialTitle": "What our clients say?",
+        "hireTitle": "Hire the best workers in Kurdistan",
+        "paraOneText": "Find great talent. Build your business.",
+        "paraTwoText": "Take your career to the next level.",
+        "workers": "Workers",
+        "yearsOfJourney": "Years of Journey"
+    }

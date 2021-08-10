@@ -1,5 +1,19 @@
 {
-    "hireTalent": "",
-    "findJob": "",
-    "categories": ""
+    "hireTalent": "Bir yetenek işe alın",
+    "findJob": "İş bul",
+    "categories": "Kategoriler",
+    "impInNums": "Rakamlarla Etkilerimiz",
+    "design": "Tasarım",
+    "vidAud": "Video & Ses",
+    "marketing": "Pazarlama",
+    "it": "Geliştirme ve BT",
+    "translation": "Tercüme",
+    "lifeStyle": "Yaşam tarzı",
+    "testimonialTitle": "Müşterilerimiz ne diyor?",
+    "hireTitle": "Kürdistan'daki en iyi işçileri işe alın",
+    "paraOneText": "Büyük yetenek bulun. İşinizi kurun.",
+    "paraTwoText": "Kariyerinizi bir sonraki seviyeye taşıyın.",
+    "workers": "İşçiler",
+    "yearsOfJourney": "yıllar süren yolculuk"
+
 }
