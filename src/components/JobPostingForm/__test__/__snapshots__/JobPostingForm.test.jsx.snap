@@ -1,0 +1,274 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Navbar correctly 1`] = `
+<div
+  className="JobPostingFormstyled__JobPostingContainer-sc-1bu3b4i-0 bHIcoe"
+>
+  <form
+    action=""
+  >
+    <div
+      className="ant-row"
+      style={Object {}}
+    >
+      <input
+        id="title"
+        name="title"
+        onChange={[Function]}
+        placeholder="jobTitle"
+        type="text"
+      />
+    </div>
+    <div
+      className="ant-row"
+      style={Object {}}
+    >
+      <div
+        className="ant-col"
+        style={Object {}}
+      >
+        <textarea
+          cols="140"
+          id="post"
+          name="post"
+          onChange={[Function]}
+          placeholder="jobDesc"
+          rows="3"
+        />
+      </div>
+    </div>
+    <div
+      className="ant-row"
+      style={
+        Object {
+          "display": "flex",
+          "flexWrap": "wrap",
+        }
+      }
+    >
+      <div
+        className="ant-col"
+        style={
+          Object {
+            "flex": 1,
+            "margin": "10px",
+            "minWidth": "120px",
+          }
+        }
+      >
+        <input
+          id="salary"
+          name="salary"
+          onChange={[Function]}
+          placeholder="salaryInUsd"
+          type="number"
+        />
+      </div>
+      <div
+        className="ant-col"
+        style={
+          Object {
+            "flex": 1,
+            "margin": "10px",
+            "minWidth": "120px",
+          }
+        }
+      >
+        <select
+          className="post-select"
+          onChange={[Function]}
+        >
+          <option
+            disabled={true}
+            selected={true}
+          >
+            youAreAn
+          </option>
+          <option
+            value={1}
+          >
+            Employer
+          </option>
+          <option
+            value={2}
+          >
+            Jobseeker
+          </option>
+        </select>
+      </div>
+      <div
+        className="ant-col"
+        style={
+          Object {
+            "flex": 1,
+            "margin": "10px",
+            "minWidth": "120px",
+          }
+        }
+      >
+        <select
+          className="post-select"
+          onChange={[Function]}
+        >
+          <option
+            disabled={true}
+            selected={true}
+          >
+            jobType
+          </option>
+          <option
+            value="Babysitter"
+          >
+            Babysitter
+          </option>
+          <option
+            value="Cleaner"
+          >
+            Cleaner
+          </option>
+          <option
+            value="Design"
+          >
+            Design
+          </option>
+          <option
+            value="Gardner"
+          >
+            Gardner
+          </option>
+          <option
+            value="Marketing"
+          >
+            Marketing
+          </option>
+          <option
+            value="Production"
+          >
+            Production
+          </option>
+          <option
+            value="TranslatorTranslator"
+          >
+            Translator
+          </option>
+          <option
+            value="Worker"
+          >
+            Worker
+          </option>
+          <option
+            value="open"
+          >
+            open
+          </option>
+          <option
+            value="Others"
+          >
+            Others
+          </option>
+        </select>
+      </div>
+      <div
+        className="ant-col"
+        style={
+          Object {
+            "flex": 1,
+            "margin": "10px",
+            "minWidth": "120px",
+          }
+        }
+      >
+        <select
+          className="post-select"
+          onChange={[Function]}
+        >
+          <option
+            disabled={true}
+            selected={true}
+          >
+            employment
+          </option>
+          <option
+            value="Contract"
+          >
+            Contract
+          </option>
+          <option
+            value="Full-time"
+          >
+            Full-time
+          </option>
+          <option
+            value="Part-time"
+          >
+            Part-time
+          </option>
+        </select>
+      </div>
+      <div
+        className="ant-col"
+        style={
+          Object {
+            "flex": 1,
+            "margin": "10px",
+            "minWidth": "120px",
+          }
+        }
+      >
+        <select
+          className="post-select"
+          onChange={[Function]}
+        >
+          <option
+            disabled={true}
+            selected={true}
+          >
+            location
+          </option>
+          <option
+            value="Erbil"
+          >
+            Erbil
+          </option>
+          <option
+            value="Duhok"
+          >
+            Duhok
+          </option>
+          <option
+            value="Halabja"
+          >
+            Halabja
+          </option>
+          <option
+            value="Kerkuk"
+          >
+            Kerkuk
+          </option>
+          <option
+            value="Sulaymaniyah"
+          >
+            Sulaymaniyah
+          </option>
+        </select>
+      </div>
+    </div>
+    <div
+      className="ant-row ant-row-space-between ant-row-middle btn-row"
+      style={Object {}}
+    >
+      <input
+        onChange={[Function]}
+        type="file"
+      />
+      <button
+        className="post-btn"
+        onClick={[Function]}
+        type="button"
+      >
+        post
+      </button>
+    </div>
+  </form>
+</div>
+`;

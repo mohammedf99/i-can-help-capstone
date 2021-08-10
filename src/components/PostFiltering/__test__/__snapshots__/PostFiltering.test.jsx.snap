@@ -1,0 +1,321 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Post filtering correctly 1`] = `
+<div
+  className="PostFilteringstyled__FilterContainer-sc-1kfb96c-0 gbZFuv"
+>
+  <form
+    action=""
+  >
+    <div
+      className="ant-row"
+      style={
+        Object {
+          "marginBottom": -4,
+          "marginLeft": -4,
+          "marginRight": -4,
+          "marginTop": -4,
+        }
+      }
+    >
+      <div
+        className="ant-col ant-col-24"
+        style={
+          Object {
+            "paddingBottom": 4,
+            "paddingLeft": 4,
+            "paddingRight": 4,
+            "paddingTop": 4,
+          }
+        }
+      >
+        <h3
+          className="salary-title"
+          style={
+            Object {
+              "backgroundColor": "#CACAEA",
+              "color": "#1C1259",
+            }
+          }
+        >
+          salary
+        </h3>
+      </div>
+    </div>
+    <div
+      className="ant-row salary-row"
+      style={
+        Object {
+          "marginBottom": -4,
+          "marginLeft": -4,
+          "marginRight": -4,
+          "marginTop": -4,
+        }
+      }
+    >
+      <div
+        className="ant-col ant-col-4 from-to-title"
+        style={
+          Object {
+            "paddingBottom": 4,
+            "paddingLeft": 4,
+            "paddingRight": 4,
+            "paddingTop": 4,
+          }
+        }
+      >
+        <label
+          htmlFor="from"
+        >
+          from
+        </label>
+      </div>
+      <div
+        className="ant-col ant-col-8"
+        style={
+          Object {
+            "paddingBottom": 4,
+            "paddingLeft": 4,
+            "paddingRight": 4,
+            "paddingTop": 4,
+          }
+        }
+      >
+        <input
+          className="salary-input"
+          defaultValue={0}
+          id="from"
+          min={0}
+          name="from"
+          onChange={[Function]}
+          placeholder="$"
+          type="number"
+        />
+      </div>
+      <div
+        className="ant-col ant-col-4 from-to-title"
+        style={
+          Object {
+            "paddingBottom": 4,
+            "paddingLeft": 4,
+            "paddingRight": 4,
+            "paddingTop": 4,
+          }
+        }
+      >
+        <label
+          htmlFor="to"
+        >
+          to
+        </label>
+      </div>
+      <div
+        className="ant-col ant-col-8"
+        style={
+          Object {
+            "paddingBottom": 4,
+            "paddingLeft": 4,
+            "paddingRight": 4,
+            "paddingTop": 4,
+          }
+        }
+      >
+        <input
+          className="salary-input"
+          id="to"
+          min={0}
+          name="to"
+          onChange={[Function]}
+          placeholder="$"
+          type="number"
+        />
+      </div>
+    </div>
+    <div
+      className="ant-row select-row"
+      style={
+        Object {
+          "marginBottom": -4,
+          "marginLeft": -4,
+          "marginRight": -4,
+          "marginTop": -4,
+        }
+      }
+    >
+      <div
+        className="ant-col ant-col-24"
+        style={
+          Object {
+            "paddingBottom": 4,
+            "paddingLeft": 4,
+            "paddingRight": 4,
+            "paddingTop": 4,
+          }
+        }
+      >
+        <select
+          className="filter-select"
+          onChange={[Function]}
+        >
+          <option
+            disabled={true}
+            selected={true}
+          >
+            empType
+          </option>
+          <option
+            value="Contract"
+          >
+            Contract
+          </option>
+          <option
+            value="Full-time"
+          >
+            Full-time
+          </option>
+          <option
+            value="Part-time"
+          >
+            Part-time
+          </option>
+          <option
+            value={false}
+          >
+            Show all
+          </option>
+        </select>
+      </div>
+      <div
+        className="ant-col ant-col-24"
+        style={
+          Object {
+            "paddingBottom": 4,
+            "paddingLeft": 4,
+            "paddingRight": 4,
+            "paddingTop": 4,
+          }
+        }
+      >
+        <select
+          className="filter-select"
+          onChange={[Function]}
+        >
+          <option
+            disabled={true}
+            selected={true}
+          >
+            location
+          </option>
+          <option
+            value="Erbil"
+          >
+            Erbil
+          </option>
+          <option
+            value="Duhok"
+          >
+            Duhok
+          </option>
+          <option
+            value="Halabja"
+          >
+            Halabja
+          </option>
+          <option
+            value="Kerkuk"
+          >
+            Kerkuk
+          </option>
+          <option
+            value="Sulaymaniyah"
+          >
+            Sulaymaniyah
+          </option>
+          <option
+            value={false}
+          >
+            Show all
+          </option>
+        </select>
+      </div>
+      <div
+        className="ant-col ant-col-24"
+        style={
+          Object {
+            "paddingBottom": 4,
+            "paddingLeft": 4,
+            "paddingRight": 4,
+            "paddingTop": 4,
+          }
+        }
+      >
+        <select
+          className="filter-select"
+          onChange={[Function]}
+        >
+          <option
+            disabled={true}
+            selected={true}
+          >
+            gender
+          </option>
+          <option
+            value="Female"
+          >
+            Female
+          </option>
+          <option
+            value="Male"
+          >
+            Male
+          </option>
+          <option
+            value={false}
+          >
+            Show both
+          </option>
+        </select>
+      </div>
+      <div
+        className="ant-col ant-col-24"
+        style={
+          Object {
+            "paddingBottom": 4,
+            "paddingLeft": 4,
+            "paddingRight": 4,
+            "paddingTop": 4,
+          }
+        }
+      >
+        <select
+          className="filter-select"
+          onChange={[Function]}
+        >
+          <option
+            defaultValue="undefined"
+            disabled={true}
+            selected={true}
+          >
+            Jobseeker
+          </option>
+          <option
+            value="1"
+          >
+            Employeer
+          </option>
+          <option
+            value="2"
+          >
+            Jobseeker
+          </option>
+          <option
+            value={false}
+          >
+            Show both
+          </option>
+        </select>
+      </div>
+    </div>
+  </form>
+</div>
+`;
