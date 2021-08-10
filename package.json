@@ -37,7 +37,7 @@
     "test": "jest",
     "test:coverage": "yarn test -- --coverage --watchAll=false ",
     "eject": "yarn react-scripts eject",
-    "format": "prettier --write \"src/*.+(js|jsx|json)\" && eslint --fix",
+    "format": "eslint . --ext .js,.jsx --fix",
     "jest:watch": "jest --watch"
   },
   "eslintConfig": {
