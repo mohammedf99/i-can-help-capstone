@@ -24,5 +24,6 @@
     "signUp": "üye ol",
     "signUpNow": "Yardım etmeye başlamak için şimdi kaydolun!",
     "repeatPassword": "Şifreyi tekrar yazınız",
-    "haveAcc": "hesabın var mı?"
+    "haveAcc": "hesabın var mı?",
+    "name": "İsim"
 }

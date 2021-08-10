@@ -23,5 +23,6 @@
   "signUp": "Sign up",
   "signUpNow": "Sign up now to start helping!",
   "repeatPassword": "repeat password",
-  "haveAcc": "Have account?"
+  "haveAcc": "Have account?",
+  "name": "Name"
 }

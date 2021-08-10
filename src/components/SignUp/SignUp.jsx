@@ -45,7 +45,7 @@ function SignUpForm({ isVisible, backgroundClick, changeForm }) {
 
             <Form.Item>
               <InputStyled
-                placeholder="Name"
+                placeholder={t("name")}
                 onChange={(e) => setData({ ...data, name: e.target.value })}
               />
             </Form.Item>
