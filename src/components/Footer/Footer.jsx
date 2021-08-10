@@ -122,8 +122,8 @@ const Footer = () => {
                 </InputIconSty>
               </InputDivSty>
             </div>
-            <div>
-            <Menu />
+            <div className="menu-div">
+            <Menu className="menu" />
             </div>
           </Col>
         </Row>
