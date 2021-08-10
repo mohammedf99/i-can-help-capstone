@@ -1,4 +1,5 @@
 import { Row, Col } from "antd";
+import { useTranslation } from "next-i18next";
 import router from "next/router";
 import {
   ImageStyled,
@@ -10,16 +11,20 @@ import {
   Container,
 } from "./HomeHero.styled";
 
-const HomeHero = () => (
-  <Container>
+const HomeHero = () => {
+
+  const { t } = useTranslation("welcome");
+
+  return (
+    <Container>
     <Col style={{ flex: 1.2 }}>
-      <TitleStyled>Hire the best workers in Kurdistan </TitleStyled>
+      <TitleStyled>{t("hireTitle")}</TitleStyled>
 
       <DescriptionStyled>
-        Find great talent. Build your business.
+        {t("paraOneText")}
       </DescriptionStyled>
 
-      <DescriptionStyled>Take your career to the next level.</DescriptionStyled>
+      <DescriptionStyled>{t("paraTwoText")}</DescriptionStyled>
 
       <Row>
         <SecondaryButton
@@ -27,14 +32,14 @@ const HomeHero = () => (
             router.push({ pathname: "/search", query: { type: 2 } })
           }
         >
-          Hire a talent
+          {t("hireTalent")}
         </SecondaryButton>
         <PrimaryButton
           onClick={() =>
             router.push({ pathname: "/search", query: { type: 1 } })
           }
         >
-          Find a Job
+          {t("findJob")}
         </PrimaryButton>
       </Row>
     </Col>
@@ -44,6 +49,7 @@ const HomeHero = () => (
       </ImageWrapper>
     </Col>
   </Container>
-);
+  )
+};
 
 export default HomeHero;

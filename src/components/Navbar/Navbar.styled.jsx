@@ -78,7 +78,6 @@ export const Navbar = styled.div`
   .btn1:hover::after {
     content: "Login";
     color: white;
-    border: 1px solid black;
   }
   .btn2 {
     margin-right: 5px;
@@ -101,7 +100,6 @@ export const Navbar = styled.div`
   .btn2:hover::after {
     content: "Sign Up";
     color: white;
-    border: 1px solid black;
   }
 
   .arrow {

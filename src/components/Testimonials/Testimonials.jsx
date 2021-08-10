@@ -1,6 +1,7 @@
 import React from "react";
 import { TestimonialsSection } from "./Testimonials.styled";
 import TestimonialsList from "./TestimonialsList";
+import { useTranslation } from "next-i18next";
 
 const testimonialsData = [
   {
@@ -30,10 +31,11 @@ const testimonialsData = [
   },
 ];
 const Testimonials = () => {
+  const { t } = useTranslation("welcome");
   return (
     <TestimonialsSection>
       <div className="title-wrapper">
-        <h1>Our Clients Speak</h1>
+        <h1>{t("testimonialTitle")}</h1>
         <h3>We have been working with clients around the world</h3>
       </div>
       <div>
