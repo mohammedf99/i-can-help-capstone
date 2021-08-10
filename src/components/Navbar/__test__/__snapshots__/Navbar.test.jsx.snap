@@ -2,7 +2,7 @@
 
 exports[`renders Navbar correctly 1`] = `
 <div
-  className="Navbarstyled__Navbar-sc-ua2yiz-0 iZftWb"
+  className="Navbarstyled__Navbar-sc-ua2yiz-0 lkLGDp"
 >
   <div
     className="Navbar"
@@ -10,7 +10,10 @@ exports[`renders Navbar correctly 1`] = `
     <div
       className="site-logo"
     >
-      <h1>
+      <h1
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
         I Can Help
       </h1>
     </div>
@@ -26,25 +29,21 @@ exports[`renders Navbar correctly 1`] = `
         className="navcontent"
       >
         <a
-          href="/"
+          href="/about"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
-          About
+          about
         </a>
         <a
-          href="/"
           onClick={[Function]}
-          onMouseEnter={[Function]}
         >
-          Find Work
+          findWork
         </a>
         <a
-          href="/"
           onClick={[Function]}
-          onMouseEnter={[Function]}
         >
-          Find Talent
+          findTalent
         </a>
       </div>
       <span
@@ -57,7 +56,7 @@ exports[`renders Navbar correctly 1`] = `
           onChange={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
-          placeholder="Search here"
+          placeholder="searchHere"
           style={null}
           type="text"
           value=""
