@@ -185,6 +185,8 @@ export const getUser = async (id) => {
 
 export const getusers = () => usersRef.get();
 
+export const getAllPosts = async () => {};
+
 export const uploadImage = (image, callback) => {
   const storageRef = Firebase.storage().ref();
   const imageRef = storageRef.child(image.name);
