@@ -43,32 +43,21 @@ function PostDetailsPage() {
 export default PostDetailsPage;
 
 export const getStaticPaths = async () => {
-  const posts = [];
-  const paths = [];
-  usersRef.get().then((users) => {
-    users.docs.forEach((user) =>
-      usersRef
-        .doc(user.id)
-        .collection("posts")
-        .get()
-        .then((snapshot) => {
-          snapshot.docs.forEach((post) => {
-            console.log(post.id);
-            paths.push(post.id);
-          });
-        })
-        .catch((e) => {
-          console.log(e);
-        }),
-    );
-    return posts;
-  });
-
-  console.log({ paths });
+  const paths = [
+    { params: { id: "IrKz60opk8jVAmTPAmrX" } },
+    { params: { id: "mWC2nTQ4LNDTAdFIndU9" } },
+    { params: { id: "WhqDuhEzOaOjr27Pl37A" } },
+    { params: { id: "WxXV7f9vljChtBwuYdsO" } },
+    { params: { id: "X5vR6ql4Ha83OA3pX3ZS" } },
+    { params: { id: "xXt47jaz0tk1NLoAvtpR" } },
+    { params: { id: "6Fa2rqAdNholoZO2J7dU" } },
+    { params: { id: "FYCFZxMQJFCGszaCGLiz" } },
+    { params: { id: "dc3Meq9l5Ciqath7MMFu" } },
+  ];
 
   return {
     paths,
-    fallback: "blocking",
+    fallback: true,
   };
 };
 
