@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faGithub, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import { useTranslation } from "next-i18next";
+import Menu from "./LangDropdown";
 
 import {
   FooterSty,
@@ -109,14 +110,17 @@ const Footer = () => {
             </Col>
             <Col xs={24} sm={24} md={10}>
               <FooterH2Sty>{t("contactUs")}</FooterH2Sty>
-              <form action="">
+              <div>
                 <InputDivSty>
                   <InputSty placeholder={t("enterYourEmail")} />
                   <InputIconSty>
                     <FontAwesomeIcon icon={faPaperPlane} />
                   </InputIconSty>
                 </InputDivSty>
-              </form>
+              </div>
+              <div className="menu-div">
+                <Menu className="menu" />
+              </div>
             </Col>
           </Row>
         </Col>

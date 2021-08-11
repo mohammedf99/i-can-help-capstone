@@ -14,7 +14,6 @@
     "myPosts": "My posts",
     "pinnedPosts": "Pinned posts",
     "userContactInfo": "'s contact information",
-    "contact": "contact",
     "signIn": "giriş yap",
     "signInNow": "Yardım etmeye başlamak için şimdi giriş yapın!",
     "email": "E-posta",
@@ -25,5 +24,6 @@
     "signUp": "üye ol",
     "signUpNow": "Yardım etmeye başlamak için şimdi kaydolun!",
     "repeatPassword": "Şifreyi tekrar yazınız",
-    "haveAcc": "hesabın var mı?"
+    "haveAcc": "hesabın var mı?",
+    "name": "İsim"
 }

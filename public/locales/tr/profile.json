@@ -1,6 +1,17 @@
 {
-    "description": "Description",
-    "languages": "Languages",
-    "add": "Add",
-    "contact": "Contact"
+    "description": "Tanımlama",
+    "languages": "Diller",
+    "add": "Ekle",
+    "addLang": "Dil ekle",
+    "contact": "İletişim",
+    "gender": "Cinsiyet",
+    "editInfo": "Bilgileri düzenle",
+    "saveChanges": "değişiklikleri Kaydet",
+    "changePass": "şifre değiştir",
+    "updatePic": "Resmi güncelle",
+    "name": "İsim",
+    "job": "Meslek",
+    "location": "Adres",
+    "phoneNo": "Telefon numarası"
+
 }

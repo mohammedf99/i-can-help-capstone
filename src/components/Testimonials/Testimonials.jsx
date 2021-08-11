@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "next-i18next";
 import { TestimonialsSection } from "./Testimonials.styled";
 import TestimonialsList from "./TestimonialsList";
 
@@ -28,16 +29,19 @@ const testimonialsData = [
     profilePosition: "",
   },
 ];
-const Testimonials = () => (
-  <TestimonialsSection>
-    <div className="title-wrapper">
-      <h1>Our Clients Speak</h1>
-      <h3>We have been working with clients around the world</h3>
-    </div>
-    <div>
-      <TestimonialsList testimonialsData={testimonialsData} />
-    </div>
-  </TestimonialsSection>
-);
+const Testimonials = () => {
+  const { t } = useTranslation("welcome");
+  return (
+    <TestimonialsSection>
+      <div className="title-wrapper">
+        <h1>{t("testimonialTitle")}</h1>
+        <h3>We have been working with clients around the world</h3>
+      </div>
+      <div>
+        <TestimonialsList testimonialsData={testimonialsData} />
+      </div>
+    </TestimonialsSection>
+  );
+};
 
 export default Testimonials;

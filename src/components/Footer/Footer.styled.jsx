@@ -17,6 +17,10 @@ export const FooterSty = styled.footer`
     opacity: 0.8;
   }
 
+  .menu-div {
+    margin-top: 1rem;
+  }
+
   @media only screen and (max-width: 992px) {
     padding: 2rem;
   }
