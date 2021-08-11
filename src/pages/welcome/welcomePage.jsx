@@ -1,4 +1,5 @@
 import React from "react";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Layout from "../../components/Layout/Layout";
 import Category from "../../components/Category/Category";
 import HomeHero from "../../components/HomeHero/HomeHero";
@@ -15,5 +16,11 @@ function WelcomePage() {
     </Layout>
   );
 }
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["common", "footer", "navbar", "welcome"])),
+  },
+});
 
 export default WelcomePage;

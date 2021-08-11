@@ -4,12 +4,13 @@
     "company": "Company",
     "aboutUs": "about us",
     "blog": "blog",
-    "contactUs": "contact us",
+    "contactUs": "Contact us",
     "testimonial": "testimonial",
     "support": "Support",
     "helpCenter": "help center",
     "termsOfService": "tersms of Service",
     "legal": "legal",
     "privacyPolicy": "privacy policy",
-    "enterYourEmail": "enter your email"
+    "enterYourEmail": "enter your email",
+    "lang": "Language"
 }

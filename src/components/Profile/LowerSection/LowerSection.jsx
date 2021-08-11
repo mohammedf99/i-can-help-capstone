@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import { useTranslation } from "next-i18next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
@@ -13,6 +14,7 @@ const LowerSection = () => {
   const { userData } = useContext(DataContext);
   const { currentUser } = useContext(AuthContext);
   const [language, setLanguage] = useState(null);
+  const { t } = useTranslation("profile");
 
   const handleAddLanguage = () => {
     if (language && language !== "") addLanguage(currentUser?.uid, language);
@@ -25,9 +27,9 @@ const LowerSection = () => {
   return (
     <ProfileDetailCont>
       <LeftSection>
-        <h2 className="detail-titles">Description</h2>
+        <h2 className="detail-titles">{t("description")}</h2>
         <p className="detail-paragraph">{userData?.description}</p>
-        <h2 className="detail-titles">Languages</h2>
+        <h2 className="detail-titles">{t("languages")}</h2>
         <div className="tags-div">
           {userData?.languages?.map((language) => (
             <LangTags
@@ -43,18 +45,18 @@ const LowerSection = () => {
           <form>
             <input
               type="text"
-              placeholder="Add language"
+              placeholder={t("addLang")}
               onChange={(e) => setLanguage(e.target.value)}
             />
             <button className="lang-button" type="button" onClick={handleAddLanguage}>
-              Add
+              {t("add")}
             </button>
           </form>
         </div>
       </LeftSection>
       <RightSection>
         <div className="contact-div">
-          <h2 className="detail-titles">Contact</h2>
+          <h2 className="detail-titles">{t("contact")}</h2>
           <EditFormModal />
         </div>
         <div className="contact-info-div">
@@ -85,7 +87,7 @@ const LowerSection = () => {
             )}
           </ul>
         </div>
-        <h3 className="detail-titles">Gender</h3>
+        <h3 className="detail-titles">{t("gender")}</h3>
         <p style={{ color: "#1C1259", fontWeight: "bold" }}>
           {userData?.gender || "Prefer not to say"}
         </p>

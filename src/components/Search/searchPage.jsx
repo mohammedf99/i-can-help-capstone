@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useTranslation, appWithTranslation, i18n } from "next-i18next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 import Post from "../Post/Post";
 import PostFiltering from "../PostFiltering/PostFiltering";
@@ -58,3 +59,9 @@ function SearchPage() {
 }
 
 export default SearchPage;
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["search", "home", "footer", "navbar"])),
+  },
+});

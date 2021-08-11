@@ -2,7 +2,7 @@
 
 exports[`renders Navbar correctly 1`] = `
 <div
-  className="Navbarstyled__Navbar-sc-ua2yiz-0 lkLGDp"
+  className="Navbarstyled__Navbar-sc-ua2yiz-0 jFbreZ"
 >
   <div
     className="Navbar"

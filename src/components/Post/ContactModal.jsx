@@ -13,7 +13,7 @@ import { ContactBtn, ConModal } from "./Post.styled";
 
 const ContactModal = ({ button, user }) => {
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const { t } = useTranslation("common");
+  const { t } = useTranslation("home");
 
   const showModal = () => {
     setIsModalVisible(true);
@@ -37,7 +37,7 @@ const ContactModal = ({ button, user }) => {
         </ContactBtn>
       )}
       <ConModal
-        title={`${user?.name} ${t("userContactInfo")}`}
+        title={`${user?.name} ${t("contactInfo")}`}
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleCancel}

@@ -33,6 +33,6 @@ export default function MyPosts() {
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common", "footer", "navbar"])),
+    ...(await serverSideTranslations(locale, ["common", "footer", "navbar", "myPosts"])),
   },
 });

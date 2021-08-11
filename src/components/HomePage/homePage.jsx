@@ -44,3 +44,9 @@ function HomePage() {
 }
 
 export default HomePage;
+
+export const getStaticProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ["home", "footer", "navbar"])),
+  },
+});

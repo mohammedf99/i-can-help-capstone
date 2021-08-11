@@ -1,10 +1,13 @@
 import React from "react";
 import { Col, Row } from "antd";
+import { useTranslation } from "next-i18next";
 import { TitleStyled, DescriptionStyled, RowStyled, ColStyled } from "./StatsCounter.styled";
 import CounterBg from "./BackgroundSvg";
 import Counter from "./Counter";
 
 function StatsCounter() {
+  const { t } = useTranslation("welcome");
+
   return (
     // <div>
     // {/* <CounterBg /> */}
@@ -16,11 +19,11 @@ function StatsCounter() {
         backgroundColor: "#FF9B00",
       }}
     >
-      <TitleStyled>Some Count that matters</TitleStyled>
+      <TitleStyled>{t("impInNums")}</TitleStyled>
       <DescriptionStyled>Our achievement in the journey depicted in numbers</DescriptionStyled>
       <RowStyled>
         <ColStyled>
-          <Counter title="+35" sub="Categories" />
+          <Counter title="+35" sub={t("categories")} />
         </ColStyled>
 
         <ColStyled>
@@ -28,11 +31,11 @@ function StatsCounter() {
         </ColStyled>
 
         <ColStyled>
-          <Counter title="300" sub="Workers" />
+          <Counter title="300" sub={t("workers")} />
         </ColStyled>
 
         <ColStyled>
-          <Counter title="3" sub="Years of Journey" />
+          <Counter title="3" sub={t("yearsOfJourney")} />
         </ColStyled>
       </RowStyled>
     </div>
