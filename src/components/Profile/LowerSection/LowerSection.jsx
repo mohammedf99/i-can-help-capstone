@@ -48,11 +48,7 @@ const LowerSection = () => {
               placeholder={t("addLang")}
               onChange={(e) => setLanguage(e.target.value)}
             />
-            <button
-              className="lang-button"
-              type="button"
-              onClick={handleAddLanguage}
-            >
+            <button className="lang-button" type="button" onClick={handleAddLanguage}>
               {t("add")}
             </button>
           </form>

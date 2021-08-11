@@ -3,7 +3,6 @@ import { DownOutlined, UserOutlined } from "@ant-design/icons";
 import { useTranslation } from "next-i18next";
 
 const LanguageDropdown = () => {
-
   const { t } = useTranslation("footer");
 
   function handleButtonClick(e) {

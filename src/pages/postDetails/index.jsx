@@ -13,6 +13,12 @@ export default function PostDetail() {
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
-    ...(await serverSideTranslations(locale, ["common", "postDetails", "footer", "navbar", "home"])),
+    ...(await serverSideTranslations(locale, [
+      "common",
+      "postDetails",
+      "footer",
+      "navbar",
+      "home",
+    ])),
   },
 });

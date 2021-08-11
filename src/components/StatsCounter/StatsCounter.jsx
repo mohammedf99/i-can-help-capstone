@@ -1,17 +1,11 @@
 import React from "react";
 import { Col, Row } from "antd";
 import { useTranslation } from "next-i18next";
-import {
-  TitleStyled,
-  DescriptionStyled,
-  RowStyled,
-  ColStyled,
-} from "./StatsCounter.styled";
+import { TitleStyled, DescriptionStyled, RowStyled, ColStyled } from "./StatsCounter.styled";
 import CounterBg from "./BackgroundSvg";
 import Counter from "./Counter";
 
 function StatsCounter() {
-
   const { t } = useTranslation("welcome");
 
   return (
@@ -26,9 +20,7 @@ function StatsCounter() {
       }}
     >
       <TitleStyled>{t("impInNums")}</TitleStyled>
-      <DescriptionStyled>
-        Our achievement in the journey depicted in numbers
-      </DescriptionStyled>
+      <DescriptionStyled>Our achievement in the journey depicted in numbers</DescriptionStyled>
       <RowStyled>
         <ColStyled>
           <Counter title="+35" sub={t("categories")} />

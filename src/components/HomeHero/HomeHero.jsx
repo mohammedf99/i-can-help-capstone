@@ -25,18 +25,10 @@ const HomeHero = () => {
         <DescriptionStyled>{t("paraTwoText")}</DescriptionStyled>
 
         <Row>
-          <SecondaryButton
-            onClick={() =>
-              router.push({ pathname: "/search", query: { type: 2 } })
-            }
-          >
+          <SecondaryButton onClick={() => router.push({ pathname: "/search", query: { type: 2 } })}>
             {t("hireTalent")}
           </SecondaryButton>
-          <PrimaryButton
-            onClick={() =>
-              router.push({ pathname: "/search", query: { type: 1 } })
-            }
-          >
+          <PrimaryButton onClick={() => router.push({ pathname: "/search", query: { type: 1 } })}>
             {t("findJob")}
           </PrimaryButton>
         </Row>

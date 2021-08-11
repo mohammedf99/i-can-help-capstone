@@ -209,10 +209,7 @@ const EditFormModal = () => {
           </BtnDiv>
         </form>
         <BtnDiv>
-          <button
-            type="button"
-            onClick={() => resetPassword(userData?.contact?.email)}
-          >
+          <button type="button" onClick={() => resetPassword(userData?.contact?.email)}>
             {t("changePass")}
           </button>
         </BtnDiv>
