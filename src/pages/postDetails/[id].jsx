@@ -5,7 +5,7 @@ import { Space, Spin } from "antd";
 import PostDetail from "../../components/PostDetail/PostDetail";
 import Layout from "../../components/Layout/Layout";
 import DataContext from "../../Utilities/Contexts/DataContext";
-import { getUser } from "../../Utilities/FirebaseUtilities";
+import { getAllPosts, getUser, usersRef } from "../../Utilities/FirebaseUtilities";
 
 function PostDetailsPage() {
   const [post, setPost] = useState(null);
@@ -42,10 +42,35 @@ function PostDetailsPage() {
 
 export default PostDetailsPage;
 
-export const getStaticPaths = async () => ({
-  paths: [],
-  fallback: "blocking",
-});
+export const getStaticPaths = async () => {
+  const posts = [];
+  const paths = [];
+  usersRef.get().then((users) => {
+    users.docs.forEach((user) =>
+      usersRef
+        .doc(user.id)
+        .collection("posts")
+        .get()
+        .then((snapshot) => {
+          snapshot.docs.forEach((post) => {
+            console.log(post.id);
+            paths.push(post.id);
+          });
+        })
+        .catch((e) => {
+          console.log(e);
+        }),
+    );
+    return posts;
+  });
+
+  console.log({ paths });
+
+  return {
+    paths,
+    fallback: "blocking",
+  };
+};
 
 export const getStaticProps = async ({ locale }) => ({
   props: {
