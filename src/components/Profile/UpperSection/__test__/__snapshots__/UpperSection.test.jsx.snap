@@ -102,7 +102,7 @@ exports[`renders profile's upper section correctly 1`] = `
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            pinnedPosts
+            pinned
           </a>
         </h3>
       </div>
